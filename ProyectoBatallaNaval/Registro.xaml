@@ -1,0 +1,47 @@
+﻿<Window x:Class="ProyectoBatallaNaval.Registro"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+        Title="Registro" Height="387" Width="528" Background="Black">
+    <Grid  Height="350" Width="525" Background="Bisque">
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" x:Name="textBlockHeading" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"><Run Language="es-mx" Text="Registro"/><LineBreak/><Run Language="es-mx"/></TextBlock>
+
+        <Button Margin="441,5,12,288" Content="Iniciar Sesion" Cursor="Hand" Click="InicioSesion_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock TextDecorations="Underline">  
+                    <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Navy" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <!--end Button as a Link button using style-->
+        <Grid Margin="31,0,29,23" Background="White" Height="264" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="252*" />
+                <!--   <RowDefinition Height="12*" />-->
+            </Grid.RowDefinitions>
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="mensajeError" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,52,0,0" Name="textBlockNombreUsuario" Text="Nombre de usuario:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,80,0,0" Name="textBlockCorreoElectronico" Text="Correo electronico" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,107,0,0" Name="textBlockContraseña" Text="Contraseña:" VerticalAlignment="Top" Width="110"  />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="50,135,0,0" Name="textBlockConfirmarContraseña" Text="Confirmar contraseña:" VerticalAlignment="Top" Width="120" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,52,0,0" Name="textBoxNombreUsuario" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,80,0,0" Name="textBoxCorreoElectronico" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,107,0,0" Name="passwordBoxContraseña" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,136,0,0" Name="passwordBoxConfirmarContraseña" VerticalAlignment="Top" Width="222" />
+            <Button Content="Registrarse" Height="23" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonRegistrarse" VerticalAlignment="Top" Width="70" Click="Registrarse_Click" />
+            <Button Content="Borrar" Height="23" HorizontalAlignment="Left" Margin="259,204,0,0" Name="buttonBorrar" VerticalAlignment="Top" Width="70" Click="Borrar_Click" />
+            <Button Content="Cancelar" Height="23" HorizontalAlignment="Right" Margin="0,204,60,0" Name="buttonCancelar" VerticalAlignment="Top" Width="70" Click="Cancelar_Click" />
+        </Grid>
+    </Grid>
+</Window>  
