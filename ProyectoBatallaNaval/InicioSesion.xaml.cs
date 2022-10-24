@@ -44,6 +44,17 @@ namespace ProyectoBatallaNaval
             {
                 string correoElectronico = textBoxCorreo.Text;
                 string password = passwordBoxContraseña.Password;
+                ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+
+                Boolean regisrado = cliente.iniciarSesion(correoElectronico, password);
+                if (regisrado)
+                {
+                    mensajeError.Text = "El usuario esta registrado";
+                }
+                else
+                {
+                    mensajeError.Text = "El usuario no esta registrado";
+                }
             }
         }
 

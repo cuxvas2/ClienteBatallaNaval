@@ -55,6 +55,18 @@ namespace ProyectoBatallaNaval
                     mensajeError.Text = "La contraseñas deben ser las mismas.";
                     passwordBoxConfirmarContraseña.Focus();
                 }
+                else
+                {
+                    //DEbemos cambiar para que las contraseñas se cifren antes de guardar en la base de datos
+                    ServicioAServidor.AdminiUsuariosClient servidor = new ServicioAServidor.AdminiUsuariosClient();
+
+                    ServicioAServidor.Jugador jugador = new ServicioAServidor.Jugador();
+                    jugador.Contraseña = contraseña;
+                    jugador.CorreoElectronico = correoElectronico;
+                    jugador.Apodo = nombreUsuario;
+
+                    servidor.registarUsuario(jugador);
+                }
             }
         }
 
