@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -49,7 +50,12 @@ namespace ProyectoBatallaNaval
                 Boolean regisrado = cliente.iniciarSesion(correoElectronico, password);
                 if (regisrado)
                 {
-                    mensajeError.Text = "El usuario esta registrado";
+                    InstanceContext context = new InstanceContext(this);
+                    ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
+                    //Agregar su contecto desde aqui?
+                    Lobby lobby = new Lobby();
+                    lobby.Show();
+                    Close();
                 }
                 else
                 {

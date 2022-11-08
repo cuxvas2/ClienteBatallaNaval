@@ -137,6 +137,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/registarUsuario", ReplyAction="http://tempuri.org/IAdminiUsuarios/registarUsuarioResponse")]
         System.Threading.Tasks.Task<bool> registarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse")]
+        bool cambiarContraseña(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse")]
+        System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -180,6 +186,178 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task<bool> registarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
             return base.Channel.registarUsuarioAsync(jugador);
+        }
+        
+        public bool cambiarContraseña(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.cambiarContraseña(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.cambiarContraseñaAsync(jugador);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiSocial", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiSocialCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
+    public interface IAdminiSocial {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/Conectado", ReplyAction="http://tempuri.org/IAdminiSocial/ConectadoResponse")]
+        bool Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/Conectado", ReplyAction="http://tempuri.org/IAdminiSocial/ConectadoResponse")]
+        System.Threading.Tasks.Task<bool> ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
+        void estaEscribiendo(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
+        System.Threading.Tasks.Task estaEscribiendoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
+        void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
+        System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
+        void enviarMensaje(string mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
+        System.Threading.Tasks.Task enviarMensajeAsync(string mensaje);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdminiSocialCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/actualizarJugadores")]
+        void actualizarJugadores(ProyectoBatallaNaval.ServicioAServidor.Jugador[] jugadores);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unionDeJugador")]
+        void unionDeJugador(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/jugadorSeFue")]
+        void jugadorSeFue(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/escribiendoEnCallback")]
+        void escribiendoEnCallback(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirMensaje", ReplyAction="http://tempuri.org/IAdminiSocial/recibirMensajeResponse")]
+        void recibirMensaje(string response);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdminiSocialChannel : ProyectoBatallaNaval.ServicioAServidor.IAdminiSocial, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AdminiSocialClient : System.ServiceModel.DuplexClientBase<ProyectoBatallaNaval.ServicioAServidor.IAdminiSocial>, ProyectoBatallaNaval.ServicioAServidor.IAdminiSocial {
+        
+        public AdminiSocialClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public AdminiSocialClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public AdminiSocialClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdminiSocialClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdminiSocialClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public bool Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.Conectado(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.ConectadoAsync(jugador);
+        }
+        
+        public void estaEscribiendo(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.estaEscribiendo(jugador);
+        }
+        
+        public System.Threading.Tasks.Task estaEscribiendoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.estaEscribiendoAsync(jugador);
+        }
+        
+        public void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.desconectado(jugador);
+        }
+        
+        public System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.desconectadoAsync(jugador);
+        }
+        
+        public void enviarMensaje(string mensaje) {
+            base.Channel.enviarMensaje(mensaje);
+        }
+        
+        public System.Threading.Tasks.Task enviarMensajeAsync(string mensaje) {
+            return base.Channel.enviarMensajeAsync(mensaje);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiPartida", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiPartidaCallback))]
+    public interface IAdminiPartida {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
+        bool tiro(int[] coordenadas, string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
+        System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdminiPartidaCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiPartida/insertarDisparoResponse")]
+        bool insertarDisparo(int[] coordenadas);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdminiPartidaChannel : ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AdminiPartidaClient : System.ServiceModel.DuplexClientBase<ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida>, ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida {
+        
+        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public bool tiro(int[] coordenadas, string contricante) {
+            return base.Channel.tiro(coordenadas, contricante);
+        }
+        
+        public System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante) {
+            return base.Channel.tiroAsync(coordenadas, contricante);
         }
     }
 }

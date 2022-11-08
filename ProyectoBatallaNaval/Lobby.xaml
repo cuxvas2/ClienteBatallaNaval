@@ -1,0 +1,50 @@
+﻿<Window x:Class="ProyectoBatallaNaval.Lobby"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoBatallaNaval"
+      mc:Ignorable="d" 
+      d:DesignHeight=" 1080" d:DesignWidth="1920"
+      Title="Lobby">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonIniciar" Content="Enviar" Grid.Column="1" Grid.Row="1" Height="40" Width="120" Click="buttonIniciar_Click"></Button>
+        <ListView  Grid.Row="1">
+
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Chat">
+
+                    <GridViewColumn x:Name="Apodo" DisplayMemberBinding="{Binding Path=Apodo}" Header="Usuario" Width="Auto"/>
+
+                    <GridViewColumn x:Name="Mensaje" DisplayMemberBinding="{Binding Path=Mensaje}" Width="Auto">
+                        <GridViewColumnHeader>Mensaje
+                            <GridViewColumnHeader.ContextMenu>
+                                <ContextMenu Name="Apodos">
+                                    <MenuItem Header="Ascending" />
+                                    <MenuItem Header="Descending" />
+                                </ContextMenu>
+                            </GridViewColumnHeader.ContextMenu>
+                        </GridViewColumnHeader>
+                    </GridViewColumn>
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="txtMensaje" Grid.Column="1" HorizontalAlignment="Left" Margin="199,132,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Height="94"/>
+        <Label x:Name="ApodoMensaje" HorizontalAlignment="Left" Margin="32,466,0,0" VerticalAlignment="Top" Width="81"/>
+        <Label x:Name="MensajeChat" HorizontalAlignment="Left" Margin="156,453,0,0" VerticalAlignment="Top" Width="232"/>
+        <Label x:Name="Disparo" HorizontalAlignment="Left" Margin="42,347,0,0" VerticalAlignment="Top" Width="125"/>
+    </Grid>
+</Window>

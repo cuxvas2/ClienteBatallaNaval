@@ -29,11 +29,70 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdminiSocial_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdminiPartida_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAdminiUsuarios_iniciarSesion_InputMessage">
@@ -48,6 +107,57 @@
   <wsdl:message name="IAdminiUsuarios_registarUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:registarUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_cambiarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:cambiarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_cambiarContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:cambiarContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_Conectado_InputMessage">
+    <wsdl:part name="parameters" element="tns:Conectado" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_Conectado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConectadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_estaEscribiendo_InputMessage">
+    <wsdl:part name="parameters" element="tns:estaEscribiendo" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_desconectado_InputMessage">
+    <wsdl:part name="parameters" element="tns:desconectado" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_enviarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:enviarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_actualizarJugadores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:actualizarJugadores" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_unionDeJugador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:unionDeJugador" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_jugadorSeFue_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:jugadorSeFue" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_escribiendoEnCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:escribiendoEnCallback" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_recibirMensaje_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:recibirMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_recibirMensaje_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:recibirMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiPartida_tiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:tiro" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiPartida_tiro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiPartida_insertarDisparo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:insertarDisparo" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiPartida_insertarDisparo_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:insertarDisparoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAdminiUsuarios">
     <wsdl:operation name="iniciarSesion">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/iniciarSesion" message="tns:IAdminiUsuarios_iniciarSesion_InputMessage" />
@@ -56,6 +166,51 @@
     <wsdl:operation name="registarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/registarUsuario" message="tns:IAdminiUsuarios_registarUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/registarUsuarioResponse" message="tns:IAdminiUsuarios_registarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="cambiarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña" message="tns:IAdminiUsuarios_cambiarContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse" message="tns:IAdminiUsuarios_cambiarContraseña_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="true" name="IAdminiSocial">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Conectado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Conectado" message="tns:IAdminiSocial_Conectado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/ConectadoResponse" message="tns:IAdminiSocial_Conectado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="estaEscribiendo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/estaEscribiendo" message="tns:IAdminiSocial_estaEscribiendo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="desconectado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/desconectado" message="tns:IAdminiSocial_desconectado_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="enviarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/enviarMensaje" message="tns:IAdminiSocial_enviarMensaje_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="actualizarJugadores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/actualizarJugadores" message="tns:IAdminiSocial_actualizarJugadores_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="unionDeJugador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/unionDeJugador" message="tns:IAdminiSocial_unionDeJugador_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="jugadorSeFue">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/jugadorSeFue" message="tns:IAdminiSocial_jugadorSeFue_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="escribiendoEnCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/escribiendoEnCallback" message="tns:IAdminiSocial_escribiendoEnCallback_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="recibirMensaje">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirMensaje" message="tns:IAdminiSocial_recibirMensaje_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirMensajeResponse" message="tns:IAdminiSocial_recibirMensaje_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAdminiPartida">
+    <wsdl:operation name="tiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/tiro" message="tns:IAdminiPartida_tiro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/tiroResponse" message="tns:IAdminiPartida_tiro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertarDisparo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/insertarDisparo" message="tns:IAdminiPartida_insertarDisparo_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/insertarDisparoResponse" message="tns:IAdminiPartida_insertarDisparo_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAdminiUsuarios" type="tns:IAdminiUsuarios">
@@ -79,9 +234,122 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="cambiarContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAdminiSocial" type="tns:IAdminiSocial">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdminiSocial_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Conectado">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/Conectado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="estaEscribiendo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/estaEscribiendo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="desconectado">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/desconectado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="enviarMensaje">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/enviarMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/actualizarJugadores" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unionDeJugador">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/unionDeJugador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="jugadorSeFue">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/jugadorSeFue" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="escribiendoEnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/escribiendoEnCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recibirMensaje">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAdminiPartida" type="tns:IAdminiPartida">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdminiPartida_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="tiro">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/tiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertarDisparo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/insertarDisparo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="AdminUsuarios">
     <wsdl:port name="NetTcpBinding_IAdminiUsuarios" binding="tns:NetTcpBinding_IAdminiUsuarios">
+      <soap12:address location="net.tcp://localhost:8081/ServicioConWCFJuego" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8081/ServicioConWCFJuego</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-1LU117D4\Victor</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAdminiSocial" binding="tns:NetTcpBinding_IAdminiSocial">
+      <soap12:address location="net.tcp://localhost:8081/ServicioConWCFJuego" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8081/ServicioConWCFJuego</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-1LU117D4\Victor</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAdminiPartida" binding="tns:NetTcpBinding_IAdminiPartida">
       <soap12:address location="net.tcp://localhost:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ServicioConWCFJuego</wsa10:Address>
