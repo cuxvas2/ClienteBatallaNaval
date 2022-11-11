@@ -52,13 +52,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ConectadoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ConectadoResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="estaEscribiendo">
     <xs:complexType>
       <xs:sequence>

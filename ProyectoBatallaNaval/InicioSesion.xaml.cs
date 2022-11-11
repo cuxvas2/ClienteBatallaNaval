@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using ProyectoBatallaNaval.ServicioAServidor;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -19,7 +20,7 @@ using System.Windows.Shapes;
 
 namespace ProyectoBatallaNaval
 {
-    public partial class InicioSesion : Window
+    public partial class InicioSesion : Window, IAdminiSocialCallback
     {
 
         public InicioSesion()
@@ -53,9 +54,16 @@ namespace ProyectoBatallaNaval
                     InstanceContext context = new InstanceContext(this);
                     ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
                     //Agregar su contecto desde aqui?
+                    Jugador jugador = new Jugador();
+                    jugador.CorreoElectronico = correoElectronico;
+                    jugador.Contraseña = password;
+                    clienteJoin.Conectado(jugador);
+                    
                     Lobby lobby = new Lobby();
                     lobby.Show();
                     Close();
+                    
+                    
                 }
                 else
                 {
@@ -68,6 +76,31 @@ namespace ProyectoBatallaNaval
         {
             registro.Show();
             Close();
+        }
+
+        public void actualizarJugadores(Jugador[] jugadores)
+        {
+            Console.WriteLine("Los usuarios conectados son " + jugadores);
+        }
+
+        public void unionDeJugador(Jugador jugador)
+        {
+            Console.WriteLine("El jugador con correo " + jugador.CorreoElectronico + "se unió");
+        }
+
+        public void jugadorSeFue(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void escribiendoEnCallback(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirMensaje(string response)
+        {
+            throw new NotImplementedException();
         }
     }
 }

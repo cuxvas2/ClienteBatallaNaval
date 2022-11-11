@@ -38,7 +38,7 @@ namespace ProyectoBatallaNaval
             else
             {
                 string nombreUsuario = textBoxNombreUsuario.Text;
-                string correoElectronico = textBlockCorreoElectronico.Text;
+                string correoElectronico = textBoxCorreoElectronico.Text;
                 string contraseña = passwordBoxContraseña.Password;
                 if (passwordBoxContraseña.Password.Length == 0)
                 {

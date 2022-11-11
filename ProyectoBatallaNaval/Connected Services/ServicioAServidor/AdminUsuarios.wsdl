@@ -116,9 +116,6 @@
   <wsdl:message name="IAdminiSocial_Conectado_InputMessage">
     <wsdl:part name="parameters" element="tns:Conectado" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_Conectado_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConectadoResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdminiSocial_estaEscribiendo_InputMessage">
     <wsdl:part name="parameters" element="tns:estaEscribiendo" />
   </wsdl:message>
@@ -175,7 +172,6 @@
   <wsdl:portType msc:usingSession="true" name="IAdminiSocial">
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Conectado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Conectado" message="tns:IAdminiSocial_Conectado_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/ConectadoResponse" message="tns:IAdminiSocial_Conectado_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="estaEscribiendo">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/estaEscribiendo" message="tns:IAdminiSocial_estaEscribiendo_InputMessage" />
@@ -252,9 +248,6 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="estaEscribiendo">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/estaEscribiendo" style="document" />

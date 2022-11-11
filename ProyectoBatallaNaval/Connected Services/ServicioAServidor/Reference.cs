@@ -201,11 +201,11 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiSocial", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiSocialCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface IAdminiSocial {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/Conectado", ReplyAction="http://tempuri.org/IAdminiSocial/ConectadoResponse")]
-        bool Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Conectado")]
+        void Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/Conectado", ReplyAction="http://tempuri.org/IAdminiSocial/ConectadoResponse")]
-        System.Threading.Tasks.Task<bool> ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Conectado")]
+        System.Threading.Tasks.Task ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
         void estaEscribiendo(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
@@ -273,11 +273,11 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public bool Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.Conectado(jugador);
+        public void Conectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.Conectado(jugador);
         }
         
-        public System.Threading.Tasks.Task<bool> ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+        public System.Threading.Tasks.Task ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
             return base.Channel.ConectadoAsync(jugador);
         }
         

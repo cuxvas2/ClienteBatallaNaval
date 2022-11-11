@@ -67,6 +67,14 @@ namespace ProyectoBatallaNaval
             InstanceContext context = new InstanceContext(this);
             ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
             cliente.enviarMensaje(mensaje);
+
+            /*int[] coordenadas = { 3, 5 };
+            ServicioAServidor.AdminiPartidaClient clientePartida = new ServicioAServidor.AdminiPartidaClient(context);
+            clientePartida.tiro(coordenadas, "Invitado");*/
+
+
         }
+
+        
     }
 }

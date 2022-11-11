@@ -42,9 +42,9 @@
 
             </ListView.View>
         </ListView>
-        <TextBlock x:Name="txtMensaje" Grid.Column="1" HorizontalAlignment="Left" Margin="199,132,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="484" Height="94"/>
         <Label x:Name="ApodoMensaje" HorizontalAlignment="Left" Margin="32,466,0,0" VerticalAlignment="Top" Width="81"/>
         <Label x:Name="MensajeChat" HorizontalAlignment="Left" Margin="156,453,0,0" VerticalAlignment="Top" Width="232"/>
         <Label x:Name="Disparo" HorizontalAlignment="Left" Margin="42,347,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtMensaje" Grid.Column="1" HorizontalAlignment="Center" Margin="0,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="542" Height="79"/>
     </Grid>
 </Window>
