@@ -122,6 +122,83 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Chat", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
+    [System.SerializableAttribute()]
+    public partial class Chat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MensajeEnviadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemitenteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SalaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MensajeEnviado {
+            get {
+                return this.MensajeEnviadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MensajeEnviadoField, value) != true)) {
+                    this.MensajeEnviadoField = value;
+                    this.RaisePropertyChanged("MensajeEnviado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remitente {
+            get {
+                return this.RemitenteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemitenteField, value) != true)) {
+                    this.RemitenteField = value;
+                    this.RaisePropertyChanged("Remitente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sala {
+            get {
+                return this.SalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SalaField, value) != true)) {
+                    this.SalaField = value;
+                    this.RaisePropertyChanged("Sala");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiUsuarios")]
     public interface IAdminiUsuarios {
@@ -143,6 +220,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse")]
         System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreoResponse")]
+        ProyectoBatallaNaval.ServicioAServidor.Jugador recuperarJugadorPorCorreo(string correoElectronico);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreoResponse")]
+        System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> recuperarJugadorPorCorreoAsync(string correoElectronico);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -195,6 +278,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         public System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
             return base.Channel.cambiarContraseñaAsync(jugador);
         }
+        
+        public ProyectoBatallaNaval.ServicioAServidor.Jugador recuperarJugadorPorCorreo(string correoElectronico) {
+            return base.Channel.recuperarJugadorPorCorreo(correoElectronico);
+        }
+        
+        public System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> recuperarJugadorPorCorreoAsync(string correoElectronico) {
+            return base.Channel.recuperarJugadorPorCorreoAsync(correoElectronico);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -220,10 +311,34 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
-        void enviarMensaje(string mensaje);
+        void enviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
-        System.Threading.Tasks.Task enviarMensajeAsync(string mensaje);
+        System.Threading.Tasks.Task enviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/crearSala")]
+        void crearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/crearSala")]
+        System.Threading.Tasks.Task crearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unirseASala")]
+        void unirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unirseASala")]
+        System.Threading.Tasks.Task unirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/todoListo")]
+        void todoListo(string sala, string jugador, int numeroDeListos);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/todoListo")]
+        System.Threading.Tasks.Task todoListoAsync(string sala, string jugador, int numeroDeListos);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
+        void cancelarTodoListo(string sala, string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
+        System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -242,7 +357,22 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         void escribiendoEnCallback(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirMensaje", ReplyAction="http://tempuri.org/IAdminiSocial/recibirMensajeResponse")]
-        void recibirMensaje(string response);
+        void recibirMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat respuesta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCodigoSala", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCodigoSalaResponse")]
+        void recibirCodigoSala(string codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/jugadorSeUnio", ReplyAction="http://tempuri.org/IAdminiSocial/jugadorSeUnioResponse")]
+        void jugadorSeUnio(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador, string sala, bool seUnio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse")]
+        void recibirTodoListo(string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse")]
+        void recibirTodoListoParaIniciar(string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse")]
+        void recibirCancelarListo(string contricante);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -297,12 +427,44 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
             return base.Channel.desconectadoAsync(jugador);
         }
         
-        public void enviarMensaje(string mensaje) {
+        public void enviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
             base.Channel.enviarMensaje(mensaje);
         }
         
-        public System.Threading.Tasks.Task enviarMensajeAsync(string mensaje) {
+        public System.Threading.Tasks.Task enviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
             return base.Channel.enviarMensajeAsync(mensaje);
+        }
+        
+        public void crearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.crearSala(jugador);
+        }
+        
+        public System.Threading.Tasks.Task crearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.crearSalaAsync(jugador);
+        }
+        
+        public void unirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.unirseASala(sala, jugador);
+        }
+        
+        public System.Threading.Tasks.Task unirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.unirseASalaAsync(sala, jugador);
+        }
+        
+        public void todoListo(string sala, string jugador, int numeroDeListos) {
+            base.Channel.todoListo(sala, jugador, numeroDeListos);
+        }
+        
+        public System.Threading.Tasks.Task todoListoAsync(string sala, string jugador, int numeroDeListos) {
+            return base.Channel.todoListoAsync(sala, jugador, numeroDeListos);
+        }
+        
+        public void cancelarTodoListo(string sala, string jugador) {
+            base.Channel.cancelarTodoListo(sala, jugador);
+        }
+        
+        public System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador) {
+            return base.Channel.cancelarTodoListoAsync(sala, jugador);
         }
     }
     
@@ -315,6 +477,24 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
         System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartida", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaResponse")]
+        void IniciarPartida(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartida", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaResponse")]
+        System.Threading.Tasks.Task IniciarPartidaAsync(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/TerminarPartida")]
+        void TerminarPartida(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/TerminarPartida")]
+        System.Threading.Tasks.Task TerminarPartidaAsync(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/PrimerTiro")]
+        void PrimerTiro(string jugador1, string jugador2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/PrimerTiro")]
+        System.Threading.Tasks.Task PrimerTiroAsync(string jugador1, string jugador2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -322,6 +502,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiPartida/insertarDisparoResponse")]
         bool insertarDisparo(int[] coordenadas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaCallbackResponse")]
+        void IniciarPartidaCallback(bool inicar);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/PrimerTiroCallback", ReplyAction="http://tempuri.org/IAdminiPartida/PrimerTiroCallbackResponse")]
+        void PrimerTiroCallback(bool jugadorInicio);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -358,6 +544,30 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante) {
             return base.Channel.tiroAsync(coordenadas, contricante);
+        }
+        
+        public void IniciarPartida(string jugador) {
+            base.Channel.IniciarPartida(jugador);
+        }
+        
+        public System.Threading.Tasks.Task IniciarPartidaAsync(string jugador) {
+            return base.Channel.IniciarPartidaAsync(jugador);
+        }
+        
+        public void TerminarPartida(string jugador) {
+            base.Channel.TerminarPartida(jugador);
+        }
+        
+        public System.Threading.Tasks.Task TerminarPartidaAsync(string jugador) {
+            return base.Channel.TerminarPartidaAsync(jugador);
+        }
+        
+        public void PrimerTiro(string jugador1, string jugador2) {
+            base.Channel.PrimerTiro(jugador1, jugador2);
+        }
+        
+        public System.Threading.Tasks.Task PrimerTiroAsync(string jugador1, string jugador2) {
+            return base.Channel.PrimerTiroAsync(jugador1, jugador2);
         }
     }
 }

@@ -65,6 +65,9 @@
     <Compile Include="Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Partida.xaml.cs">
+      <DependentUpon>Partida.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Lobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Partida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +127,9 @@
     <None Include="Connected Services\ServicioAServidor\item3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,6 +158,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Ajustes_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ajustes_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Tabrero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\todoListoIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\BarcoContricanteIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\BarcoHostIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\FondoMar.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

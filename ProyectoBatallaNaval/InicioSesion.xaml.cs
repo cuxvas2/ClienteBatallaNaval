@@ -51,17 +51,17 @@ namespace ProyectoBatallaNaval
                 Boolean regisrado = cliente.iniciarSesion(correoElectronico, password);
                 if (regisrado)
                 {
+                    Jugador jugador = new Jugador();
+                    jugador = cliente.recuperarJugadorPorCorreo(correoElectronico);
                     InstanceContext context = new InstanceContext(this);
                     ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
                     //Agregar su contecto desde aqui?
-                    Jugador jugador = new Jugador();
-                    jugador.CorreoElectronico = correoElectronico;
-                    jugador.Contraseña = password;
                     clienteJoin.Conectado(jugador);
                     
-                    Lobby lobby = new Lobby();
+                    //Recuperar los datos del que inicia sesion y pasasrlos a la ventana
+                    Lobby lobby = new Lobby(jugador);
                     lobby.Show();
-                    Close();
+                    this.Close();
                     
                     
                 }
@@ -75,7 +75,7 @@ namespace ProyectoBatallaNaval
         private void buttonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
             registro.Show();
-            Close();
+            this.Close();
         }
 
         public void actualizarJugadores(Jugador[] jugadores)
@@ -99,6 +99,36 @@ namespace ProyectoBatallaNaval
         }
 
         public void recibirMensaje(string response)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirMensaje(Chat respuesta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCodigoSala(string codigo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListo(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListoParaIniciar(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCancelarListo(string contricante)
         {
             throw new NotImplementedException();
         }

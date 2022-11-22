@@ -10,6 +10,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Jugador" nillable="true" type="tns:Jugador" />
+  <xs:complexType name="Chat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MensajeEnviado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remitente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sala" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Chat" nillable="true" type="tns:Chat" />
   <xs:complexType name="ArrayOfJugador">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Jugador" nillable="true" type="tns:Jugador" />
