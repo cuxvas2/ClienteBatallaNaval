@@ -365,13 +365,13 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/jugadorSeUnio", ReplyAction="http://tempuri.org/IAdminiSocial/jugadorSeUnioResponse")]
         void jugadorSeUnio(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador, string sala, bool seUnio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirTodoListo")]
         void recibirTodoListo(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar")]
         void recibirTodoListoParaIniciar(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo")]
         void recibirCancelarListo(string contricante);
     }
     
@@ -473,15 +473,15 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     public interface IAdminiPartida {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
-        bool tiro(int[] coordenadas, string contricante);
+        void tiro(string coordenadas, string contricante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
-        System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante);
+        System.Threading.Tasks.Task tiroAsync(string coordenadas, string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartida", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartida")]
         void IniciarPartida(string jugador);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartida", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartida")]
         System.Threading.Tasks.Task IniciarPartidaAsync(string jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/TerminarPartida")]
@@ -501,13 +501,10 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     public interface IAdminiPartidaCallback {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiPartida/insertarDisparoResponse")]
-        bool insertarDisparo(int[] coordenadas);
+        void insertarDisparo(string coordenadas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback", ReplyAction="http://tempuri.org/IAdminiPartida/IniciarPartidaCallbackResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback")]
         void IniciarPartidaCallback(bool inicar);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/PrimerTiroCallback", ReplyAction="http://tempuri.org/IAdminiPartida/PrimerTiroCallbackResponse")]
-        void PrimerTiroCallback(bool jugadorInicio);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -538,11 +535,11 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public bool tiro(int[] coordenadas, string contricante) {
-            return base.Channel.tiro(coordenadas, contricante);
+        public void tiro(string coordenadas, string contricante) {
+            base.Channel.tiro(coordenadas, contricante);
         }
         
-        public System.Threading.Tasks.Task<bool> tiroAsync(int[] coordenadas, string contricante) {
+        public System.Threading.Tasks.Task tiroAsync(string coordenadas, string contricante) {
             return base.Channel.tiroAsync(coordenadas, contricante);
         }
         

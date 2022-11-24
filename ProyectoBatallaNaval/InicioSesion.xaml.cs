@@ -27,7 +27,6 @@ namespace ProyectoBatallaNaval
         {
             InitializeComponent();
         }
-        Registro registro = new Registro();
 
         private void buttonIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
@@ -74,6 +73,7 @@ namespace ProyectoBatallaNaval
 
         private void buttonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
+            Registro registro = new Registro();
             registro.Show();
             this.Close();
         }

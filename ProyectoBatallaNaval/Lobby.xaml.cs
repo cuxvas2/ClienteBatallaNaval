@@ -45,12 +45,6 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public bool insertarDisparo(int[] coordenadas)
-        {
-            Disparo.Content = coordenadas.ToString();
-            //REgresar true si le da a un barco y false si no
-            return true;
-        }
 
         public void jugadorSeFue(Jugador jugador)
         {
@@ -94,7 +88,7 @@ namespace ProyectoBatallaNaval
         {
             if (inicar)
             {
-                Partida partida = new Partida(jugadorContricante, jugadorPartida, this);
+                Partida partida = new Partida(jugadorContricante, jugadorPartida, jugadorLider, this);
                 this.Hide();
                 partida.Show();
             }
@@ -174,11 +168,15 @@ namespace ProyectoBatallaNaval
             //y si solo queda una persona en la sala eliminar la sala por completo
             labelCodigoPartida.Content = "";
             buttonAbandonarSala.Visibility = Visibility.Hidden;
+            jugadorContricante = null;
+            jugadoresListos = 0;
+            jugadoresEnSala = 0;
+            imagenBarcoContricante.Visibility = Visibility.Hidden;
+            imagenTodoListoContricante.Visibility = Visibility.Hidden;
         }
 
         private void buttonIniciarPartida_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("jugadores en sala: "+this.jugadoresEnSala+" y los listos: "+jugadoresListos, "Sala", MessageBoxButton.OK, MessageBoxImage.Information);
             if (this.jugadorContricante.Apodo != null)
             {
                 InstanceContext context = new InstanceContext(this);
@@ -216,7 +214,7 @@ namespace ProyectoBatallaNaval
         {
             InstanceContext context = new InstanceContext(this);
             ServicioAServidor.AdminiPartidaClient cliente = new ServicioAServidor.AdminiPartidaClient(context);
-            cliente.IniciarPartida(jugadorContricante.Apodo);
+            cliente.IniciarPartida(this.jugadorPartida.Apodo);
             
         }
 
@@ -224,6 +222,11 @@ namespace ProyectoBatallaNaval
         {
             this.jugadoresListos -= 1;
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
+        }
+
+        public void insertarDisparo(string coordenadas)
+        {
+            throw new NotImplementedException();
         }
     }
 }

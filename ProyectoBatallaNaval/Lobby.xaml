@@ -28,7 +28,7 @@
         <Label x:Name="labelCodigoPartida" HorizontalAlignment="Left" Margin="-776,-615,0,0" VerticalAlignment="Top" Height="51" Width="279" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Button x:Name="buttonUnirseSala" Content="Unirse a sala" HorizontalAlignment="Left" Margin="-364,-675,0,0" VerticalAlignment="Top" Height="26" Width="92" Click="buttonUnirseSala_Click"/>
         <TextBox x:Name="textBoxCodigoSala" HorizontalAlignment="Left" Margin="-242,-675,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="16" Height="26"/>
-        <Button x:Name="buttonAbandonarSala" Content="Abandonar sala" HorizontalAlignment="Left" Margin="-475,-599,0,0" VerticalAlignment="Top" Height="22" Width="97" Click="buttonAbandonarSala_Click" IsEnabled="False" Visibility="Hidden"/>
+        <Button x:Name="buttonAbandonarSala" Content="Abandonar sala" HorizontalAlignment="Left" Margin="-475,-599,0,0" VerticalAlignment="Top" Height="22" Width="97" Click="buttonAbandonarSala_Click" IsEnabled="True" Visibility="Hidden"/>
         <Button x:Name="buttonIniciarPartida" Content="Todo listo" HorizontalAlignment="Left" Margin="-200,-100,0,0" VerticalAlignment="Top" Height="49" Width="147" Background="#FFF1ED8E" Click="buttonIniciarPartida_Click"/>
         <Image x:Name="imagenTodoListoHost" HorizontalAlignment="Left" Height="43" Margin="-927,-536,0,0" VerticalAlignment="Top" Width="65" Source="/Imagenes/todoListoIcono.png" IsEnabled="False" Visibility="Hidden"/>
         <Image x:Name="imagenTodoListoContricante" HorizontalAlignment="Left" Height="43" Margin="-424,-536,0,0" VerticalAlignment="Top" Width="64" Source="/Imagenes/todoListoIcono.png" IsEnabled="False" Visibility="Hidden"/>

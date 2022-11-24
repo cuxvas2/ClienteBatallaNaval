@@ -92,7 +92,6 @@
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-      <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAdminiUsuarios_iniciarSesion_InputMessage">
@@ -176,20 +175,11 @@
   <wsdl:message name="IAdminiSocial_recibirTodoListo_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:recibirTodoListo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListo_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListoResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdminiSocial_recibirTodoListoParaIniciar_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:recibirTodoListoParaIniciar" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListoParaIniciar_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListoParaIniciarResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdminiSocial_recibirCancelarListo_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:recibirCancelarListo" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirCancelarListo_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirCancelarListoResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiPartida_tiro_InputMessage">
     <wsdl:part name="parameters" element="tns:tiro" />
@@ -199,9 +189,6 @@
   </wsdl:message>
   <wsdl:message name="IAdminiPartida_IniciarPartida_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartida" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_IniciarPartida_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IniciarPartidaResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiPartida_TerminarPartida_InputMessage">
     <wsdl:part name="parameters" element="tns:TerminarPartida" />
@@ -217,15 +204,6 @@
   </wsdl:message>
   <wsdl:message name="IAdminiPartida_IniciarPartidaCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartidaCallback" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_IniciarPartidaCallback_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:IniciarPartidaCallbackResponse" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_PrimerTiroCallback_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PrimerTiroCallback" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_PrimerTiroCallback_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:PrimerTiroCallbackResponse" />
   </wsdl:message>
   <wsdl:portType name="IAdminiUsuarios">
     <wsdl:operation name="iniciarSesion">
@@ -296,15 +274,12 @@
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="recibirTodoListo">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListo" message="tns:IAdminiSocial_recibirTodoListo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse" message="tns:IAdminiSocial_recibirTodoListo_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="recibirTodoListoParaIniciar">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar" message="tns:IAdminiSocial_recibirTodoListoParaIniciar_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse" message="tns:IAdminiSocial_recibirTodoListoParaIniciar_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="recibirCancelarListo">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo" message="tns:IAdminiSocial_recibirCancelarListo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse" message="tns:IAdminiSocial_recibirCancelarListo_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IAdminiPartida">
@@ -314,7 +289,6 @@
     </wsdl:operation>
     <wsdl:operation name="IniciarPartida">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartida" message="tns:IAdminiPartida_IniciarPartida_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartidaResponse" message="tns:IAdminiPartida_IniciarPartida_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="TerminarPartida">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/TerminarPartida" message="tns:IAdminiPartida_TerminarPartida_InputMessage" />
@@ -328,11 +302,6 @@
     </wsdl:operation>
     <wsdl:operation name="IniciarPartidaCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback" message="tns:IAdminiPartida_IniciarPartidaCallback_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallbackResponse" message="tns:IAdminiPartida_IniciarPartidaCallback_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="PrimerTiroCallback">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/PrimerTiroCallback" message="tns:IAdminiPartida_PrimerTiroCallback_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/PrimerTiroCallbackResponse" message="tns:IAdminiPartida_PrimerTiroCallback_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAdminiUsuarios" type="tns:IAdminiUsuarios">
@@ -479,27 +448,18 @@
     </wsdl:operation>
     <wsdl:operation name="recibirTodoListo">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirTodoListo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="recibirTodoListoParaIniciar">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="recibirCancelarListo">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirCancelarListo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -522,9 +482,6 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="TerminarPartida">
       <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/TerminarPartida" style="document" />
@@ -549,18 +506,6 @@
     </wsdl:operation>
     <wsdl:operation name="IniciarPartidaCallback">
       <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="PrimerTiroCallback">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/PrimerTiroCallback" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
