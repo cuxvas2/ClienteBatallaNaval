@@ -58,35 +58,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="NetTcpBinding_IAdminiPartida_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
-                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
-                </msf:WindowsTransportSecurity>
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-          </wsp:Policy>
-        </sp:TransportBinding>
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -142,6 +113,24 @@
   <wsdl:message name="IAdminiSocial_cancelarTodoListo_InputMessage">
     <wsdl:part name="parameters" element="tns:cancelarTodoListo" />
   </wsdl:message>
+  <wsdl:message name="IAdminiSocial_Tiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:Tiro" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_IniciarPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarPartida" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_TerminarPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminarPartida" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_PrimerTiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrimerTiro" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_ActualizarCallbackEnPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCallbackEnPartida" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_PartidaGanada_InputMessage">
+    <wsdl:part name="parameters" element="tns:PartidaGanada" />
+  </wsdl:message>
   <wsdl:message name="IAdminiSocial_actualizarJugadores_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:actualizarJugadores" />
   </wsdl:message>
@@ -181,29 +170,20 @@
   <wsdl:message name="IAdminiSocial_recibirCancelarListo_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:recibirCancelarListo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiPartida_tiro_InputMessage">
-    <wsdl:part name="parameters" element="tns:tiro" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_tiro_OutputMessage">
-    <wsdl:part name="parameters" element="tns:tiroResponse" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_IniciarPartida_InputMessage">
-    <wsdl:part name="parameters" element="tns:IniciarPartida" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_TerminarPartida_InputMessage">
-    <wsdl:part name="parameters" element="tns:TerminarPartida" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_PrimerTiro_InputMessage">
-    <wsdl:part name="parameters" element="tns:PrimerTiro" />
-  </wsdl:message>
-  <wsdl:message name="IAdminiPartida_insertarDisparo_OutputCallbackMessage">
+  <wsdl:message name="IAdminiSocial_insertarDisparo_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:insertarDisparo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiPartida_insertarDisparo_InputCallbackMessage">
+  <wsdl:message name="IAdminiSocial_insertarDisparo_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:insertarDisparoResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiPartida_IniciarPartidaCallback_OutputCallbackMessage">
+  <wsdl:message name="IAdminiSocial_IniciarPartidaCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartidaCallback" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_primerTiroCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:primerTiroCallback" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_PartidaGanadaCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PartidaGanadaCallback" />
   </wsdl:message>
   <wsdl:portType name="IAdminiUsuarios">
     <wsdl:operation name="iniciarSesion">
@@ -248,6 +228,24 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="cancelarTodoListo">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo" message="tns:IAdminiSocial_cancelarTodoListo_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Tiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Tiro" message="tns:IAdminiSocial_Tiro_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IniciarPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/IniciarPartida" message="tns:IAdminiSocial_IniciarPartida_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="TerminarPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/TerminarPartida" message="tns:IAdminiSocial_TerminarPartida_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PrimerTiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/PrimerTiro" message="tns:IAdminiSocial_PrimerTiro_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ActualizarCallbackEnPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartida" message="tns:IAdminiSocial_ActualizarCallbackEnPartida_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="PartidaGanada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/PartidaGanada" message="tns:IAdminiSocial_PartidaGanada_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="actualizarJugadores">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/actualizarJugadores" message="tns:IAdminiSocial_actualizarJugadores_OutputCallbackMessage" />
     </wsdl:operation>
@@ -281,27 +279,18 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="recibirCancelarListo">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo" message="tns:IAdminiSocial_recibirCancelarListo_OutputCallbackMessage" />
     </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="IAdminiPartida">
-    <wsdl:operation name="tiro">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/tiro" message="tns:IAdminiPartida_tiro_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/tiroResponse" message="tns:IAdminiPartida_tiro_OutputMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="insertarDisparo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/insertarDisparo" message="tns:IAdminiSocial_insertarDisparo_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/insertarDisparoResponse" message="tns:IAdminiSocial_insertarDisparo_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="IniciarPartida">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartida" message="tns:IAdminiPartida_IniciarPartida_InputMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IniciarPartidaCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback" message="tns:IAdminiSocial_IniciarPartidaCallback_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="TerminarPartida">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/TerminarPartida" message="tns:IAdminiPartida_TerminarPartida_InputMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="primerTiroCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/primerTiroCallback" message="tns:IAdminiSocial_primerTiroCallback_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="PrimerTiro">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/PrimerTiro" message="tns:IAdminiPartida_PrimerTiro_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="insertarDisparo">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/insertarDisparo" message="tns:IAdminiPartida_insertarDisparo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiPartida/insertarDisparoResponse" message="tns:IAdminiPartida_insertarDisparo_InputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="IniciarPartidaCallback">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback" message="tns:IAdminiPartida_IniciarPartidaCallback_OutputCallbackMessage" />
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PartidaGanadaCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback" message="tns:IAdminiSocial_PartidaGanadaCallback_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAdminiUsuarios" type="tns:IAdminiUsuarios">
@@ -395,6 +384,42 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="Tiro">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/Tiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarPartida">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/IniciarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="TerminarPartida">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/TerminarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PrimerTiro">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/PrimerTiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCallbackEnPartida">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PartidaGanada">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/PartidaGanada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="actualizarJugadores">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/actualizarJugadores" style="document" />
       <wsdl:output>
@@ -464,39 +489,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="NetTcpBinding_IAdminiPartida" type="tns:IAdminiPartida">
-    <wsp:PolicyReference URI="#NetTcpBinding_IAdminiPartida_policy" />
-    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="tiro">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/tiro" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IniciarPartida">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/IniciarPartida" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="TerminarPartida">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/TerminarPartida" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="PrimerTiro">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/PrimerTiro" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="insertarDisparo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/insertarDisparo" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/insertarDisparo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -505,7 +499,19 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="IniciarPartidaCallback">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback" style="document" />
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="primerTiroCallback">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/primerTiroCallback" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartidaGanadaCallback">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -522,15 +528,6 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAdminiSocial" binding="tns:NetTcpBinding_IAdminiSocial">
-      <soap12:address location="net.tcp://localhost:8081/ServicioConWCFJuego" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8081/ServicioConWCFJuego</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-1LU117D4\Victor</Upn>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
-    <wsdl:port name="NetTcpBinding_IAdminiPartida" binding="tns:NetTcpBinding_IAdminiPartida">
       <soap12:address location="net.tcp://localhost:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8081/ServicioConWCFJuego</wsa10:Address>

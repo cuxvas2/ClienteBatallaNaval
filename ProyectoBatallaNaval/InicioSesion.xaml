@@ -1,4 +1,4 @@
-﻿<Window x:Class="ProyectoBatallaNaval.InicioSesion"
+﻿<Page x:Class="ProyectoBatallaNaval.InicioSesion"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,4 +16,4 @@
         <TextBlock HorizontalAlignment="Left" Margin="77,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21"><Run Language="es-mx" Text="Correo electronico"/><LineBreak/><Run Language="es-mx"/><LineBreak/><Run Language="es-mx"/></TextBlock>
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="mensajeError" VerticalAlignment="Top" Width="247" Margin="180,245,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
     </Grid>
-</Window>
+</Page>

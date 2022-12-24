@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +21,7 @@ namespace ProyectoBatallaNaval
     /// <summary>
     /// Lógica de interacción para Partida.xaml
     /// </summary>
-    public partial class Partida : Window, IAdminiPartidaCallback
+    public partial class Partida : Page, IAdminiSocialCallback
     {
         private Jugador jugadorContricante;
         private Jugador jugadorPartida;
@@ -31,21 +32,33 @@ namespace ProyectoBatallaNaval
         private DispatcherTimer temporizador;
         private Button ultimoBotonSeleccionado;
         private bool jugadorLider;
+        private string sala;
 
         public Partida()
         {
             InitializeComponent();
         }
 
-        public Partida(Jugador jugadorContricante, Jugador jugadorPartida, bool jugadorLider, Lobby lobby)
+        public Partida(Jugador jugadorContricante, Jugador jugadorPartida, bool jugadorLider, Lobby lobby, string sala)
         {
             InitializeComponent();
             this.jugadorContricante = jugadorContricante;
             this.jugadorPartida = jugadorPartida;
             this.jugadorLider = jugadorLider;
             this.lobby = lobby;
+            this.sala = sala;
             labelHost.Content = jugadorPartida.Apodo;
             labelContricante.Content = jugadorContricante.Apodo;
+            actualizarCallbackEnServidor();
+            Thread.Sleep(500);
+            iniciarPartida();
+        }
+
+        private void actualizarCallbackEnServidor()
+        {
+            InstanceContext contexto = new InstanceContext(this);
+            ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(contexto);
+            cliente.ActualizarCallbackEnPartida(jugadorPartida.Apodo);
         }
 
         private void iniciarPartida()
@@ -53,7 +66,7 @@ namespace ProyectoBatallaNaval
             if (jugadorLider)
             {
                 InstanceContext contexto = new InstanceContext(this);
-                ServicioAServidor.AdminiPartidaClient cliente = new ServicioAServidor.AdminiPartidaClient(contexto);
+                ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(contexto);
                 cliente.PrimerTiro(jugadorPartida.Apodo, jugadorContricante.Apodo);
             }
         }
@@ -62,7 +75,7 @@ namespace ProyectoBatallaNaval
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button boton = sender as Button;
-            if (boton != null)
+            if (boton != null)//O que el boton sea diiferente al seleccionado
             {
                 if(ultimoBotonSeleccionado != null)
                 {
@@ -113,10 +126,10 @@ namespace ProyectoBatallaNaval
             else
             {
                 InstanceContext contexto = new InstanceContext(this);
-                ServicioAServidor.AdminiPartidaClient cliente = new ServicioAServidor.AdminiPartidaClient(contexto);
-                cliente.tiro(botonPresionadoCordenadas, jugadorContricante.Apodo);
-                cambiarColorVerdeABoton();
+                ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(contexto);
+                cliente.Tiro(botonPresionadoCordenadas, jugadorContricante.Apodo, sala, jugadorPartida.Apodo);
                 buttonTirar.IsEnabled = false;
+                botonPresionadoCordenadas = null;
             }
         }
 
@@ -131,30 +144,121 @@ namespace ProyectoBatallaNaval
             labelSeleccionarPosicion.Visibility = Visibility.Hidden;
         }
 
-        public void insertarDisparo(string coordenadas)
+        
+
+        public void IniciarPartidaCallback(bool inicar)
         {
-            if (listaDePosicionesDeBarcos.Contains(coordenadas)){
+            throw new NotImplementedException();
+        }
+
+        public void primerTiroCallback(bool iniciar)
+        {
+            if (true)
+            {
+                buttonTirar.IsEnabled = true;
+            }
+        }
+
+        private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string mensaje = "Desea abandonar la partida y salir del juego?";
+            MessageBoxResult result =
+                MessageBox.Show(mensaje,"Salir",MessageBoxButton.YesNo,MessageBoxImage.Warning);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                //this.lobby.Close();
+                this.lobby = null;
+                //this.Close();
+            }              
+        }
+
+        public void PartidaGanadaCallback(string jugadorGanado)
+        {
+            buttonTirar.Visibility = Visibility.Hidden;
+            btnAtras.Visibility = Visibility.Visible;
+            textGanador.Text += jugadorGanado;
+            textGanador.Visibility = Visibility.Visible;
+        }
+
+        private void btnAtras_Click(object sender, RoutedEventArgs e)
+        {
+            //this.lobby.Show();
+            //this.Close();
+        }
+
+        public void actualizarJugadores(Jugador[] jugadores)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void unionDeJugador(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void jugadorSeFue(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void escribiendoEnCallback(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirMensaje(Chat respuesta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCodigoSala(string codigo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListo(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListoParaIniciar(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCancelarListo(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void insertarDisparo(String coordenadas)
+        {
+            /*if (listaDePosicionesDeBarcos.Contains(coordenadas)){
                 //Mandar a llamar un método que diga que golpeó a un barco
             }
             else
             {
                 //Que hacer si no le da a ningun barco
-            }
+            }*/
+
+
             buttonTirar.IsEnabled = true;
-            string nombreBoton = "casilla_" + coordenadas + "_Propia";
-            Button button = new Button();
-            button.Name = coordenadas;
-            button.Background = Brushes.Green;
-        }
+            MessageBox.Show("boton habilitado en teoria"); 
 
-        public void IniciarPartidaCallback(bool inicar)
-        {
-            if (true)
-            {
-                MessageBox.Show("El lider es " + jugadorPartida.Apodo, "Lider", MessageBoxButton.OK, MessageBoxImage.Warning);
-                buttonTirar.IsEnabled = true;
-            }
+            String nombreBoton = "casilla_" + coordenadas + "_Propia";
+            Button botonPresionado = (Button)GridPartida.FindName(nombreBoton);
+            Button botonPresionado1 = (Button)GridPartida.TryFindResource(nombreBoton);
+            MessageBox.Show("atacó en la posicion " + coordenadas + " B: " + botonPresionado.Name + " - " + botonPresionado1.Name);
+            botonPresionado.Background = Brushes.Black;
         }
-
     }
 }

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace ProyectoBatallaNaval
 {
 
-    public partial class Registro : Window
+    public partial class Registro : Page
     {
         public Registro()
         {
@@ -84,14 +84,14 @@ namespace ProyectoBatallaNaval
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            //Close();
         }
 
         private void InicioSesion_Click(object sender, RoutedEventArgs e)
         {
             InicioSesion inicioSesion = new InicioSesion();
-            inicioSesion.Show();
-            Close();
+            //inicioSesion.Show();
+            //Close();
         }
     }
 }

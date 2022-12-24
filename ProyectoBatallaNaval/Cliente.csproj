@@ -160,9 +160,6 @@
     <Resource Include="Imagenes\Ajustes_Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ajustes_Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\Tabrero.png" />
   </ItemGroup>
   <ItemGroup>

@@ -118,6 +118,53 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Tiro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coordenadas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sala" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NombreJugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TerminarPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrimerTiro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugador1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="jugador2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCallbackEnPartida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartidaGanada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="janador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="jugadorParaNotificar" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="actualizarJugadores">
     <xs:complexType>
       <xs:sequence>
@@ -205,41 +252,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="tiro">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="coordenadas" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="tiroResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="IniciarPartida">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="TerminarPartida">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="jugador" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="PrimerTiro">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="jugador1" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="jugador2" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="insertarDisparo">
     <xs:complexType>
       <xs:sequence>
@@ -256,6 +268,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="inicar" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="primerTiroCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iniciar" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartidaGanadaCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugadorGanado" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

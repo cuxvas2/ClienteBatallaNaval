@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 
 namespace ProyectoBatallaNaval
 {
-    public partial class InicioSesion : Window, IAdminiSocialCallback
+    public partial class InicioSesion : Page, IAdminiSocialCallback
     {
 
         public InicioSesion()
@@ -28,11 +28,81 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
 
+        public void actualizarJugadores(Jugador[] jugadores)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void escribiendoEnCallback(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void IniciarPartidaCallback(bool inicar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void insertarDisparo(string coordenadas)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void jugadorSeFue(Jugador jugador)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PartidaGanadaCallback(string jugadorGanado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void primerTiroCallback(bool iniciar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCancelarListo(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirCodigoSala(string codigo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirMensaje(Chat respuesta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListo(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void recibirTodoListoParaIniciar(string contricante)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void unionDeJugador(Jugador jugador)
+        {
+            
+        }
+
         private void buttonIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxCorreo.Text.Length == 0)
+            if (textBoxCorreo.Text.Length == 0 || passwordBoxContraseña.Password.Length == 0)
             {
-                mensajeError.Text = "Escribe un Email.";
+                mensajeError.Text = "No se pueden dejar campos vacios";
                 textBoxCorreo.Focus();
             }
             else if(!Regex.IsMatch(textBoxCorreo.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
@@ -59,8 +129,8 @@ namespace ProyectoBatallaNaval
                     
                     //Recuperar los datos del que inicia sesion y pasasrlos a la ventana
                     Lobby lobby = new Lobby(jugador);
-                    lobby.Show();
-                    this.Close();
+                    //lobby.Show(); Cambiar como abrir la nueva
+                    //this.Close(); CAMbiar como cerrar esto
                     
                     
                 }
@@ -74,63 +144,11 @@ namespace ProyectoBatallaNaval
         private void buttonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
             Registro registro = new Registro();
-            registro.Show();
-            this.Close();
+            //registro.Show();
+            //this.Close();
         }
 
-        public void actualizarJugadores(Jugador[] jugadores)
-        {
-            Console.WriteLine("Los usuarios conectados son " + jugadores);
-        }
 
-        public void unionDeJugador(Jugador jugador)
-        {
-            Console.WriteLine("El jugador con correo " + jugador.CorreoElectronico + "se unió");
-        }
 
-        public void jugadorSeFue(Jugador jugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void escribiendoEnCallback(Jugador jugador)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirMensaje(string response)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirMensaje(Chat respuesta)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirCodigoSala(string codigo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirTodoListo(string contricante)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirTodoListoParaIniciar(string contricante)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void recibirCancelarListo(string contricante)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

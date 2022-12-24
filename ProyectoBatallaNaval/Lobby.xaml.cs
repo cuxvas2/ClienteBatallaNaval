@@ -20,7 +20,7 @@ namespace ProyectoBatallaNaval
     /// <summary>
     /// Lógica de interacción para Lobby.xaml
     /// </summary>
-    public partial class Lobby : Window, IAdminiSocialCallback, IAdminiPartidaCallback
+    public partial class Lobby : Page, IAdminiSocialCallback
     {
         private Jugador jugadorPartida;
         private string sala;
@@ -70,7 +70,7 @@ namespace ProyectoBatallaNaval
             txtMensaje.Text = "";
 
             /*int[] coordenadas = { 3, 5 };
-            ServicioAServidor.AdminiPartidaClient clientePartida = new ServicioAServidor.AdminiPartidaClient(context);
+            ServicioAServidor.AdminiSocialClient clientePartida = new ServicioAServidor.AdminiSocialClient(context);
             clientePartida.tiro(coordenadas, "Invitado");*/
 
 
@@ -88,9 +88,9 @@ namespace ProyectoBatallaNaval
         {
             if (inicar)
             {
-                Partida partida = new Partida(jugadorContricante, jugadorPartida, jugadorLider, this);
-                this.Hide();
-                partida.Show();
+                //this.Hide();
+                Partida partida = new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala);
+                //partida.Show();
             }
         }
 
@@ -155,6 +155,7 @@ namespace ProyectoBatallaNaval
                 cliente.unirseASala(codigo, jugadorPartida);
                 textBoxCodigoSala.Text = "";
                 labelCodigoPartida.Content = codigo;
+                jugadorLider = false;
             }
             else
             {
@@ -171,6 +172,7 @@ namespace ProyectoBatallaNaval
             jugadorContricante = null;
             jugadoresListos = 0;
             jugadoresEnSala = 0;
+            jugadorLider = false;
             imagenBarcoContricante.Visibility = Visibility.Hidden;
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
         }
@@ -213,7 +215,7 @@ namespace ProyectoBatallaNaval
         public void recibirTodoListoParaIniciar(string contricante)
         {
             InstanceContext context = new InstanceContext(this);
-            ServicioAServidor.AdminiPartidaClient cliente = new ServicioAServidor.AdminiPartidaClient(context);
+            ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
             cliente.IniciarPartida(this.jugadorPartida.Apodo);
             
         }
@@ -225,6 +227,16 @@ namespace ProyectoBatallaNaval
         }
 
         public void insertarDisparo(string coordenadas)
+        {
+            MessageBox.Show("Esta fallando en lobby");
+        }
+
+        public void primerTiroCallback(bool iniciar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PartidaGanadaCallback(string jugadorGanado)
         {
             throw new NotImplementedException();
         }

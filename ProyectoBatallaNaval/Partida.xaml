@@ -1,4 +1,4 @@
-﻿<Window x:Class="ProyectoBatallaNaval.Partida"
+﻿<Page x:Class="ProyectoBatallaNaval.Partida"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ProyectoBatallaNaval"
         mc:Ignorable="d"
         Title="Partida" Height="450" Width="800">
-    <Grid>
+    <!--Closing="CerrandoVentana"> Esto iria adentro de arriba-->
+    <Grid x:Name="GridPartida">
         <Grid.Background>
             <ImageBrush ImageSource="/Imagenes/oceano.jpg"/>
         </Grid.Background>
@@ -197,6 +198,8 @@
         <Label x:Name="labelContricante" Content="" HorizontalAlignment="Left" Margin="490,336,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="219" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="labelHost" Content="" HorizontalAlignment="Left" Margin="75,331,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="219" FontWeight="Bold" FontSize="16"/>
         <Label x:Name="labelSeleccionarPosicion" Content="Debes seleccionar una posicion para tirar" HorizontalAlignment="Left" Margin="247,375,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" FontWeight="Bold" FontSize="16" Width="326" Visibility="Hidden"/>
+        <TextBlock x:Name="textGanador" HorizontalAlignment="Left" Margin="139,325,0,0" TextWrapping="Wrap" Text="El ganador es " VerticalAlignment="Top" Height="59" Width="541" TextAlignment="Center" FontSize="24" IsEnabled="False" FontWeight="Bold" Visibility="Hidden"/>
+        <Button x:Name="btnAtras" Content="Atras" HorizontalAlignment="Left" Margin="672,378,0,0" VerticalAlignment="Top" Height="25" Width="72" Click="btnAtras_Click"/>
 
     </Grid>
-</Window>
+</Page>

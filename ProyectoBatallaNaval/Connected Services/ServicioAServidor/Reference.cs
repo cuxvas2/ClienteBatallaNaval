@@ -339,6 +339,42 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
         System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Tiro")]
+        void Tiro(string coordenadas, string contricante, string sala, string NombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Tiro")]
+        System.Threading.Tasks.Task TiroAsync(string coordenadas, string contricante, string sala, string NombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/IniciarPartida")]
+        void IniciarPartida(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/IniciarPartida")]
+        System.Threading.Tasks.Task IniciarPartidaAsync(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
+        void TerminarPartida(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
+        System.Threading.Tasks.Task TerminarPartidaAsync(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PrimerTiro")]
+        void PrimerTiro(string jugador1, string jugador2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PrimerTiro")]
+        System.Threading.Tasks.Task PrimerTiroAsync(string jugador1, string jugador2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartida")]
+        void ActualizarCallbackEnPartida(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartida")]
+        System.Threading.Tasks.Task ActualizarCallbackEnPartidaAsync(string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
+        void PartidaGanada(string janador, string jugadorParaNotificar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
+        System.Threading.Tasks.Task PartidaGanadaAsync(string janador, string jugadorParaNotificar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -373,6 +409,18 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo")]
         void recibirCancelarListo(string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiSocial/insertarDisparoResponse")]
+        void insertarDisparo(string coordenadas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback")]
+        void IniciarPartidaCallback(bool inicar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/primerTiroCallback")]
+        void primerTiroCallback(bool iniciar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback")]
+        void PartidaGanadaCallback(string jugadorGanado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -466,81 +514,13 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         public System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador) {
             return base.Channel.cancelarTodoListoAsync(sala, jugador);
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiPartida", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiPartidaCallback))]
-    public interface IAdminiPartida {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
-        void tiro(string coordenadas, string contricante);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/tiro", ReplyAction="http://tempuri.org/IAdminiPartida/tiroResponse")]
-        System.Threading.Tasks.Task tiroAsync(string coordenadas, string contricante);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartida")]
-        void IniciarPartida(string jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartida")]
-        System.Threading.Tasks.Task IniciarPartidaAsync(string jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/TerminarPartida")]
-        void TerminarPartida(string jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/TerminarPartida")]
-        System.Threading.Tasks.Task TerminarPartidaAsync(string jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/PrimerTiro")]
-        void PrimerTiro(string jugador1, string jugador2);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/PrimerTiro")]
-        System.Threading.Tasks.Task PrimerTiroAsync(string jugador1, string jugador2);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdminiPartidaCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiPartida/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiPartida/insertarDisparoResponse")]
-        void insertarDisparo(string coordenadas);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiPartida/IniciarPartidaCallback")]
-        void IniciarPartidaCallback(bool inicar);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdminiPartidaChannel : ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AdminiPartidaClient : System.ServiceModel.DuplexClientBase<ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida>, ProyectoBatallaNaval.ServicioAServidor.IAdminiPartida {
-        
-        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
+        public void Tiro(string coordenadas, string contricante, string sala, string NombreJugador) {
+            base.Channel.Tiro(coordenadas, contricante, sala, NombreJugador);
         }
         
-        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
-        }
-        
-        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public AdminiPartidaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
-        }
-        
-        public void tiro(string coordenadas, string contricante) {
-            base.Channel.tiro(coordenadas, contricante);
-        }
-        
-        public System.Threading.Tasks.Task tiroAsync(string coordenadas, string contricante) {
-            return base.Channel.tiroAsync(coordenadas, contricante);
+        public System.Threading.Tasks.Task TiroAsync(string coordenadas, string contricante, string sala, string NombreJugador) {
+            return base.Channel.TiroAsync(coordenadas, contricante, sala, NombreJugador);
         }
         
         public void IniciarPartida(string jugador) {
@@ -565,6 +545,22 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task PrimerTiroAsync(string jugador1, string jugador2) {
             return base.Channel.PrimerTiroAsync(jugador1, jugador2);
+        }
+        
+        public void ActualizarCallbackEnPartida(string jugador) {
+            base.Channel.ActualizarCallbackEnPartida(jugador);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarCallbackEnPartidaAsync(string jugador) {
+            return base.Channel.ActualizarCallbackEnPartidaAsync(jugador);
+        }
+        
+        public void PartidaGanada(string janador, string jugadorParaNotificar) {
+            base.Channel.PartidaGanada(janador, jugadorParaNotificar);
+        }
+        
+        public System.Threading.Tasks.Task PartidaGanadaAsync(string janador, string jugadorParaNotificar) {
+            return base.Channel.PartidaGanadaAsync(janador, jugadorParaNotificar);
         }
     }
 }
