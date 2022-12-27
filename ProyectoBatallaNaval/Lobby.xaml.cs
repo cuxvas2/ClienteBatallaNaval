@@ -69,11 +69,6 @@ namespace ProyectoBatallaNaval
             cliente.enviarMensaje(chat);
             txtMensaje.Text = "";
 
-            /*int[] coordenadas = { 3, 5 };
-            ServicioAServidor.AdminiSocialClient clientePartida = new ServicioAServidor.AdminiSocialClient(context);
-            clientePartida.tiro(coordenadas, "Invitado");*/
-
-
         }
 
         private void buttonCrearPartida_Click(object sender, RoutedEventArgs e)
@@ -88,9 +83,7 @@ namespace ProyectoBatallaNaval
         {
             if (inicar)
             {
-                //this.Hide();
-                Partida partida = new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala);
-                //partida.Show();
+                NavigationService.Navigate(new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala));
             }
         }
 
@@ -237,6 +230,16 @@ namespace ProyectoBatallaNaval
         }
 
         public void PartidaGanadaCallback(string jugadorGanado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ActualizarCallbackEnPartidaCallback(bool actualizado)
+        {
+            
+        }
+
+        public void TiroCerteroCallback(string coordenadas)
         {
             throw new NotImplementedException();
         }

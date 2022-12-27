@@ -165,6 +165,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TiroCertero">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coordenadas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="actualizarJugadores">
     <xs:complexType>
       <xs:sequence>
@@ -238,6 +246,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="recibirTodoListoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="recibirTodoListoParaIniciar">
     <xs:complexType>
       <xs:sequence>
@@ -245,11 +258,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="recibirTodoListoParaIniciarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="recibirCancelarListo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recibirCancelarListoResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="insertarDisparo">
@@ -271,6 +294,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IniciarPartidaCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="primerTiroCallback">
     <xs:complexType>
       <xs:sequence>
@@ -278,11 +306,45 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="primerTiroCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PartidaGanadaCallback">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="jugadorGanado" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PartidaGanadaCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCallbackEnPartidaCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actualizado" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCallbackEnPartidaCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TiroCerteroCallback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="coordenadas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TiroCerteroCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

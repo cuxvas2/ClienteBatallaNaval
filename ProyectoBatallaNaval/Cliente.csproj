@@ -71,6 +71,9 @@
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VentanaJuego.xaml.cs">
+      <DependentUpon>VentanaJuego.xaml</DependentUpon>
+    </Compile>
     <Page Include="InicioSesion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Registro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaJuego.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +183,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\oceano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\timon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\barcoIcono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\embarcacion.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\buque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\buqueDestruido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,11 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
 
+        public void ActualizarCallbackEnPartidaCallback(bool actualizado)
+        {
+            
+        }
+
         public void actualizarJugadores(Jugador[] jugadores)
         {
             throw new NotImplementedException();
@@ -93,6 +98,11 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
+        public void TiroCerteroCallback(string coordenadas)
+        {
+            throw new NotImplementedException();
+        }
+
         public void unionDeJugador(Jugador jugador)
         {
             
@@ -127,10 +137,7 @@ namespace ProyectoBatallaNaval
                     //Agregar su contecto desde aqui?
                     clienteJoin.Conectado(jugador);
                     
-                    //Recuperar los datos del que inicia sesion y pasasrlos a la ventana
-                    Lobby lobby = new Lobby(jugador);
-                    //lobby.Show(); Cambiar como abrir la nueva
-                    //this.Close(); CAMbiar como cerrar esto
+                    NavigationService.Navigate(new Lobby(jugador));
                     
                     
                 }
@@ -143,9 +150,7 @@ namespace ProyectoBatallaNaval
 
         private void buttonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
-            Registro registro = new Registro();
-            //registro.Show();
-            //this.Close();
+            NavigationService.Navigate(new Registro());
         }
 
 

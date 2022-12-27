@@ -21,7 +21,7 @@
         <ListBox x:Name="listBoxMensajes" Margin="-1240,-284,578,96" FontSize="16" Background="{x:Null}"/>
         <Button x:Name="buttonConfiguracion" HorizontalAlignment="Left" Margin="-1259,-681,0,0" VerticalAlignment="Top" Height="50" Width="54" BorderBrush="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="/Ajustes_Icon.png"/>
+                <ImageBrush ImageSource="/Imagenes/Ajustes_Icon.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="buttonCrearPartida" Content="Crear Partida" HorizontalAlignment="Left" Margin="-745,-681,0,0" VerticalAlignment="Top" Click="buttonCrearPartida_Click" Height="48" Width="217"/>

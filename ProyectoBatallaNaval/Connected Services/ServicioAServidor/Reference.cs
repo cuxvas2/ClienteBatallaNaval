@@ -289,7 +289,7 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiSocial", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiSocialCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiSocial", CallbackContract=typeof(ProyectoBatallaNaval.ServicioAServidor.IAdminiSocialCallback))]
     public interface IAdminiSocial {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Conectado")]
@@ -304,10 +304,10 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
         System.Threading.Tasks.Task estaEscribiendoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
         void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
         System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
@@ -352,10 +352,10 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/IniciarPartida")]
         System.Threading.Tasks.Task IniciarPartidaAsync(string jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
         void TerminarPartida(string jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TerminarPartida")]
         System.Threading.Tasks.Task TerminarPartidaAsync(string jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PrimerTiro")]
@@ -370,11 +370,17 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartida")]
         System.Threading.Tasks.Task ActualizarCallbackEnPartidaAsync(string jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
         void PartidaGanada(string janador, string jugadorParaNotificar);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, IsTerminating=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanada")]
         System.Threading.Tasks.Task PartidaGanadaAsync(string janador, string jugadorParaNotificar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TiroCertero")]
+        void TiroCertero(string coordenadas, string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TiroCertero")]
+        System.Threading.Tasks.Task TiroCerteroAsync(string coordenadas, string contricante);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -401,26 +407,32 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/jugadorSeUnio", ReplyAction="http://tempuri.org/IAdminiSocial/jugadorSeUnioResponse")]
         void jugadorSeUnio(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador, string sala, bool seUnio);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirTodoListo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse")]
         void recibirTodoListo(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse")]
         void recibirTodoListoParaIniciar(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse")]
         void recibirCancelarListo(string contricante);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiSocial/insertarDisparoResponse")]
         void insertarDisparo(string coordenadas);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback", ReplyAction="http://tempuri.org/IAdminiSocial/IniciarPartidaCallbackResponse")]
         void IniciarPartidaCallback(bool inicar);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/primerTiroCallback")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/primerTiroCallback", ReplyAction="http://tempuri.org/IAdminiSocial/primerTiroCallbackResponse")]
         void primerTiroCallback(bool iniciar);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback", ReplyAction="http://tempuri.org/IAdminiSocial/PartidaGanadaCallbackResponse")]
         void PartidaGanadaCallback(string jugadorGanado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartidaCallback", ReplyAction="http://tempuri.org/IAdminiSocial/ActualizarCallbackEnPartidaCallbackResponse")]
+        void ActualizarCallbackEnPartidaCallback(bool actualizado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/TiroCerteroCallback", ReplyAction="http://tempuri.org/IAdminiSocial/TiroCerteroCallbackResponse")]
+        void TiroCerteroCallback(string coordenadas);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -561,6 +573,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task PartidaGanadaAsync(string janador, string jugadorParaNotificar) {
             return base.Channel.PartidaGanadaAsync(janador, jugadorParaNotificar);
+        }
+        
+        public void TiroCertero(string coordenadas, string contricante) {
+            base.Channel.TiroCertero(coordenadas, contricante);
+        }
+        
+        public System.Threading.Tasks.Task TiroCerteroAsync(string coordenadas, string contricante) {
+            return base.Channel.TiroCerteroAsync(coordenadas, contricante);
         }
     }
 }

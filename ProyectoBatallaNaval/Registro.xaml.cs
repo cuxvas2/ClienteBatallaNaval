@@ -89,9 +89,7 @@ namespace ProyectoBatallaNaval
 
         private void InicioSesion_Click(object sender, RoutedEventArgs e)
         {
-            InicioSesion inicioSesion = new InicioSesion();
-            //inicioSesion.Show();
-            //Close();
+            NavigationService.Navigate(new InicioSesion());
         }
     }
 }

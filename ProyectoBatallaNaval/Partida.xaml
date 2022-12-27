@@ -11,195 +11,182 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Imagenes/oceano.jpg"/>
         </Grid.Background>
-        <Button x:Name="buttonTirar" Content="Tirar" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" Height="34" Width="108" IsEnabled="False" Click="buttonTirar_Click"/>
-        <Image HorizontalAlignment="Left" Height="244" Margin="75,67,0,0" VerticalAlignment="Top" Width="232" Source="/Imagenes/Tabrero.png"/>
-        <Image HorizontalAlignment="Left" Height="244" Margin="490,67,0,0" VerticalAlignment="Top" Width="233" Source="/Imagenes/Tabrero.png"/>
-        <Button x:Name="casilla_6A" Content="" HorizontalAlignment="Left" Margin="511,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5I" Content="" HorizontalAlignment="Left" Margin="684,174,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3B" Content="" HorizontalAlignment="Left" Margin="533,131,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3A" Content="" HorizontalAlignment="Left" Margin="512,131,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2I" Content="" HorizontalAlignment="Left" Margin="684,109,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2H" Content="" HorizontalAlignment="Left" Margin="663,109,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2G" Content="" HorizontalAlignment="Left" Margin="641,110,0,0" VerticalAlignment="Top" Height="18" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2F" Content="" HorizontalAlignment="Left" Margin="619,110,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2E" Content="" HorizontalAlignment="Left" Margin="598,108,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2D" Content="" HorizontalAlignment="Left" Margin="575,109,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2C" Content="" HorizontalAlignment="Left" Margin="553,110,0,0" VerticalAlignment="Top" Height="19" Width="22" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2B" Content="" HorizontalAlignment="Left" Margin="533,109,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_2A" Content="" HorizontalAlignment="Left" Margin="512,109,0,0" VerticalAlignment="Top" Height="21" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1I" Content="" HorizontalAlignment="Left" Margin="683,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1H" Content="" HorizontalAlignment="Left" Margin="661,88,0,0" VerticalAlignment="Top" Height="19" Width="22" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1G" Content="" HorizontalAlignment="Left" Margin="640,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1F" Content="" HorizontalAlignment="Left" Margin="617,88,0,0" VerticalAlignment="Top" Height="19" Width="21" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1E" Content="" HorizontalAlignment="Left" Margin="598,88,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1D" Content="" HorizontalAlignment="Left" Margin="576,88,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1C" Content="" HorizontalAlignment="Left" Margin="553,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1B" Content="" HorizontalAlignment="Left" Margin="530,88,0,0" VerticalAlignment="Top" Height="19" Width="23" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_1A" Content="" HorizontalAlignment="Left" Margin="513,88,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5H" Content="" HorizontalAlignment="Left" Margin="663,175,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5G" Content="" HorizontalAlignment="Left" Margin="642,175,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5F" Content="" HorizontalAlignment="Left" Margin="619,175,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5E" Content="" HorizontalAlignment="Left" Margin="597,174,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5D" Content="" HorizontalAlignment="Left" Margin="576,175,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5C" Content="" HorizontalAlignment="Left" Margin="555,175,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5B" Content="" HorizontalAlignment="Left" Margin="533,175,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5A" Content="" HorizontalAlignment="Left" Margin="512,174,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4I" Content="" HorizontalAlignment="Left" Margin="684,152,0,0" VerticalAlignment="Top" Height="20" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4H" Content="" HorizontalAlignment="Left" Margin="663,152,0,0" VerticalAlignment="Top" Height="20" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4G" Content="" HorizontalAlignment="Left" Margin="641,152,0,0" VerticalAlignment="Top" Height="20" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4F" Content="" HorizontalAlignment="Left" Margin="619,152,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4E" Content="" HorizontalAlignment="Left" Margin="597,152,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4D" Content="" HorizontalAlignment="Left" Margin="576,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4B" Content="" HorizontalAlignment="Left" Margin="533,152,0,0" VerticalAlignment="Top" Height="20" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4A" Content="" HorizontalAlignment="Left" Margin="512,153,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3I" Content="" HorizontalAlignment="Left" Margin="684,131,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3H" Content="" HorizontalAlignment="Left" Margin="663,132,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3G" Content="" HorizontalAlignment="Left" Margin="641,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3F" Content="" HorizontalAlignment="Left" Margin="618,131,0,0" VerticalAlignment="Top" Height="19" Width="21" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3E" Content="" HorizontalAlignment="Left" Margin="598,131,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3C" Content="" HorizontalAlignment="Left" Margin="554,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_3D" Content="" HorizontalAlignment="Left" Margin="576,131,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_4C" Content="" HorizontalAlignment="Left" Margin="555,152,0,0" VerticalAlignment="Top" Height="21" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7I" Content="" HorizontalAlignment="Left" Margin="684,217,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7H" Content="" HorizontalAlignment="Left" Margin="663,218,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7G" Content="" HorizontalAlignment="Left" Margin="642,218,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7F" Content="" HorizontalAlignment="Left" Margin="619,218,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7E" Content="" HorizontalAlignment="Left" Margin="597,217,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7D" Content="" HorizontalAlignment="Left" Margin="576,218,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7C" Content="" HorizontalAlignment="Left" Margin="555,218,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7B" Content="" HorizontalAlignment="Left" Margin="533,218,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_7A" Content="" HorizontalAlignment="Left" Margin="512,217,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8I" Content="" HorizontalAlignment="Left" Margin="684,240,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8H" Content="" HorizontalAlignment="Left" Margin="663,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8G" Content="" HorizontalAlignment="Left" Margin="642,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8F" Content="" HorizontalAlignment="Left" Margin="619,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8E" Content="" HorizontalAlignment="Left" Margin="597,240,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8D" Content="" HorizontalAlignment="Left" Margin="576,240,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8C" Content="" HorizontalAlignment="Left" Margin="555,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8B" Content="" HorizontalAlignment="Left" Margin="533,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_8A" Content="" HorizontalAlignment="Left" Margin="512,240,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6I" Content="" HorizontalAlignment="Left" Margin="684,196,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6H" Content="" HorizontalAlignment="Left" Margin="663,196,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6G" Content="" HorizontalAlignment="Left" Margin="641,196,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6F" Content="" HorizontalAlignment="Left" Margin="619,196,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_5E1" Content="" HorizontalAlignment="Left" Margin="597,196,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6D" Content="" HorizontalAlignment="Left" Margin="576,196,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6C" Content="" HorizontalAlignment="Left" Margin="555,197,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6B" Content="" HorizontalAlignment="Left" Margin="534,196,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9I" Content="" HorizontalAlignment="Left" Margin="684,260,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9H" Content="" HorizontalAlignment="Left" Margin="663,261,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9G" Content="" HorizontalAlignment="Left" Margin="642,261,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9F" Content="" HorizontalAlignment="Left" Margin="619,261,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9E" Content="" HorizontalAlignment="Left" Margin="597,260,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9D" Content="" HorizontalAlignment="Left" Margin="576,261,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9C" Content="" HorizontalAlignment="Left" Margin="555,261,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9B" Content="" HorizontalAlignment="Left" Margin="533,261,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_9A" Content="" HorizontalAlignment="Left" Margin="512,260,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10I" Content="" HorizontalAlignment="Left" Margin="684,282,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10H" Content="" HorizontalAlignment="Left" Margin="662,282,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10G" Content="" HorizontalAlignment="Left" Margin="641,282,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10F" Content="" HorizontalAlignment="Left" Margin="619,282,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10E" Content="" HorizontalAlignment="Left" Margin="597,282,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10D" Content="" HorizontalAlignment="Left" Margin="576,281,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10C" Content="" HorizontalAlignment="Left" Margin="555,281,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10B" Content="" HorizontalAlignment="Left" Margin="533,281,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_10A" Content="" HorizontalAlignment="Left" Margin="512,282,0,0" VerticalAlignment="Top" Height="19" Width="18" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Button x:Name="casilla_6A_Propia" Content="" HorizontalAlignment="Left" Margin="96,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5I_Propia" Content="" HorizontalAlignment="Left" Margin="269,174,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3B_Propia" Content="" HorizontalAlignment="Left" Margin="118,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3A_Propia" Content="" HorizontalAlignment="Left" Margin="96,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2I_Propia" Content="" HorizontalAlignment="Left" Margin="269,109,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2H_Propia" Content="" HorizontalAlignment="Left" Margin="247,109,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2G_Propia" Content="" HorizontalAlignment="Left" Margin="225,109,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2F_Propia" Content="" HorizontalAlignment="Left" Margin="204,109,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2E_Propia" Content="" HorizontalAlignment="Left" Margin="182,109,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2D_Propia" Content="" HorizontalAlignment="Left" Margin="160,109,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2C_Propia" Content="" HorizontalAlignment="Left" Margin="139,109,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2B_Propia" Content="" HorizontalAlignment="Left" Margin="118,109,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_2A_Propia" Content="" HorizontalAlignment="Left" Margin="96,109,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1I_Propia" Content="" HorizontalAlignment="Left" Margin="269,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1H_Propia" Content="" HorizontalAlignment="Left" Margin="247,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1G_Propia" Content="" HorizontalAlignment="Left" Margin="225,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1F_Propia" Content="" HorizontalAlignment="Left" Margin="204,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1E_Propia" Content="" HorizontalAlignment="Left" Margin="182,88,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1D_Propia" Content="" HorizontalAlignment="Left" Margin="161,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1C_Propia" Content="" HorizontalAlignment="Left" Margin="139,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1B_Propia" Content="" HorizontalAlignment="Left" Margin="118,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_1A_Propia" Content="" HorizontalAlignment="Left" Margin="96,88,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5H_Propia" Content="" HorizontalAlignment="Left" Margin="247,174,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5G_Propia" Content="" HorizontalAlignment="Left" Margin="225,174,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5F_Propia" Content="" HorizontalAlignment="Left" Margin="204,174,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5E_Propia" Content="" HorizontalAlignment="Left" Margin="182,174,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5D_Propia" Content="" HorizontalAlignment="Left" Margin="161,174,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5C_Propia" Content="" HorizontalAlignment="Left" Margin="139,174,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5B_Propia" Content="" HorizontalAlignment="Left" Margin="118,174,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_5A_Propia" Content="" HorizontalAlignment="Left" Margin="96,174,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4I_Propia" Content="" HorizontalAlignment="Left" Margin="269,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4H_Propia" Content="" HorizontalAlignment="Left" Margin="247,152,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4G_Propia" Content="" HorizontalAlignment="Left" Margin="225,152,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4F_Propia" Content="" HorizontalAlignment="Left" Margin="204,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4E_Propia" Content="" HorizontalAlignment="Left" Margin="182,152,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4D_Propia" Content="" HorizontalAlignment="Left" Margin="161,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4B_Propia" Content="" HorizontalAlignment="Left" Margin="118,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4A_Propia" Content="" HorizontalAlignment="Left" Margin="96,152,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3I_Propia" Content="" HorizontalAlignment="Left" Margin="269,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3H_Propia" Content="" HorizontalAlignment="Left" Margin="247,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3G_Propia" Content="" HorizontalAlignment="Left" Margin="225,131,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3F_Propia" Content="" HorizontalAlignment="Left" Margin="203,131,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3E_Propia" Content="" HorizontalAlignment="Left" Margin="182,131,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3C_Propia" Content="" HorizontalAlignment="Left" Margin="139,131,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_3D_Propia" Content="" HorizontalAlignment="Left" Margin="161,131,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_4C_Propia" Content="" HorizontalAlignment="Left" Margin="139,152,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7I_Propia" Content="" HorizontalAlignment="Left" Margin="269,217,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7H_Propia" Content="" HorizontalAlignment="Left" Margin="247,217,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7G_Propia" Content="" HorizontalAlignment="Left" Margin="225,217,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7F_Propia" Content="" HorizontalAlignment="Left" Margin="204,217,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7E_Propia" Content="" HorizontalAlignment="Left" Margin="182,217,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7D_Propia" Content="" HorizontalAlignment="Left" Margin="161,217,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7C_Propia" Content="" HorizontalAlignment="Left" Margin="139,217,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7B_Propia" Content="" HorizontalAlignment="Left" Margin="118,217,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_7A_Propia" Content="" HorizontalAlignment="Left" Margin="96,217,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8I_Propia" Content="" HorizontalAlignment="Left" Margin="269,239,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8H_Propia" Content="" HorizontalAlignment="Left" Margin="247,239,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8G_Propia" Content="" HorizontalAlignment="Left" Margin="225,239,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8F_Propia" Content="" HorizontalAlignment="Left" Margin="204,239,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8E_Propia" Content="" HorizontalAlignment="Left" Margin="182,239,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8D_Propia" Content="" HorizontalAlignment="Left" Margin="161,239,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8C_Propia" Content="" HorizontalAlignment="Left" Margin="139,239,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8B_Propia" Content="" HorizontalAlignment="Left" Margin="118,239,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_8A_Propia" Content="" HorizontalAlignment="Left" Margin="96,239,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6I_Propia" Content="" HorizontalAlignment="Left" Margin="269,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6H_Propia" Content="" HorizontalAlignment="Left" Margin="247,196,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6G_Propia" Content="" HorizontalAlignment="Left" Margin="225,196,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6F_Propia" Content="" HorizontalAlignment="Left" Margin="204,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6E_Propia" Content="" HorizontalAlignment="Left" Margin="182,196,0,0" VerticalAlignment="Top" Height="19" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6D_Propia" Content="" HorizontalAlignment="Left" Margin="161,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6C_Propia" Content="" HorizontalAlignment="Left" Margin="139,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_6B_Propia" Content="" HorizontalAlignment="Left" Margin="118,196,0,0" VerticalAlignment="Top" Height="19" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9I_Propia" Content="" HorizontalAlignment="Left" Margin="269,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9H_Propia" Content="" HorizontalAlignment="Left" Margin="247,260,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9G_Propia" Content="" HorizontalAlignment="Left" Margin="226,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9F_Propia" Content="" HorizontalAlignment="Left" Margin="204,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9E_Propia" Content="" HorizontalAlignment="Left" Margin="182,260,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9D_Propia" Content="" HorizontalAlignment="Left" Margin="161,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9C_Propia" Content="" HorizontalAlignment="Left" Margin="139,260,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9B_Propia" Content="" HorizontalAlignment="Left" Margin="118,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_9A_Propia" Content="" HorizontalAlignment="Left" Margin="96,260,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10I_Propia" Content="" HorizontalAlignment="Left" Margin="269,282,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10H_Propia" Content="" HorizontalAlignment="Left" Margin="247,282,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10G_Propia" Content="" HorizontalAlignment="Left" Margin="225,282,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10F_Propia" Content="" HorizontalAlignment="Left" Margin="204,282,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10E_Propia" Content="" HorizontalAlignment="Left" Margin="182,282,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10D_Propia" Content="" HorizontalAlignment="Left" Margin="161,282,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10C_Propia" Content="" HorizontalAlignment="Left" Margin="139,282,0,0" VerticalAlignment="Top" Height="20" Width="20" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10B_Propia" Content="" HorizontalAlignment="Left" Margin="118,282,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Button x:Name="casilla_10A_Propia" Content="" HorizontalAlignment="Left" Margin="96,282,0,0" VerticalAlignment="Top" Height="20" Width="19" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" IsEnabled="False"/>
-        <Label Content="Partida" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <Label x:Name="labelContricante" Content="" HorizontalAlignment="Left" Margin="490,336,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="219" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="labelHost" Content="" HorizontalAlignment="Left" Margin="75,331,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="219" FontWeight="Bold" FontSize="16"/>
-        <Label x:Name="labelSeleccionarPosicion" Content="Debes seleccionar una posicion para tirar" HorizontalAlignment="Left" Margin="247,375,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" FontWeight="Bold" FontSize="16" Width="326" Visibility="Hidden"/>
-        <TextBlock x:Name="textGanador" HorizontalAlignment="Left" Margin="139,325,0,0" TextWrapping="Wrap" Text="El ganador es " VerticalAlignment="Top" Height="59" Width="541" TextAlignment="Center" FontSize="24" IsEnabled="False" FontWeight="Bold" Visibility="Hidden"/>
-        <Button x:Name="btnAtras" Content="Atras" HorizontalAlignment="Left" Margin="672,378,0,0" VerticalAlignment="Top" Height="25" Width="72" Click="btnAtras_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition x:Name="columnDefinitionHost" Width="*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition x:Name="columnDefinitionContricanteNumerosPosiciones" Width="30"/>
+            <ColumnDefinition x:Name="columnDefinitionContricante" Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition x:Name="rowDefinitionHost" Height="*"/>
+            <RowDefinition x:Name="rowDefinitionUltima" Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="GridContricante" Grid.Column="5" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="casilla_1A" Grid.Column="0" Grid.Row="0" Click="Button_Click" Background="{x:Null}" BorderBrush="Black" AutomationProperties.IsOffscreenBehavior="Onscreen"/>
+            <Button x:Name="casilla_1B" Grid.Column="1" Grid.Row="0" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_1C" Grid.Column="2" Grid.Row="0" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_1D" Grid.Column="3" Grid.Row="0" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_1E" Grid.Column="4" Grid.Row="0" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_2A" Grid.Column="0" Grid.Row="1" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_2B" Grid.Column="1" Grid.Row="1" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_2D" Grid.Column="3" Grid.Row="1" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_2E" Grid.Column="4" Grid.Row="1" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_3A" Grid.Column="0" Grid.Row="2" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_3B" Grid.Column="1" Grid.Row="2" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_3C" Grid.Column="2" Grid.Row="2" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_3D" Grid.Column="3" Grid.Row="2" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_3E" Grid.Column="4" Grid.Row="2" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_4A" Grid.Column="0" Grid.Row="3" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_4B" Grid.Column="1" Grid.Row="3" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_4C" Grid.Column="2" Grid.Row="3" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_4D" Grid.Column="3" Grid.Row="3" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_4E" Grid.Column="4" Grid.Row="3" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_5A" Grid.Column="0" Grid.Row="4" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_5B" Grid.Column="1" Grid.Row="4" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_5C" Grid.Column="2" Grid.Row="4" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_5D" Grid.Column="3" Grid.Row="4" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_2C" Grid.Column="2" Grid.Row="1" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            <Button x:Name="casilla_5E" Grid.Column="4" Grid.Row="4" Click="Button_Click" Background="{x:Null}" BorderBrush="Black"/>
+            
+            
+        </Grid>
+        <Image x:Name="imagenBarco" Source="/Imagenes/buque.png" Visibility="Hidden"/>
+        <Image x:Name="imagenBarcoDestruido" Source="/Imagenes/buqueDestruido.png" Visibility="Hidden"/>
+
+        <Grid Grid.Column="5" Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="16">A</TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" FontSize="16">B</TextBlock>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" FontSize="16">C</TextBlock>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" FontSize="16">D</TextBlock>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" FontSize="16">E</TextBlock>
+        </Grid>
+
+        <Grid Grid.Column="4" Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">1</TextBlock>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">2</TextBlock>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">3</TextBlock>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">4</TextBlock>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">5</TextBlock>
+        </Grid>
+
+        <Grid x:Name="GridHost" Grid.Column="2" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="casilla_1A_Propia" Grid.Column="0" Grid.Row="0" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_1B_Propia" Grid.Column="1" Grid.Row="0" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_1C_Propia" Grid.Column="2" Grid.Row="0" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_1D_Propia" Grid.Column="3" Grid.Row="0" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_1E_Propia" Grid.Column="4" Grid.Row="0" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_2A_Propia" Grid.Column="0" Grid.Row="1" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_2B_Propia" Grid.Column="1" Grid.Row="1" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_2C_Propia" Grid.Column="2" Grid.Row="1" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_2D_Propia" Grid.Column="3" Grid.Row="1" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_2E_Propia" Grid.Column="4" Grid.Row="1" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_3A_Propia" Grid.Column="0" Grid.Row="2" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_3B_Propia" Grid.Column="1" Grid.Row="2" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_3C_Propia" Grid.Column="2" Grid.Row="2" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_3D_Propia" Grid.Column="3" Grid.Row="2" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_3E_Propia" Grid.Column="4" Grid.Row="2" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_4A_Propia" Grid.Column="0" Grid.Row="3" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_4B_Propia" Grid.Column="1" Grid.Row="3" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_4C_Propia" Grid.Column="2" Grid.Row="3" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_4D_Propia" Grid.Column="3" Grid.Row="3" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_4E_Propia" Grid.Column="4" Grid.Row="3" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_5A_Propia" Grid.Column="0" Grid.Row="4" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_5B_Propia" Grid.Column="1" Grid.Row="4" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_5C_Propia" Grid.Column="2" Grid.Row="4" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_5D_Propia" Grid.Column="3" Grid.Row="4" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+            <Button x:Name="casilla_5E_Propia" Grid.Column="4" Grid.Row="4" Click="ButtonPropio_Click" Content="" Background="Transparent" BorderBrush="Black" />
+        </Grid>
+
+        <Grid Grid.Column="2" Grid.Row="1" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" FontSize="16">A</TextBlock>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" FontSize="16">B</TextBlock>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Center" FontSize="16">C</TextBlock>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Center" FontSize="16">D</TextBlock>
+            <TextBlock Grid.Column="4" HorizontalAlignment="Center" FontSize="16">E</TextBlock>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">1</TextBlock>
+            <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">2</TextBlock>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">3</TextBlock>
+            <TextBlock Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">4</TextBlock>
+            <TextBlock Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">5</TextBlock>
+        </Grid>
+
+        <Button x:Name="buttonTirar" Content="Tirar" Height="34" Width="108" IsEnabled="False" Click="buttonTirar_Click" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="buttonPosicionListas" Content="Listo" Click="buttonPosicionListas_Click" Height="34" Width="108" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Visibility="Hidden" IsEnabled="False"/>
+        <Label Content="Partida" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="4"/>
+        <Label x:Name="labelContricante" Content="" Width="219" FontSize="16" FontWeight="Bold" Grid.Row="3" Grid.Column="5" VerticalAlignment="Top" Margin="0,15,0,0"/>
+        <Label x:Name="labelHost" Content="" Width="219" FontWeight="Bold" FontSize="16" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" Margin="0,15,0,0"/>
+        <Label x:Name="labelSeleccionarPosicion" Content="Debes seleccionar una posicion para tirar" FontWeight="Bold" FontSize="16" Visibility="Hidden" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textGanador" TextWrapping="Wrap" Text="El ganador es " Height="59" FontSize="36" FontWeight="Bold" Visibility="Hidden" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center"/>
+        <Button x:Name="btnAtras" Content="Atras" Height="25" Width="72" Click="btnAtras_Click" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0" Background="#FF3E45AA" BorderBrush="#FF003D71" FontFamily="Segoe UI Black" Foreground="#FFD1EAE9" Visibility="Hidden"/>
 
     </Grid>
 </Page>
