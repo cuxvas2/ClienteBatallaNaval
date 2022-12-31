@@ -123,10 +123,28 @@
   <data name="correoElectronico" xml:space="preserve">
     <value>Correo Electronico</value>
   </data>
+  <data name="crearPartida" xml:space="preserve">
+    <value>Crear partida</value>
+  </data>
+  <data name="enviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Iniciar Sesion</value>
   </data>
+  <data name="partida" xml:space="preserve">
+    <value>Partida</value>
+  </data>
   <data name="registrarse" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="tirar" xml:space="preserve">
+    <value>Tirar</value>
+  </data>
+  <data name="todoListo" xml:space="preserve">
+    <value>Todo listo</value>
+  </data>
+  <data name="unirseSala" xml:space="preserve">
+    <value>Unirse a sala</value>
   </data>
 </root>

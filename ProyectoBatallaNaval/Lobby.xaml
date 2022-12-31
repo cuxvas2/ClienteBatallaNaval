@@ -4,7 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProyectoBatallaNaval"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      xmlns:lenguajes="clr-namespace:ProyectoBatallaNaval.Properties.Idiomas"
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Lobby" Height="720" Width="1280">
     <Page.Background>
@@ -12,7 +13,7 @@
     </Page.Background>
 
     <Grid Margin="1280,720">
-        <Button x:Name="buttonEnviar" Content="Enviar" Click="buttonEnviar_Click" Margin="-693,-91,578,51" Height="40" Width="115"/>
+        <Button x:Name="buttonEnviar" Content="{x:Static lenguajes:Resources.crearPartida}" Click="buttonEnviar_Click" Margin="-693,-91,578,51" Height="40" Width="115"/>
 
         <Label x:Name="ApodoMensaje" HorizontalAlignment="Left" Margin="32,466,0,0" VerticalAlignment="Top" Width="81"/>
         <Label x:Name="MensajeChat" HorizontalAlignment="Left" Margin="156,453,0,0" VerticalAlignment="Top" Width="232"/>
@@ -24,12 +25,12 @@
                 <ImageBrush ImageSource="/Imagenes/Ajustes_Icon.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="buttonCrearPartida" Content="Crear Partida" HorizontalAlignment="Left" Margin="-745,-681,0,0" VerticalAlignment="Top" Click="buttonCrearPartida_Click" Height="48" Width="217"/>
+        <Button x:Name="buttonCrearPartida" Content="{x:Static lenguajes:Resources.crearPartida}" HorizontalAlignment="Left" Margin="-745,-681,0,0" VerticalAlignment="Top" Click="buttonCrearPartida_Click" Height="48" Width="217"/>
         <Label x:Name="labelCodigoPartida" HorizontalAlignment="Left" Margin="-776,-615,0,0" VerticalAlignment="Top" Height="51" Width="279" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-        <Button x:Name="buttonUnirseSala" Content="Unirse a sala" HorizontalAlignment="Left" Margin="-364,-675,0,0" VerticalAlignment="Top" Height="26" Width="92" Click="buttonUnirseSala_Click"/>
+        <Button x:Name="buttonUnirseSala" Content="{x:Static lenguajes:Resources.unirseSala}" HorizontalAlignment="Left" Margin="-364,-675,0,0" VerticalAlignment="Top" Height="26" Width="92" Click="buttonUnirseSala_Click"/>
         <TextBox x:Name="textBoxCodigoSala" HorizontalAlignment="Left" Margin="-242,-675,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="16" Height="26"/>
         <Button x:Name="buttonAbandonarSala" Content="Abandonar sala" HorizontalAlignment="Left" Margin="-475,-599,0,0" VerticalAlignment="Top" Height="22" Width="97" Click="buttonAbandonarSala_Click" IsEnabled="True" Visibility="Hidden"/>
-        <Button x:Name="buttonIniciarPartida" Content="Todo listo" HorizontalAlignment="Left" Margin="-200,-100,0,0" VerticalAlignment="Top" Height="49" Width="147" Background="#FFF1ED8E" Click="buttonIniciarPartida_Click"/>
+        <Button x:Name="buttonIniciarPartida" Content="{x:Static lenguajes:Resources.todoListo}" HorizontalAlignment="Left" Margin="-200,-100,0,0" VerticalAlignment="Top" Height="49" Width="147" Background="#FFF1ED8E" Click="buttonIniciarPartida_Click"/>
         <Image x:Name="imagenTodoListoHost" HorizontalAlignment="Left" Height="43" Margin="-927,-536,0,0" VerticalAlignment="Top" Width="65" Source="/Imagenes/todoListoIcono.png" IsEnabled="False" Visibility="Hidden"/>
         <Image x:Name="imagenTodoListoContricante" HorizontalAlignment="Left" Height="43" Margin="-424,-536,0,0" VerticalAlignment="Top" Width="64" Source="/Imagenes/todoListoIcono.png" IsEnabled="False" Visibility="Hidden"/>
         <Image x:Name="imagenBarcoHost" HorizontalAlignment="Left" Height="262" Margin="-1105,-588,0,0" VerticalAlignment="Top" Width="399" Source="/Imagenes/BarcoHostIcono.png" Stretch="UniformToFill" IsEnabled="False" Visibility="Hidden"/>

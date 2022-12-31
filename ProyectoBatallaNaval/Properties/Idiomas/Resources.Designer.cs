@@ -61,6 +61,33 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Borrar.
+        /// </summary>
+        public static string borrar {
+            get {
+                return ResourceManager.GetString("borrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string cancelar {
+            get {
+                return ResourceManager.GetString("cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar contraseña.
+        /// </summary>
+        public static string confirmarContraseña {
+            get {
+                return ResourceManager.GetString("confirmarContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         public static string contraseña {
@@ -79,6 +106,24 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Crear partida.
+        /// </summary>
+        public static string crearPartida {
+            get {
+                return ResourceManager.GetString("crearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar.
+        /// </summary>
+        public static string enviar {
+            get {
+                return ResourceManager.GetString("enviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar Sesion.
         /// </summary>
         public static string iniciarSesion {
@@ -88,11 +133,56 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario.
+        /// </summary>
+        public static string nombreUsuario {
+            get {
+                return ResourceManager.GetString("nombreUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partida.
+        /// </summary>
+        public static string partida {
+            get {
+                return ResourceManager.GetString("partida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Registrarse.
         /// </summary>
         public static string registrarse {
             get {
                 return ResourceManager.GetString("registrarse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tirar.
+        /// </summary>
+        public static string tirar {
+            get {
+                return ResourceManager.GetString("tirar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Todo listo.
+        /// </summary>
+        public static string todoListo {
+            get {
+                return ResourceManager.GetString("todoListo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unirse a sala.
+        /// </summary>
+        public static string unirseSala {
+            get {
+                return ResourceManager.GetString("unirseSala", resourceCulture);
             }
         }
     }
