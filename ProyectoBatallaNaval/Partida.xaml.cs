@@ -256,7 +256,7 @@ namespace ProyectoBatallaNaval
         {
             buttonTirar.IsEnabled = true;
 
-            String nombreBoton = Properties.Idiomas.Resources.casilla + coordenadas + Properties.Idiomas.Resources.Propia;
+            String nombreBoton = Properties.Idiomas.Resources.casilla + coordenadas + Properties.Idiomas.Resources.propia;
             Object botonSolicitado = GridPartida.FindName(nombreBoton);
             if(botonSolicitado is Button)
             {

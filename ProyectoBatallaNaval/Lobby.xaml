@@ -20,7 +20,7 @@
         <Label x:Name="Disparo" HorizontalAlignment="Left" Margin="42,347,0,0" VerticalAlignment="Top" Width="125"/>
         <TextBox x:Name="txtMensaje" HorizontalAlignment="Left" Margin="-1240,-90,0,0" TextWrapping="Wrap" Width="542" Height="39" Background="{x:Null}" FontSize="16" VerticalAlignment="Top" FontWeight="Bold"/>
         <ListBox x:Name="listBoxMensajes" Margin="-1240,-284,578,96" FontSize="16" Background="{x:Null}"/>
-        <Button x:Name="buttonConfiguracion" HorizontalAlignment="Left" Margin="-1259,-681,0,0" VerticalAlignment="Top" Height="50" Width="54" BorderBrush="{x:Null}">
+        <Button x:Name="buttonConfiguracion" HorizontalAlignment="Left" Margin="-1259,-681,0,0" VerticalAlignment="Top" Height="50" Width="54" BorderBrush="{x:Null}" Click="buttonConfiguracion_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Imagenes/Ajustes_Icon.png"/>
             </Button.Background>

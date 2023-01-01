@@ -159,6 +159,9 @@
   <data name="escribeCorreoElectronico" xml:space="preserve">
     <value>Write an email</value>
   </data>
+  <data name="español" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
   <data name="fallaEnLobby" xml:space="preserve">
     <value>The lobby is failing</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="hasPerdido" xml:space="preserve">
     <value>You lost :(</value>
+  </data>
+  <data name="ingles" xml:space="preserve">
+    <value>English</value>
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Log in</value>

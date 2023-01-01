@@ -117,11 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="borrar" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="casilla" xml:space="preserve">
+    <value>Casilla_</value>
+  </data>
+  <data name="codigoInvalido" xml:space="preserve">
+    <value>El código ingresado es invalido, deben ser de 5 caracteres</value>
+  </data>
+  <data name="confirmaContraseña" xml:space="preserve">
+    <value>Confirma la contraseña</value>
+  </data>
+  <data name="confirmarContraseña" xml:space="preserve">
+    <value>Confirmar contraseña</value>
+  </data>
   <data name="contraseña" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="contraseñasDiferentes" xml:space="preserve">
+    <value>Las contraseñas deben coincidir </value>
+  </data>
   <data name="correoElectronico" xml:space="preserve">
     <value>Correo Electronico</value>
+  </data>
+  <data name="correoInvalido" xml:space="preserve">
+    <value>Ingresa un Correo electronico valido.</value>
   </data>
   <data name="crearPartida" xml:space="preserve">
     <value>Crear partida</value>
@@ -129,14 +153,56 @@
   <data name="enviar" xml:space="preserve">
     <value>Enviar</value>
   </data>
+  <data name="escribaContraseña" xml:space="preserve">
+    <value>Escribe una contraseña</value>
+  </data>
+  <data name="escribeCorreoElectronico" xml:space="preserve">
+    <value>Escribe un correo electronico</value>
+  </data>
+  <data name="español" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="fallaEnLobby" xml:space="preserve">
+    <value>Esta fallando el lobby</value>
+  </data>
+  <data name="faltanJugadores" xml:space="preserve">
+    <value>Debe haber dos personas en la sala para poder jugar</value>
+  </data>
+  <data name="hasGanando" xml:space="preserve">
+    <value>Has ganado, felicidades</value>
+  </data>
+  <data name="hasPerdido" xml:space="preserve">
+    <value>Has perdido :(</value>
+  </data>
+  <data name="ingles" xml:space="preserve">
+    <value>Ingles</value>
+  </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Iniciar Sesion</value>
+  </data>
+  <data name="noCamposVacios" xml:space="preserve">
+    <value>No se pueden dejar campos vacios</value>
+  </data>
+  <data name="nombreUsuario" xml:space="preserve">
+    <value>Nombre de usuario</value>
   </data>
   <data name="partida" xml:space="preserve">
     <value>Partida</value>
   </data>
+  <data name="propia" xml:space="preserve">
+    <value>Propia</value>
+  </data>
   <data name="registrarse" xml:space="preserve">
     <value>Registrarse</value>
+  </data>
+  <data name="salaLlena" xml:space="preserve">
+    <value>La sala a la que intenta unirse se encuentra llena</value>
+  </data>
+  <data name="salir" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="salirDelJuego" xml:space="preserve">
+    <value>Desea abandonar la partida y salir del juego?</value>
   </data>
   <data name="tirar" xml:space="preserve">
     <value>Tirar</value>
@@ -144,7 +210,13 @@
   <data name="todoListo" xml:space="preserve">
     <value>Todo listo</value>
   </data>
+  <data name="tu" xml:space="preserve">
+    <value>(Tu)</value>
+  </data>
   <data name="unirseSala" xml:space="preserve">
-    <value>Unirse a sala</value>
+    <value>Unirse a sala.</value>
+  </data>
+  <data name="usuarioNoRegistrado" xml:space="preserve">
+    <value>El usuario no esta registrado</value>
   </data>
 </root>

@@ -243,5 +243,10 @@ namespace ProyectoBatallaNaval
         {
             throw new NotImplementedException();
         }
+
+        private void buttonConfiguracion_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Configuracion());
+        }
     }
 }

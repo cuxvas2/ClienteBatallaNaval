@@ -187,6 +187,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Español.
+        /// </summary>
+        public static string español {
+            get {
+                return ResourceManager.GetString("español", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Esta fallando el lobby.
         /// </summary>
         public static string fallaEnLobby {
@@ -219,6 +228,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         public static string hasPerdido {
             get {
                 return ResourceManager.GetString("hasPerdido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingles.
+        /// </summary>
+        public static string ingles {
+            get {
+                return ResourceManager.GetString("ingles", resourceCulture);
             }
         }
         

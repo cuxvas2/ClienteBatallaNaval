@@ -72,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Configuracion.xaml.cs">
+      <DependentUpon>Configuracion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioAServidor\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,8 +93,8 @@
     </Compile>
     <Compile Include="Properties\Idiomas\Idioma.es-MX.Designer.cs">
       <DependentUpon>Idioma.es-MX.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Registro.xaml.cs">
       <DependentUpon>Registro.xaml</DependentUpon>
@@ -99,6 +102,10 @@
     <Compile Include="VentanaJuego.xaml.cs">
       <DependentUpon>VentanaJuego.xaml</DependentUpon>
     </Compile>
+    <Page Include="Configuracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InicioSesion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -146,6 +153,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Idioma.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Idiomas\Idioma.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Idioma.es-MX.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Idiomas\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -163,10 +174,6 @@
     <None Include="Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <EmbeddedResource Include="Properties\Idiomas\Idioma.es-MX.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idioma.es-MX.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
