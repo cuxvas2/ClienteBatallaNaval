@@ -9,16 +9,22 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Configuracion">
 
-    <Grid>
+    <Grid Margin="69,0,51,0">
         <!--end Button as a Link button using style-->
-        <Grid Background="White" Height="450" VerticalAlignment="Center">
+        <Grid Background="White" Height="450" VerticalAlignment="Top" Margin="0,2,-1,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="252*" />
                 <!--   <RowDefinition Height="12*" />-->
 
             </Grid.RowDefinitions>
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="520" FontSize="48"><Run Language="es-mx" Text="Opciones"/><LineBreak/><Run Language="es-mx"/></TextBlock>
-            <Label Content="Seleccionar idioma&#xD;&#xA;" HorizontalAlignment="Left" Margin="66,103,0,0" VerticalAlignment="Top" Height="24"/>
+            <Label Content="{x:Static lenguajes:Resources.cambiarIdioma}" HorizontalAlignment="Left" Margin="52,144,0,0" VerticalAlignment="Top" Height="24"/>
+            <ComboBox Name="cambiarIdioma"  HorizontalAlignment="Left" Margin="159,146,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="cambiarIdioma_SelectionChanged" Height="22" SelectedIndex="0">
+                <ComboBoxItem Content="{x:Static lenguajes:Resources.español}"/>
+                <ComboBoxItem Content="{x:Static lenguajes:Resources.ingles}"/>
+
+            </ComboBox>
+            <Label Content="{x:Static lenguajes:Resources.opciones}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="352" FontSize="72" Height="100"/>
+            <Button x:Name="aplicarCambios" Content="Aplicar cambios&#xD;&#xA;" HorizontalAlignment="Left" Margin="389,336,0,0" VerticalAlignment="Top" Height="24" Click="aplicarCambios_Click"/>
         </Grid>
         <!--end Button as a Link button using style-->
 

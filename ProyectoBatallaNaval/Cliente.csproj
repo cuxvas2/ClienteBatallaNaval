@@ -86,13 +86,13 @@
     <Compile Include="Partida.xaml.cs">
       <DependentUpon>Partida.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Idiomas\Idioma.en-US.Designer.cs">
+    <Compile Include="Properties\Idiomas\Resources.en-US.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Idioma.en-US.resx</DependentUpon>
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Idiomas\Idioma.es-MX.Designer.cs">
-      <DependentUpon>Idioma.es-MX.resx</DependentUpon>
+    <Compile Include="Properties\Idiomas\Resources.es-MX.Designer.cs">
+      <DependentUpon>Resources.es-MX.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -149,13 +149,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Properties\Idiomas\Idioma.en-US.resx">
+    <EmbeddedResource Include="Properties\Idiomas\Resources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idioma.en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Idiomas\Idioma.es-MX.resx">
+    <EmbeddedResource Include="Properties\Idiomas\Resources.es-MX.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idioma.es-MX.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.es-MX.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Idiomas\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

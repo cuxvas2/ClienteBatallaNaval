@@ -70,6 +70,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cambiar idioma.
+        /// </summary>
+        public static string cambiarIdioma {
+            get {
+                return ResourceManager.GetString("cambiarIdioma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         public static string cancelar {
@@ -264,6 +273,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         public static string nombreUsuario {
             get {
                 return ResourceManager.GetString("nombreUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Opciones.
+        /// </summary>
+        public static string opciones {
+            get {
+                return ResourceManager.GetString("opciones", resourceCulture);
             }
         }
         

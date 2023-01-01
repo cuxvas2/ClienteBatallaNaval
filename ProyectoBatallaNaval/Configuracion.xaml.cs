@@ -24,18 +24,28 @@ namespace ProyectoBatallaNaval
         {
             InitializeComponent();
         }
-        /*private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+
+ 
+        private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cambiarIdioma.SelectedIndex == 0)
             {
-                Properties.Settings.Default.codigoLenguaje = "es-MX";
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
+
             }
             else
             {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
-                Properties.Settings.Default.codigoLenguaje = "en-US";
-                Properties.Settings.Default.Save();
             }
-        }*/
+        }
+
+        private void aplicarCambios_Click(object sender, RoutedEventArgs e)
+        {
+            //Debe mandar a lobby pero requiere un parametro
+            //NavigationService.Navigate(new Lobby());
+        }
     }
 }

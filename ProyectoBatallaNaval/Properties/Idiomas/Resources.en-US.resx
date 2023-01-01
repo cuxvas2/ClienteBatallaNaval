@@ -120,6 +120,9 @@
   <data name="borrar" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="cambiarIdioma" xml:space="preserve">
+    <value>Changue Languaje</value>
+  </data>
   <data name="cancelar" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="nombreUsuario" xml:space="preserve">
     <value>Nickname</value>
+  </data>
+  <data name="opciones" xml:space="preserve">
+    <value>Options</value>
   </data>
   <data name="partida" xml:space="preserve">
     <value>Game</value>
