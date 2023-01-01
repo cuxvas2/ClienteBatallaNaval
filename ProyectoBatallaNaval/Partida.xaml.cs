@@ -53,7 +53,7 @@ namespace ProyectoBatallaNaval
             this.jugadorLider = jugadorLider;
             this.lobby = lobby;
             this.sala = sala;
-            labelHost.Content = jugadorPartida.Apodo + " (Tú)";
+            labelHost.Content = jugadorPartida.Apodo + Properties.Idiomas.Resources.tu;
             labelContricante.Content = jugadorContricante.Apodo;
             brushBarcoDestruido.ImageSource = imagenBarcoDestruido.Source;
             brushBarco.ImageSource = imagenBarco.Source;
@@ -172,8 +172,8 @@ namespace ProyectoBatallaNaval
 
         private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string mensaje = "Desea abandonar la partida y salir del juego?";
-            MessageBoxResult result = MessageBox.Show(mensaje,"Salir",MessageBoxButton.YesNo,MessageBoxImage.Warning);
+            string mensaje = Properties.Idiomas.Resources.salirDelJuego;
+            MessageBoxResult result = MessageBox.Show(mensaje,Properties.Idiomas.Resources.salir,MessageBoxButton.YesNo,MessageBoxImage.Warning);
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;
@@ -186,7 +186,7 @@ namespace ProyectoBatallaNaval
 
         public void PartidaGanadaCallback(string jugadorGanado)
         {
-            textGanador.Text = "Has ganado, felicidades "+jugadorGanado;
+            textGanador.Text = Properties.Idiomas.Resources.hasGanando+jugadorGanado;
             ActivarBotonesEnPartidaTerminada();
         }
 
@@ -256,7 +256,7 @@ namespace ProyectoBatallaNaval
         {
             buttonTirar.IsEnabled = true;
 
-            String nombreBoton = "casilla_" + coordenadas + "_Propia";
+            String nombreBoton = Properties.Idiomas.Resources.casilla + coordenadas + Properties.Idiomas.Resources.Propia;
             Object botonSolicitado = GridPartida.FindName(nombreBoton);
             if(botonSolicitado is Button)
             {
@@ -270,7 +270,7 @@ namespace ProyectoBatallaNaval
                         if(listaDePosicionesDeBarcos.Count == 0)
                         {
                             cliente.PartidaGanada(jugadorContricante.Apodo, jugadorContricante.Apodo);
-                            textGanador.Text = "Has perdido :(";
+                            textGanador.Text = Properties.Idiomas.Resources.hasPerdido;
                             ActivarBotonesEnPartidaTerminada();
                         }
                     }

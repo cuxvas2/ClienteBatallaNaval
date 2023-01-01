@@ -113,12 +113,12 @@ namespace ProyectoBatallaNaval
         {
             if (textBoxCorreo.Text.Length == 0 || passwordBoxContraseña.Password.Length == 0)
             {
-                mensajeError.Text = "No se pueden dejar campos vacios";
+                mensajeError.Text = Properties.Idiomas.Resources.noCamposVacios;
                 textBoxCorreo.Focus();
             }
             else if(!Regex.IsMatch(textBoxCorreo.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
-                mensajeError.Text = "Ingresa un Correo electronico valido.";
+                mensajeError.Text = Properties.Idiomas.Resources.correoInvalido;
                 textBoxCorreo.Select(0, textBoxCorreo.Text.Length);
                 textBoxCorreo.Focus();
             }
@@ -144,7 +144,7 @@ namespace ProyectoBatallaNaval
                 }
                 else
                 {
-                    mensajeError.Text = "El usuario no esta registrado";
+                    MessageBox.Show(Properties.Idiomas.Resources.correoInvalido);
                 }
             }
         }

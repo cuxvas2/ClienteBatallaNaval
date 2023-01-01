@@ -26,12 +26,12 @@ namespace ProyectoBatallaNaval
         {
             if (textBoxCorreoElectronico.Text.Length == 0)
             {
-                mensajeError.Text = "Escribe un correo electronico";
+                mensajeError.Text = Properties.Idiomas.Resources.escribeCorreoElectronico;
                 textBoxCorreoElectronico.Focus();
             }
             else if (!Regex.IsMatch(textBoxCorreoElectronico.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
-                mensajeError.Text = "Ingresa un Correo electronico valido.";
+                mensajeError.Text = Properties.Idiomas.Resources.correoInvalido;
                 textBoxCorreoElectronico.Select(0, textBoxCorreoElectronico.Text.Length);
                 textBoxCorreoElectronico.Focus();
             }
@@ -42,17 +42,17 @@ namespace ProyectoBatallaNaval
                 string contraseña = passwordBoxContraseña.Password;
                 if (passwordBoxContraseña.Password.Length == 0)
                 {
-                    mensajeError.Text = "Escribe una contraseña";
+                    mensajeError.Text = Properties.Idiomas.Resources.escribaContraseña;
                     passwordBoxContraseña.Focus();
                 }
                 else if(passwordBoxConfirmarContraseña.Password.Length == 0)
                 {
-                    mensajeError.Text = "Confirma la contraseña. ";
+                    mensajeError.Text = Properties.Idiomas.Resources.confirmaContraseña;
                     passwordBoxConfirmarContraseña.Focus();
                 }
                 else if(passwordBoxContraseña.Password != passwordBoxContraseña.Password)
                 {
-                    mensajeError.Text = "La contraseñas deben ser las mismas.";
+                    mensajeError.Text = Properties.Idiomas.Resources.contraseñasDiferentes;
                     passwordBoxConfirmarContraseña.Focus();
                 }
                 else

@@ -79,6 +79,33 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Casilla_.
+        /// </summary>
+        public static string casilla {
+            get {
+                return ResourceManager.GetString("casilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El código ingresado es invalido, deben ser de 5 caracteres.
+        /// </summary>
+        public static string codigoInvalido {
+            get {
+                return ResourceManager.GetString("codigoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirma la contraseña.
+        /// </summary>
+        public static string confirmaContraseña {
+            get {
+                return ResourceManager.GetString("confirmaContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirmar contraseña.
         /// </summary>
         public static string confirmarContraseña {
@@ -97,11 +124,29 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas deben coincidir .
+        /// </summary>
+        public static string contraseñasDiferentes {
+            get {
+                return ResourceManager.GetString("contraseñasDiferentes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo Electronico.
         /// </summary>
         public static string correoElectronico {
             get {
                 return ResourceManager.GetString("correoElectronico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa un Correo electronico valido..
+        /// </summary>
+        public static string correoInvalido {
+            get {
+                return ResourceManager.GetString("correoInvalido", resourceCulture);
             }
         }
         
@@ -124,11 +169,74 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Escribe una contraseña.
+        /// </summary>
+        public static string escribaContraseña {
+            get {
+                return ResourceManager.GetString("escribaContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Escribe un correo electronico.
+        /// </summary>
+        public static string escribeCorreoElectronico {
+            get {
+                return ResourceManager.GetString("escribeCorreoElectronico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esta fallando el lobby.
+        /// </summary>
+        public static string fallaEnLobby {
+            get {
+                return ResourceManager.GetString("fallaEnLobby", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe haber dos personas en la sala para poder jugar.
+        /// </summary>
+        public static string faltanJugadores {
+            get {
+                return ResourceManager.GetString("faltanJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has ganado, felicidades.
+        /// </summary>
+        public static string hasGanando {
+            get {
+                return ResourceManager.GetString("hasGanando", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has perdido :(.
+        /// </summary>
+        public static string hasPerdido {
+            get {
+                return ResourceManager.GetString("hasPerdido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar Sesion.
         /// </summary>
         public static string iniciarSesion {
             get {
                 return ResourceManager.GetString("iniciarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pueden dejar campos vacios.
+        /// </summary>
+        public static string noCamposVacios {
+            get {
+                return ResourceManager.GetString("noCamposVacios", resourceCulture);
             }
         }
         
@@ -151,11 +259,47 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Propia.
+        /// </summary>
+        public static string propia {
+            get {
+                return ResourceManager.GetString("propia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Registrarse.
         /// </summary>
         public static string registrarse {
             get {
                 return ResourceManager.GetString("registrarse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La sala a la que intenta unirse se encuentra llena.
+        /// </summary>
+        public static string salaLlena {
+            get {
+                return ResourceManager.GetString("salaLlena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salir.
+        /// </summary>
+        public static string salir {
+            get {
+                return ResourceManager.GetString("salir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desea abandonar la partida y salir del juego?.
+        /// </summary>
+        public static string salirDelJuego {
+            get {
+                return ResourceManager.GetString("salirDelJuego", resourceCulture);
             }
         }
         
@@ -178,11 +322,29 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Unirse a sala.
+        ///   Busca una cadena traducida similar a (Tu).
+        /// </summary>
+        public static string tu {
+            get {
+                return ResourceManager.GetString("tu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unirse a sala..
         /// </summary>
         public static string unirseSala {
             get {
                 return ResourceManager.GetString("unirseSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El usuario no esta registrado.
+        /// </summary>
+        public static string usuarioNoRegistrado {
+            get {
+                return ResourceManager.GetString("usuarioNoRegistrado", resourceCulture);
             }
         }
     }
