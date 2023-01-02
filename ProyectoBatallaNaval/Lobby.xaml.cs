@@ -138,7 +138,7 @@ namespace ProyectoBatallaNaval
             }
             else
             {
-                MessageBox.Show("La sala a la que intenta unirse se encuentra llena", "Sala llena", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Idiomas.Resources.salaLlena);
             }
         }
 
@@ -155,7 +155,7 @@ namespace ProyectoBatallaNaval
             }
             else
             {
-                MessageBox.Show("El código ingresado es invalido, deben ser de 5 caracteres", "Codigo inválido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Idiomas.Resources.codigoInvalido);
             }
         }
 
@@ -182,7 +182,7 @@ namespace ProyectoBatallaNaval
                 if (!todoListo)
                 {
                     imagenTodoListoHost.Visibility = Visibility.Visible;
-                    buttonIniciarPartida.Content = "Cancelar";
+                    buttonIniciarPartida.Content = Properties.Idiomas.Resources.cancelar;
                     jugadoresListos += 1;
                     todoListo = true;
                     cliente.todoListo(this.sala, this.jugadorPartida.Apodo, jugadoresListos);
@@ -190,7 +190,7 @@ namespace ProyectoBatallaNaval
                 else
                 {
                     imagenTodoListoHost.Visibility = Visibility.Hidden;
-                    buttonIniciarPartida.Content = "Todo listo";
+                    buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
                     jugadoresListos -= 1;
                     todoListo = false;
                     cliente.cancelarTodoListo(this.sala, this.jugadorContricante.Apodo);
@@ -198,7 +198,7 @@ namespace ProyectoBatallaNaval
             }
             else
             {
-                MessageBox.Show("Debe haber dos personas en la sala para poder jugar", "Jugadores en sala", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(Properties.Idiomas.Resources.faltanJugadores);
             }
         }
 
@@ -242,6 +242,11 @@ namespace ProyectoBatallaNaval
         public void TiroCerteroCallback(string coordenadas)
         {
             throw new NotImplementedException();
+        }
+
+        private void buttonConfiguracion_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Configuracion());
         }
     }
 }

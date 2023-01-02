@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,117 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="borrar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="cambiarIdioma" xml:space="preserve">
+    <value>Changue Languaje</value>
+  </data>
+  <data name="cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="casilla" xml:space="preserve">
+    <value>Box_</value>
+  </data>
+  <data name="codigoInvalido" xml:space="preserve">
+    <value>The code entered is invalid, it must be 5 characters long</value>
+  </data>
+  <data name="confirmaContraseña" xml:space="preserve">
+    <value>Confirm the password</value>
+  </data>
+  <data name="confirmarContraseña" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="contraseña" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="contraseñasDiferentes" xml:space="preserve">
+    <value>Passwords must match</value>
+  </data>
+  <data name="correoElectronico" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="correoInvalido" xml:space="preserve">
+    <value>Enter a valid email.</value>
+  </data>
+  <data name="crearPartida" xml:space="preserve">
+    <value>Create game</value>
+  </data>
+  <data name="enviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="escribaContraseña" xml:space="preserve">
+    <value>Enter a password</value>
+  </data>
+  <data name="escribeCorreoElectronico" xml:space="preserve">
+    <value>Write an email</value>
+  </data>
+  <data name="español" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="fallaEnLobby" xml:space="preserve">
+    <value>The lobby is failing</value>
+  </data>
+  <data name="faltanJugadores" xml:space="preserve">
+    <value>There must be two people in the room to play</value>
+  </data>
+  <data name="hasGanando" xml:space="preserve">
+    <value>You have won, congratulations</value>
+  </data>
+  <data name="hasPerdido" xml:space="preserve">
+    <value>You lost :(</value>
+  </data>
+  <data name="ingles" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="iniciarSesion" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="noCamposVacios" xml:space="preserve">
+    <value>Fields cannot be left empty</value>
+  </data>
+  <data name="nombreUsuario" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+  <data name="opciones" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="partida" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="propia" xml:space="preserve">
+    <value>own</value>
+  </data>
+  <data name="registrarse" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="salaLlena" xml:space="preserve">
+    <value>The room you are trying to join is full</value>
+  </data>
+  <data name="salir" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="salirDelJuego" xml:space="preserve">
+    <value>Do you want to leave the game and exit the game?</value>
+  </data>
+  <data name="tirar" xml:space="preserve">
+    <value>Throw</value>
+  </data>
+  <data name="todoListo" xml:space="preserve">
+    <value>All ready</value>
+  </data>
+  <data name="tu" xml:space="preserve">
+    <value>(Me)</value>
+  </data>
+  <data name="unirseSala" xml:space="preserve">
+    <value>Join room</value>
+  </data>
+  <data name="usuarioNoRegistrado" xml:space="preserve">
+    <value>The user is not registered</value>
+  </data>
 </root>

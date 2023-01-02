@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoBatallaNaval"
         mc:Ignorable="d"
+        xmlns:lenguajes="clr-namespace:ProyectoBatallaNaval.Properties.Idiomas"
         Title="Inicio de sesion" Height="350" Width="525">
     <Grid Height="350" Width="525" Background="Bisque">
-        <TextBlock HorizontalAlignment="Left" Margin="222,10,0,0" x:Name="Cabecera" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed" Text="Inicio de sesion" TextAlignment="Center"/>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="180,93,0,0" Name="textBoxCorreo" VerticalAlignment="Top" Width="247" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="180,140,0,0" Name="passwordBoxContraseña" VerticalAlignment="Top" Width="246" />
-        <Button x:Name="buttonIniciarSesion" Content="Iniciar sesion" HorizontalAlignment="Left" Margin="208,187,0,0" VerticalAlignment="Top" Click="buttonIniciarSesion_Click"/>
-        <Button x:Name="buttonRegistrarse" Content="Registrarse" HorizontalAlignment="Left" Margin="330,187,0,0" VerticalAlignment="Top" Click="buttonRegistrarse_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="115,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-mx" Text="Contraseña"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="77,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21"><Run Language="es-mx" Text="Correo electronico"/><LineBreak/><Run Language="es-mx"/><LineBreak/><Run Language="es-mx"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="222,10,0,0" x:Name="Cabecera" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed" Text="{x:Static lenguajes:Resources.iniciarSesion}" TextAlignment="Center"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="148,90,0,0" Name="textBoxCorreo" VerticalAlignment="Top" Width="247" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="148,137,0,0" Name="passwordBoxContraseña" VerticalAlignment="Top" Width="246" />
+        <Button x:Name="buttonIniciarSesion" Content="{x:Static lenguajes:Resources.iniciarSesion}" HorizontalAlignment="Left" Margin="163,198,0,0" VerticalAlignment="Top" Click="buttonIniciarSesion_Click" Width="78"/>
+        <Button x:Name="buttonRegistrarse" Content="{x:Static lenguajes:Resources.registrarse}" HorizontalAlignment="Left" Margin="304,198,0,0" VerticalAlignment="Top" Click="buttonRegistrarse_Click" Width="66"/>
+        <TextBlock HorizontalAlignment="Left" Margin="83,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-mx" Text="{x:Static lenguajes:Resources.contraseña}"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="45,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21"><Run Language="es-mx" Text="{x:Static lenguajes:Resources.correoElectronico}"/><LineBreak/><Run Language="es-mx"/><LineBreak/><Run Language="es-mx"/></TextBlock>
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="mensajeError" VerticalAlignment="Top" Width="247" Margin="180,245,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
     </Grid>
 </Page>
