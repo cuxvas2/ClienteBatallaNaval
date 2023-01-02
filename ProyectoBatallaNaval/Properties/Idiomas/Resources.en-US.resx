@@ -214,10 +214,10 @@
     <value>Throw</value>
   </data>
   <data name="todoListo" xml:space="preserve">
-    <value>All ready</value>
+    <value>Ready</value>
   </data>
   <data name="tu" xml:space="preserve">
-    <value>(Me)</value>
+    <value>(You)</value>
   </data>
   <data name="unirseSala" xml:space="preserve">
     <value>Join room</value>
