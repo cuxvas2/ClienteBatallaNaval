@@ -298,12 +298,6 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Conectado")]
         System.Threading.Tasks.Task ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
-        void estaEscribiendo(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/estaEscribiendo")]
-        System.Threading.Tasks.Task estaEscribiendoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
-        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
         void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
@@ -339,6 +333,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
         System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EliminarSala")]
+        void EliminarSala(string codigoSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EliminarSala")]
+        System.Threading.Tasks.Task EliminarSalaAsync(string codigoSala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Tiro")]
         void Tiro(string coordenadas, string contricante, string sala, string NombreJugador);
@@ -381,6 +381,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TiroCertero")]
         System.Threading.Tasks.Task TiroCerteroAsync(string coordenadas, string contricante);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CerrarJuego")]
+        void CerrarJuego(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CerrarJuego")]
+        System.Threading.Tasks.Task CerrarJuegoAsync(string nombreJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -471,14 +477,6 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
             return base.Channel.ConectadoAsync(jugador);
         }
         
-        public void estaEscribiendo(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            base.Channel.estaEscribiendo(jugador);
-        }
-        
-        public System.Threading.Tasks.Task estaEscribiendoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.estaEscribiendoAsync(jugador);
-        }
-        
         public void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
             base.Channel.desconectado(jugador);
         }
@@ -525,6 +523,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador) {
             return base.Channel.cancelarTodoListoAsync(sala, jugador);
+        }
+        
+        public void EliminarSala(string codigoSala) {
+            base.Channel.EliminarSala(codigoSala);
+        }
+        
+        public System.Threading.Tasks.Task EliminarSalaAsync(string codigoSala) {
+            return base.Channel.EliminarSalaAsync(codigoSala);
         }
         
         public void Tiro(string coordenadas, string contricante, string sala, string NombreJugador) {
@@ -581,6 +587,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task TiroCerteroAsync(string coordenadas, string contricante) {
             return base.Channel.TiroCerteroAsync(coordenadas, contricante);
+        }
+        
+        public void CerrarJuego(string nombreJugador) {
+            base.Channel.CerrarJuego(nombreJugador);
+        }
+        
+        public System.Threading.Tasks.Task CerrarJuegoAsync(string nombreJugador) {
+            return base.Channel.CerrarJuegoAsync(nombreJugador);
         }
     }
 }

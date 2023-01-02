@@ -65,7 +65,17 @@ namespace ProyectoBatallaNaval
                     jugador.CorreoElectronico = correoElectronico;
                     jugador.Apodo = nombreUsuario;
 
-                    servidor.registarUsuario(jugador);
+                    bool jugadorRegistrado = false;
+                    jugadorRegistrado = servidor.registarUsuario(jugador);
+                    if(jugadorRegistrado == false)
+                    {
+                        mensajeError.Text = "Credenciales no validas, intenta con otras";
+                    }
+                    else
+                    {
+                        mensajeError.Text = "Jugador registrado";
+                        Reiniciar();
+                    }
                 }
             }
         }

@@ -136,9 +136,11 @@ namespace ProyectoBatallaNaval
                     ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
                     //Agregar su contecto desde aqui?
                     clienteJoin.Conectado(jugador);
+
+                    //Inventigar como pasar el objeto jugador a la ventana desde aquí
                     
+                    //VentanaJuego ventana = Application.Current.MainWindow.Closing -= MetodoParaCerrarLaVentana();
                     NavigationService.Navigate(new Lobby(jugador));
-                    
                     
                 }
                 else

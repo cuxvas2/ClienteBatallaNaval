@@ -64,13 +64,7 @@ namespace ProyectoBatallaNaval
             columnDefinitionContricanteNumerosPosiciones. Width = new GridLength(0);
             rowDefinitionUltima.Height = new GridLength(50);
             buttonTirar.Visibility = Visibility.Hidden;
-            posicionarBarcos();
 
-        }
-
-        private void posicionarBarcos()
-        {
-            
         }
 
         private void actualizarCallbackEnServidor()
@@ -172,22 +166,14 @@ namespace ProyectoBatallaNaval
 
         private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            string mensaje = "Desea abandonar la partida y salir del juego?";
-            MessageBoxResult result = MessageBox.Show(mensaje,"Salir",MessageBoxButton.YesNo,MessageBoxImage.Warning);
-            if (result == MessageBoxResult.No)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                this.lobby = null;
-            }              
+                        
         }
 
         public void PartidaGanadaCallback(string jugadorGanado)
         {
             textGanador.Text = "Has ganado, felicidades "+jugadorGanado;
             ActivarBotonesEnPartidaTerminada();
+            cliente.TerminarPartida(jugadorPartida.Apodo);
         }
 
         private void ActivarBotonesEnPartidaTerminada()
@@ -272,6 +258,7 @@ namespace ProyectoBatallaNaval
                             cliente.PartidaGanada(jugadorContricante.Apodo, jugadorContricante.Apodo);
                             textGanador.Text = "Has perdido :(";
                             ActivarBotonesEnPartidaTerminada();
+                            cliente.TerminarPartida(jugadorPartida.Apodo);
                         }
                     }
                     
@@ -296,6 +283,8 @@ namespace ProyectoBatallaNaval
             rowDefinitionUltima.Height = new GridLength(100);
             buttonPosicionListas.IsEnabled = false;
             buttonPosicionListas.Visibility = Visibility.Hidden;
+            //Quitarles el evento clic a los botones 
+
             //Hacer un método para saber cuando los dos tengan las posiciones listas
             //O si uno esta comodadndo las piezas y el otro tira que se espere hasta que termine de poner las posiciones
             //y despes de poner las posiciones que se imprima el disparo

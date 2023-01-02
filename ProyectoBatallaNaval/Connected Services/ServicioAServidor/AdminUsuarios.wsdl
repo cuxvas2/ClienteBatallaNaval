@@ -92,9 +92,6 @@
   <wsdl:message name="IAdminiSocial_Conectado_InputMessage">
     <wsdl:part name="parameters" element="tns:Conectado" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_estaEscribiendo_InputMessage">
-    <wsdl:part name="parameters" element="tns:estaEscribiendo" />
-  </wsdl:message>
   <wsdl:message name="IAdminiSocial_desconectado_InputMessage">
     <wsdl:part name="parameters" element="tns:desconectado" />
   </wsdl:message>
@@ -112,6 +109,9 @@
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_cancelarTodoListo_InputMessage">
     <wsdl:part name="parameters" element="tns:cancelarTodoListo" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_EliminarSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarSala" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_Tiro_InputMessage">
     <wsdl:part name="parameters" element="tns:Tiro" />
@@ -133,6 +133,9 @@
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_TiroCertero_InputMessage">
     <wsdl:part name="parameters" element="tns:TiroCertero" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiSocial_CerrarJuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarJuego" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_actualizarJugadores_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:actualizarJugadores" />
@@ -240,9 +243,6 @@
     <wsdl:operation name="Conectado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Conectado" message="tns:IAdminiSocial_Conectado_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="estaEscribiendo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/estaEscribiendo" message="tns:IAdminiSocial_estaEscribiendo_InputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="desconectado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/desconectado" message="tns:IAdminiSocial_desconectado_InputMessage" />
     </wsdl:operation>
@@ -260,6 +260,9 @@
     </wsdl:operation>
     <wsdl:operation name="cancelarTodoListo">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo" message="tns:IAdminiSocial_cancelarTodoListo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/EliminarSala" message="tns:IAdminiSocial_EliminarSala_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Tiro">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Tiro" message="tns:IAdminiSocial_Tiro_InputMessage" />
@@ -281,6 +284,9 @@
     </wsdl:operation>
     <wsdl:operation name="TiroCertero">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/TiroCertero" message="tns:IAdminiSocial_TiroCertero_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarJuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/CerrarJuego" message="tns:IAdminiSocial_CerrarJuego_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="actualizarJugadores">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/actualizarJugadores" message="tns:IAdminiSocial_actualizarJugadores_OutputCallbackMessage" />
@@ -392,12 +398,6 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="estaEscribiendo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/estaEscribiendo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="desconectado">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/desconectado" style="document" />
       <wsdl:input>
@@ -430,6 +430,12 @@
     </wsdl:operation>
     <wsdl:operation name="cancelarTodoListo">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/cancelarTodoListo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/EliminarSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -472,6 +478,12 @@
     </wsdl:operation>
     <wsdl:operation name="TiroCertero">
       <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/TiroCertero" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarJuego">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/CerrarJuego" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

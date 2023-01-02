@@ -29,10 +29,14 @@ namespace ProyectoBatallaNaval
         private Jugador jugadorContricante;
         private bool jugadorLider = false;
         private bool todoListo = false;
+        private InstanceContext context;
+        private readonly ServicioAServidor.AdminiSocialClient cliente;
         public Lobby(Jugador jugador)
         {
             InitializeComponent();
             jugadorPartida = jugador;
+            context = new InstanceContext(this);
+            cliente = new ServicioAServidor.AdminiSocialClient(context);
         }
 
         public void actualizarJugadores(Jugador[] jugadores)
@@ -60,8 +64,6 @@ namespace ProyectoBatallaNaval
         private void buttonEnviar_Click(object sender, RoutedEventArgs e)
         {
             string mensaje = txtMensaje.Text;
-            InstanceContext context = new InstanceContext(this);
-            ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
             Chat chat = new Chat();
             chat.Remitente = jugadorPartida.Apodo;
             chat.Sala = this.sala;
@@ -73,8 +75,6 @@ namespace ProyectoBatallaNaval
 
         private void buttonCrearPartida_Click(object sender, RoutedEventArgs e)
         {
-            InstanceContext context = new InstanceContext(this);
-            ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
             cliente.crearSala(this.jugadorPartida);
 
         }
@@ -83,6 +83,11 @@ namespace ProyectoBatallaNaval
         {
             if (inicar)
             {
+                imagenTodoListoHost.Visibility = Visibility.Hidden;
+                imagenTodoListoContricante.Visibility = Visibility.Hidden;
+                buttonIniciarPartida.Content = "Todo listo";
+                jugadoresListos = 0;
+                todoListo = false;
                 NavigationService.Navigate(new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala));
             }
         }
@@ -143,8 +148,6 @@ namespace ProyectoBatallaNaval
             if (codigo.Length == 5)
             {
                 this.sala = codigo;
-                InstanceContext context = new InstanceContext(this);
-                ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
                 cliente.unirseASala(codigo, jugadorPartida);
                 textBoxCodigoSala.Text = "";
                 labelCodigoPartida.Content = codigo;
@@ -158,8 +161,10 @@ namespace ProyectoBatallaNaval
 
         private void buttonAbandonarSala_Click(object sender, RoutedEventArgs e)
         {
-            //Poner el método para eliminar el callback del diccionario del servidor
-            //y si solo queda una persona en la sala eliminar la sala por completo
+            if(jugadorContricante == null)
+            {
+                cliente.EliminarSala(labelCodigoPartida.Content.ToString());
+            }
             labelCodigoPartida.Content = "";
             buttonAbandonarSala.Visibility = Visibility.Hidden;
             jugadorContricante = null;
@@ -172,10 +177,8 @@ namespace ProyectoBatallaNaval
 
         private void buttonIniciarPartida_Click(object sender, RoutedEventArgs e)
         {
-            if (this.jugadorContricante.Apodo != null)
+            if (this.jugadorContricante != null)
             {
-                InstanceContext context = new InstanceContext(this);
-                ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
                 if (!todoListo)
                 {
                     imagenTodoListoHost.Visibility = Visibility.Visible;
@@ -207,8 +210,6 @@ namespace ProyectoBatallaNaval
 
         public void recibirTodoListoParaIniciar(string contricante)
         {
-            InstanceContext context = new InstanceContext(this);
-            ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
             cliente.IniciarPartida(this.jugadorPartida.Apodo);
             
         }
@@ -221,7 +222,6 @@ namespace ProyectoBatallaNaval
 
         public void insertarDisparo(string coordenadas)
         {
-            MessageBox.Show("Esta fallando en lobby");
         }
 
         public void primerTiroCallback(bool iniciar)
