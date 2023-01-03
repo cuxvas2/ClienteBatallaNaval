@@ -59,20 +59,20 @@ namespace ProyectoBatallaNaval
             brushBarco.ImageSource = imagenBarco.Source;
             contexto = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(contexto);
-            actualizarCallbackEnServidor();
+            ActualizarCallbackEnServidor();
             columnDefinitionContricante.Width = new GridLength(0);
             columnDefinitionContricanteNumerosPosiciones. Width = new GridLength(0);
             rowDefinitionUltima.Height = new GridLength(50);
             buttonTirar.Visibility = Visibility.Hidden;
-
+            
         }
 
-        private void actualizarCallbackEnServidor()
+        private void ActualizarCallbackEnServidor()
         {
             cliente.ActualizarCallbackEnPartida(jugadorPartida.Apodo);
         }
 
-        private void iniciarPartida()
+        private void IniciarPartida()
         {
             buttonTirar.Visibility = Visibility.Visible;
             if (jugadorLider)
@@ -88,32 +88,32 @@ namespace ProyectoBatallaNaval
             if (boton != null || boton != ultimoBotonSeleccionado || !listaDePosicionesPulsadas.Contains(botonPresionadoCordenadas))
             {
                 string nombreBoton = boton.Name;
-                string posiciones = obtenerPosicionString(nombreBoton);
+                string posiciones = ObtenerPosicionString(nombreBoton);
                 if(ultimoBotonSeleccionado != null && !listaDePosicionesPulsadas.Contains(posiciones))
                 {
-                    volverTransparenteElBoton();
+                    VolverTransparenteElBoton();
                     
                 }
                 ultimoBotonSeleccionado = boton;
-                cambiarColorVerdeABoton();
+                CambiarColorVerdeABoton();
                 botonPresionadoCordenadas = posiciones;
             }
                 
         }
 
-        private void volverTransparenteElBoton()
+        private void VolverTransparenteElBoton()
         {
             ultimoBotonSeleccionado.Background = Brushes.Transparent;
         }
 
-        private string obtenerPosicionString(string nombreBoton)
+        private string ObtenerPosicionString(string nombreBoton)
         {
             string[] nombreBotonSeparado = nombreBoton.Split('_');
             string posicionString = nombreBotonSeparado[1];
             return posicionString;
         }
 
-        private void buttonTirar_Click(object sender, RoutedEventArgs e)
+        private void ButtonTirar_Click(object sender, RoutedEventArgs e)
         {
             if(botonPresionadoCordenadas == null)
             {
@@ -138,7 +138,7 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void cambiarColorVerdeABoton()
+        private void CambiarColorVerdeABoton()
         {
             ultimoBotonSeleccionado.Background = Brushes.Green;
         }
@@ -174,6 +174,7 @@ namespace ProyectoBatallaNaval
             }
             else
             {
+                cliente.CerrarJuego(jugadorPartida.Apodo);
                 this.lobby = null;
             }              
         }
@@ -192,7 +193,7 @@ namespace ProyectoBatallaNaval
             textGanador.Visibility = Visibility.Visible;
         }
 
-        private void btnAtras_Click(object sender, RoutedEventArgs e)
+        private void BtnAtras_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(lobby);
         }
@@ -285,7 +286,7 @@ namespace ProyectoBatallaNaval
             return;
         }
 
-        private void buttonPosicionListas_Click(object sender, RoutedEventArgs e)
+        private void ButtonPosicionListas_Click(object sender, RoutedEventArgs e)
         {
             columnDefinitionContricante.Width = new GridLength(1, GridUnitType.Star);
             columnDefinitionContricanteNumerosPosiciones.Width = new GridLength(30);
@@ -297,7 +298,7 @@ namespace ProyectoBatallaNaval
             //Hacer un método para saber cuando los dos tengan las posiciones listas
             //O si uno esta comodadndo las piezas y el otro tira que se espere hasta que termine de poner las posiciones
             //y despes de poner las posiciones que se imprima el disparo
-            iniciarPartida();
+            IniciarPartida();
         }
 
         public void TiroCerteroCallback(string coordenadas)
@@ -312,7 +313,7 @@ namespace ProyectoBatallaNaval
             if(sender is Button)
             {
                 Button buttonSeleccionado = sender as Button;
-                string posicionBarco = obtenerPosicionString(buttonSeleccionado.Name);
+                string posicionBarco = ObtenerPosicionString(buttonSeleccionado.Name);
                 int numeroDeBarcos = 0;
                 if(listaDePosicionesDeBarcos != null)
                 {
@@ -332,18 +333,18 @@ namespace ProyectoBatallaNaval
                         listaDePosicionesDeBarcos.Remove(posicionBarco);
                     }
                 }
-                habilitarBotonTodoListo();
+                HabilitarBotonTodoListo();
             }
         }
 
-        private void habilitarBotonTodoListo()
+        private void HabilitarBotonTodoListo()
         {
             int numeroDeBarcos = 0;
             if (listaDePosicionesDeBarcos != null)
             {
                 numeroDeBarcos = listaDePosicionesDeBarcos.Count;
             }
-            if (numeroDeBarcos == 4 && buttonPosicionListas.IsEnabled == false)
+            if (numeroDeBarcos == 4 && !buttonPosicionListas.IsEnabled)
             {
                 buttonPosicionListas.IsEnabled = true;
                 buttonPosicionListas.Visibility = Visibility.Visible;

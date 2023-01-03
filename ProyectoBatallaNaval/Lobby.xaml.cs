@@ -1,19 +1,9 @@
 ﻿using ProyectoBatallaNaval.ServicioAServidor;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProyectoBatallaNaval
 {
@@ -22,14 +12,14 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class Lobby : Page, IAdminiSocialCallback
     {
-        private Jugador jugadorPartida;
+        private readonly Jugador jugadorPartida;
         private string sala;
         private int jugadoresEnSala = 0;
         private int jugadoresListos = 0;
         private Jugador jugadorContricante;
         private bool jugadorLider = false;
         private bool todoListo = false;
-        private InstanceContext context;
+        private readonly InstanceContext context;
         private readonly ServicioAServidor.AdminiSocialClient cliente;
         public Lobby(Jugador jugador)
         {
@@ -61,7 +51,7 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        private void buttonEnviar_Click(object sender, RoutedEventArgs e)
+        private void ButtonEnviar_Click(object sender, RoutedEventArgs e)
         {
             string mensaje = txtMensaje.Text;
             Chat chat = new Chat();
@@ -73,7 +63,7 @@ namespace ProyectoBatallaNaval
 
         }
 
-        private void buttonCrearPartida_Click(object sender, RoutedEventArgs e)
+        private void ButtonCrearPartida_Click(object sender, RoutedEventArgs e)
         {
             cliente.crearSala(this.jugadorPartida);
 
@@ -119,7 +109,7 @@ namespace ProyectoBatallaNaval
         {
             if (seUnio)
             {
-                if(jugador.Apodo != this.jugadorPartida.Apodo)
+                if (jugador.Apodo != this.jugadorPartida.Apodo)
                 {
                     this.sala = sala;
                     jugadorContricante = jugador;
@@ -131,7 +121,8 @@ namespace ProyectoBatallaNaval
                     labelBarcoHost.Content = this.jugadorPartida.Apodo;
                     labelBarcoHost.Visibility = Visibility.Visible;
                     imagenBarcoHost.Visibility = Visibility.Visible;
-                }else if (jugador.Apodo == this.jugadorPartida.Apodo)
+                }
+                else if (jugador.Apodo == this.jugadorPartida.Apodo)
                 {
                     this.jugadoresEnSala += 1;
                 }
@@ -142,7 +133,7 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void buttonUnirseSala_Click(object sender, RoutedEventArgs e)
+        private void ButtonUnirseSala_Click(object sender, RoutedEventArgs e)
         {
             String codigo = textBoxCodigoSala.Text;
             if (codigo.Length == 5)
@@ -159,9 +150,9 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void buttonAbandonarSala_Click(object sender, RoutedEventArgs e)
+        private void ButtonAbandonarSala_Click(object sender, RoutedEventArgs e)
         {
-            if(jugadorContricante == null)
+            if (jugadorContricante == null)
             {
                 cliente.EliminarSala(labelCodigoPartida.Content.ToString());
             }
@@ -175,7 +166,7 @@ namespace ProyectoBatallaNaval
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
         }
 
-        private void buttonIniciarPartida_Click(object sender, RoutedEventArgs e)
+        private void ButtonIniciarPartida_Click(object sender, RoutedEventArgs e)
         {
             if (this.jugadorContricante != null)
             {
@@ -211,7 +202,7 @@ namespace ProyectoBatallaNaval
         public void recibirTodoListoParaIniciar(string contricante)
         {
             cliente.IniciarPartida(this.jugadorPartida.Apodo);
-            
+
         }
 
         public void recibirCancelarListo(string contricante)
@@ -222,6 +213,7 @@ namespace ProyectoBatallaNaval
 
         public void insertarDisparo(string coordenadas)
         {
+            return;
         }
 
         public void primerTiroCallback(bool iniciar)
@@ -236,7 +228,7 @@ namespace ProyectoBatallaNaval
 
         public void ActualizarCallbackEnPartidaCallback(bool actualizado)
         {
-            
+            return;
         }
 
         public void TiroCerteroCallback(string coordenadas)
@@ -244,7 +236,7 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        private void buttonConfiguracion_Click(object sender, RoutedEventArgs e)
+        private void ButtonConfiguracion_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Configuracion());
         }

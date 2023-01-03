@@ -23,6 +23,7 @@ namespace ProyectoBatallaNaval
 {
     public partial class InicioSesion : Page, IAdminiSocialCallback
     {
+        private Jugador jugadorPartida;
 
         public InicioSesion()
         {
@@ -31,7 +32,7 @@ namespace ProyectoBatallaNaval
 
         public void ActualizarCallbackEnPartidaCallback(bool actualizado)
         {
-            
+            return;
         }
 
         public void actualizarJugadores(Jugador[] jugadores)
@@ -106,10 +107,10 @@ namespace ProyectoBatallaNaval
 
         public void unionDeJugador(Jugador jugador)
         {
-            
+            return;
         }
 
-        private void buttonIniciarSesion_Click(object sender, RoutedEventArgs e)
+        private void ButtonIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             if (textBoxCorreo.Text.Length == 0 || passwordBoxContraseña.Password.Length == 0)
             {
@@ -131,18 +132,20 @@ namespace ProyectoBatallaNaval
                 Boolean regisrado = cliente.iniciarSesion(correoElectronico, password);
                 if (regisrado)
                 {
-                    Jugador jugador = new Jugador();
+                    Jugador jugador;
                     jugador = cliente.recuperarJugadorPorCorreo(correoElectronico);
-                    InstanceContext context = new InstanceContext(this);
-                    ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
-                    //Agregar su contecto desde aqui?
-                    clienteJoin.Conectado(jugador);
+                    if(jugador != null)
+                    {
+                        jugadorPartida = jugador;
+                        Application.Current.MainWindow.Closing += CerrandoVentana;
+                        InstanceContext context = new InstanceContext(this);
+                        ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
+                        //Agregar su contecto desde aqui?
+                        clienteJoin.Conectado(jugador);
 
-                    //Inventigar como pasar el objeto jugador a la ventana desde aquí
-                    
-                    //VentanaJuego ventana = Application.Current.MainWindow.Closing -= MetodoParaCerrarLaVentana();
-                    NavigationService.Navigate(new Lobby(jugador));
-                    
+                        NavigationService.Navigate(new Lobby(jugador));
+                    }
+                     
                 }
                 else
                 {
@@ -151,12 +154,32 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void buttonRegistrarse_Click(object sender, RoutedEventArgs e)
+        private void ButtonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Registro());
         }
 
 
+
+        private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string mensaje = Properties.Idiomas.Resources.salirDelJuego;
+            MessageBoxResult result = MessageBox.Show(mensaje, Properties.Idiomas.Resources.salir, MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                if(jugadorPartida != null)
+                {
+                    InstanceContext context = new InstanceContext(this);
+                    ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
+                    cliente.CerrarJuego(jugadorPartida.Apodo);
+                }
+                
+            }
+        }
 
     }
 }

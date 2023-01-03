@@ -181,14 +181,14 @@
             <TextBlock Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">5</TextBlock>
         </Grid>
 
-        <Button x:Name="buttonTirar" Content="{x:Static lenguajes:Resources.tirar}" Height="34" Width="108" IsEnabled="False" Click="buttonTirar_Click" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="buttonPosicionListas" Content="Listo" Click="buttonPosicionListas_Click" Height="34" Width="108" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="buttonTirar" Content="{x:Static lenguajes:Resources.tirar}" Height="34" Width="108" IsEnabled="False" Click="ButtonTirar_Click" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="buttonPosicionListas" Content="Listo" Click="ButtonPosicionListas_Click" Height="34" Width="108" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Visibility="Hidden" IsEnabled="False"/>
         <Label Content="{x:Static lenguajes:Resources.partida}" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="4"/>
         <Label x:Name="labelContricante" Content="" Width="219" FontSize="16" FontWeight="Bold" Grid.Row="3" Grid.Column="5" VerticalAlignment="Top" Margin="0,15,0,0"/>
         <Label x:Name="labelHost" Content="" Width="219" FontWeight="Bold" FontSize="16" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" Margin="0,15,0,0"/>
         <Label x:Name="labelSeleccionarPosicion" Content="Debes seleccionar una posicion para tirar" FontWeight="Bold" FontSize="16" Visibility="Hidden" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
         <TextBlock x:Name="textGanador" TextWrapping="Wrap" Text="El ganador es " Height="59" FontSize="36" FontWeight="Bold" Visibility="Hidden" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center"/>
-        <Button x:Name="btnAtras" Content="Atras" Height="25" Width="72" Click="btnAtras_Click" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0" Background="#FF3E45AA" BorderBrush="#FF003D71" FontFamily="Segoe UI Black" Foreground="#FFD1EAE9" Visibility="Hidden"/>
+        <Button x:Name="btnAtras" Content="Atras" Height="25" Width="72" Click="BtnAtras_Click" Grid.Row="3" Grid.Column="5" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,10,0" Background="#FF3E45AA" BorderBrush="#FF003D71" FontFamily="Segoe UI Black" Foreground="#FFD1EAE9" Visibility="Hidden"/>
 
     </Grid>
 </Page>
