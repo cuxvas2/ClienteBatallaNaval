@@ -267,5 +267,49 @@ namespace ProyectoBatallaNaval
                 return contraseñaHasheada.ToString();
             }
         }
+
+        private void ButtonIniviarComoInvitado_Click(object sender, RoutedEventArgs e)
+        {
+            Jugador jugador = new Jugador();
+            jugador.Apodo = GenerarApodo();
+            jugador.Contraseña = "";
+            jugador.CorreoElectronico = jugador.Apodo + "@invitado.com";
+            jugador.IdJuego = -1;
+
+            jugadorPartida = jugador;
+            Application.Current.MainWindow.Closing += CerrandoVentana;
+            InstanceContext context = new InstanceContext(this);
+            ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
+            try
+            {
+                clienteJoin.Conectado(jugador);
+                NavigationService.Navigate(new Lobby(jugador));
+            }
+            catch (TimeoutException)
+            {
+                AvisoErrorTiempoAgotado();
+                NavigationService.Refresh();
+            }
+            catch (CommunicationException)
+            {
+                AvisoDeErrorConElServidor();
+                NavigationService.Refresh();
+            }
+
+            NavigationService.Navigate(new Lobby(jugador));
+        }
+
+        private string GenerarApodo()
+        {
+            Random r = new Random();
+            String codigo = "";
+            for (int i = 0; i < 5; i++)
+            {
+                int numero = r.Next(0, 10);
+                string numeroEnString = numero.ToString();
+                codigo += numeroEnString;
+            }
+            return "Invitado" + codigo;
+        }
     }
 }
