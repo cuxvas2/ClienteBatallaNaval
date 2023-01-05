@@ -11,8 +11,8 @@
 namespace ProyectoBatallaNaval.ServicioAServidor {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using System.ServiceModel;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Jugador", Namespace="http://schemas.datacontract.org/2004/07/Entidades")]
@@ -387,6 +387,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CerrarJuego")]
         System.Threading.Tasks.Task CerrarJuegoAsync(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ExpulsarDeSala")]
+        void ExpulsarDeSala(string sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ExpulsarDeSala")]
+        System.Threading.Tasks.Task ExpulsarDeSalaAsync(string sala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -439,6 +445,9 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/TiroCerteroCallback", ReplyAction="http://tempuri.org/IAdminiSocial/TiroCerteroCallbackResponse")]
         void TiroCerteroCallback(string coordenadas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirExpulsacion", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirExpulsacionResponse")]
+        void RecibirExpulsacion();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -595,6 +604,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task CerrarJuegoAsync(string nombreJugador) {
             return base.Channel.CerrarJuegoAsync(nombreJugador);
+        }
+        
+        public void ExpulsarDeSala(string sala) {
+            base.Channel.ExpulsarDeSala(sala);
+        }
+        
+        public System.Threading.Tasks.Task ExpulsarDeSalaAsync(string sala) {
+            return base.Channel.ExpulsarDeSalaAsync(sala);
         }
     }
 }

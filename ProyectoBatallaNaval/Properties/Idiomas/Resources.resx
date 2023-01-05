@@ -165,6 +165,9 @@
   <data name="español" xml:space="preserve">
     <value>Español</value>
   </data>
+  <data name="expulsar" xml:space="preserve">
+    <value>Expulsar</value>
+  </data>
   <data name="fallaEnLobby" xml:space="preserve">
     <value>Esta fallando el lobby</value>
   </data>

@@ -180,6 +180,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ExpulsarDeSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sala" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="actualizarJugadores">
     <xs:complexType>
       <xs:sequence>
@@ -350,6 +357,16 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="TiroCerteroCallbackResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecibirExpulsacion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecibirExpulsacionResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

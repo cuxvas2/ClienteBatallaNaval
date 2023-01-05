@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:ProyectoBatallaNaval"
         mc:Ignorable="d"
         Title="Batalla Naval" Height="450" Width="800"
-        Icon="Imagenes/embarcacion.ico" SizeToContent="WidthAndHeight"
-        Closing="CerrandoVentana">
+        Icon="Imagenes/embarcacion.ico" SizeToContent="WidthAndHeight">
     <Grid>
         <Frame x:Name="frameParaPaginas" Content="" NavigationUIVisibility="Hidden" Source="/InicioSesion.xaml"/>
 

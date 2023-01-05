@@ -50,7 +50,7 @@ namespace ProyectoBatallaNaval
                     mensajeError.Text = Properties.Idiomas.Resources.confirmaContraseña;
                     passwordBoxConfirmarContraseña.Focus();
                 }
-                else if(passwordBoxContraseña.Password != passwordBoxContraseña.Password)
+                else if(passwordBoxContraseña.Password != passwordBoxConfirmarContraseña.Password)
                 {
                     mensajeError.Text = Properties.Idiomas.Resources.contraseñasDiferentes;
                     passwordBoxConfirmarContraseña.Focus();
@@ -64,10 +64,8 @@ namespace ProyectoBatallaNaval
                     jugador.Contraseña = contraseña;
                     jugador.CorreoElectronico = correoElectronico;
                     jugador.Apodo = nombreUsuario;
-
-                    bool jugadorRegistrado = false;
-                    jugadorRegistrado = servidor.registarUsuario(jugador);
-                    if(jugadorRegistrado == false)
+                    bool jugadorRegistrado = servidor.registarUsuario(jugador);
+                    if (jugadorRegistrado)
                     {
                         mensajeError.Text = "Credenciales no validas, intenta con otras";
                     }
@@ -94,7 +92,7 @@ namespace ProyectoBatallaNaval
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            //Close();
+            NavigationService.Navigate(new InicioSesion());
         }
 
         private void InicioSesion_Click(object sender, RoutedEventArgs e)

@@ -26,9 +26,5 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
 
-        private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
     }
 }

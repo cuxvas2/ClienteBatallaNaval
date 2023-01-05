@@ -90,7 +90,6 @@ namespace ProyectoBatallaNaval
         public void recibirMensaje(Chat respuesta)
         {
             ListBoxItem listBoxItemMensaje = new ListBoxItem();
-            //Aquí pueden inyectar codigo??
             listBoxItemMensaje.Content = respuesta.Remitente + ": " + respuesta.MensajeEnviado;
             listBoxMensajes.Items.Add(listBoxItemMensaje);
         }
@@ -111,6 +110,10 @@ namespace ProyectoBatallaNaval
             {
                 if (jugador.Apodo != this.jugadorPartida.Apodo)
                 {
+                    if (jugadorLider)
+                    {
+                        buttonExpulsar.Visibility = Visibility.Visible;
+                    }
                     this.sala = sala;
                     jugadorContricante = jugador;
                     this.jugadoresEnSala += 1;
@@ -156,8 +159,14 @@ namespace ProyectoBatallaNaval
             {
                 cliente.EliminarSala(labelCodigoPartida.Content.ToString());
             }
+            ReiniciarElementosPorDeefecto();
+        }
+
+        private void ReiniciarElementosPorDeefecto()
+        {
             labelCodigoPartida.Content = "";
             buttonAbandonarSala.Visibility = Visibility.Hidden;
+            buttonExpulsar.Visibility = Visibility.Hidden;
             jugadorContricante = null;
             jugadoresListos = 0;
             jugadoresEnSala = 0;
@@ -239,6 +248,16 @@ namespace ProyectoBatallaNaval
         private void ButtonConfiguracion_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Configuracion());
+        }
+
+        public void RecibirExpulsacion()
+        {
+            ReiniciarElementosPorDeefecto();
+        }
+
+        private void ButtonExpulsar_Click(object sender, RoutedEventArgs e)
+        {
+            cliente.ExpulsarDeSala(labelCodigoPartida.Content.ToString());
         }
     }
 }

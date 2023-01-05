@@ -205,6 +205,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Expulsar.
+        /// </summary>
+        public static string expulsar {
+            get {
+                return ResourceManager.GetString("expulsar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Esta fallando el lobby.
         /// </summary>
         public static string fallaEnLobby {

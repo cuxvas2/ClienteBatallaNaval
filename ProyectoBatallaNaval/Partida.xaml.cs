@@ -84,20 +84,24 @@ namespace ProyectoBatallaNaval
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button boton = sender as Button;
-            if (boton != null || boton != ultimoBotonSeleccionado || !listaDePosicionesPulsadas.Contains(botonPresionadoCordenadas))
+            if(sender is Button)
             {
-                string nombreBoton = boton.Name;
-                string posiciones = ObtenerPosicionString(nombreBoton);
-                if(ultimoBotonSeleccionado != null && !listaDePosicionesPulsadas.Contains(posiciones))
+                Button boton = sender as Button;
+                if (boton != ultimoBotonSeleccionado || !listaDePosicionesPulsadas.Contains(botonPresionadoCordenadas))
                 {
-                    VolverTransparenteElBoton();
+                    string nombreBoton = boton.Name;
+                    string posiciones = ObtenerPosicionString(nombreBoton);
+                    if(ultimoBotonSeleccionado != null && !listaDePosicionesPulsadas.Contains(posiciones))
+                    {
+                        VolverTransparenteElBoton();
                     
+                    }
+                    ultimoBotonSeleccionado = boton;
+                    CambiarColorVerdeABoton();
+                    botonPresionadoCordenadas = posiciones;
                 }
-                ultimoBotonSeleccionado = boton;
-                CambiarColorVerdeABoton();
-                botonPresionadoCordenadas = posiciones;
             }
+            
                 
         }
 
@@ -354,6 +358,11 @@ namespace ProyectoBatallaNaval
                 buttonPosicionListas.IsEnabled = false;
                 buttonPosicionListas.Visibility = Visibility.Hidden;
             }
+        }
+
+        public void RecibirExpulsacion()
+        {
+            throw new NotImplementedException();
         }
     }
 }

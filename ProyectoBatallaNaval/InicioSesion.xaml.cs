@@ -85,6 +85,11 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
+        public void RecibirExpulsacion()
+        {
+            throw new NotImplementedException();
+        }
+
         public void recibirMensaje(Chat respuesta)
         {
             throw new NotImplementedException();
