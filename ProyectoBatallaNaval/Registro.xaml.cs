@@ -60,7 +60,6 @@ namespace ProyectoBatallaNaval
                 }
                 else
                 {
-                    //DEbemos cambiar para que las contraseñas se cifren antes de guardar en la base de datos
                     ServicioAServidor.AdminiUsuariosClient servidor = new ServicioAServidor.AdminiUsuariosClient();
 
                     ServicioAServidor.Jugador jugador = new ServicioAServidor.Jugador();
