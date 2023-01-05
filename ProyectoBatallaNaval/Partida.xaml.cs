@@ -69,7 +69,20 @@ namespace ProyectoBatallaNaval
 
         private void ActualizarCallbackEnServidor()
         {
-            cliente.ActualizarCallbackEnPartida(jugadorPartida.Apodo);
+            try
+            {
+                cliente.ActualizarCallbackEnPartida(jugadorPartida.Apodo);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                NavigationService.Navigate(new Lobby(jugadorPartida));
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                NavigationService.Navigate(new Lobby(jugadorPartida));
+            }
         }
 
         private void IniciarPartida()
@@ -77,7 +90,20 @@ namespace ProyectoBatallaNaval
             buttonTirar.Visibility = Visibility.Visible;
             if (jugadorLider)
             {
-                cliente.PrimerTiro(jugadorPartida.Apodo, jugadorContricante.Apodo);
+                try
+                {
+                    cliente.PrimerTiro(jugadorPartida.Apodo, jugadorContricante.Apodo);
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                }
             }
         }
 
@@ -129,7 +155,20 @@ namespace ProyectoBatallaNaval
             }
             else
             {
-                cliente.Tiro(botonPresionadoCordenadas, jugadorContricante.Apodo, sala, jugadorPartida.Apodo);
+                try
+                {
+                    cliente.Tiro(botonPresionadoCordenadas, jugadorContricante.Apodo, sala, jugadorPartida.Apodo);
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                }
                 buttonTirar.IsEnabled = false;
                 listaDePosicionesPulsadas.Add(botonPresionadoCordenadas);
                 botonPresionadoCordenadas = null;
@@ -168,26 +207,24 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void CerrandoVentana(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string mensaje = Properties.Idiomas.Resources.salirDelJuego;
-            MessageBoxResult result = MessageBox.Show(mensaje,Properties.Idiomas.Resources.salir,MessageBoxButton.YesNo,MessageBoxImage.Warning);
-            if (result == MessageBoxResult.No)
-            {
-                e.Cancel = true;
-            }
-            else
-            {
-                cliente.CerrarJuego(jugadorPartida.Apodo);
-                this.lobby = null;
-            }              
-        }
-
         public void PartidaGanadaCallback(string jugadorGanado)
         {
             textGanador.Text = Properties.Idiomas.Resources.hasGanando+jugadorGanado;
             ActivarBotonesEnPartidaTerminada();
-            cliente.TerminarPartida(jugadorPartida.Apodo);
+            try
+            {
+                cliente.TerminarPartida(jugadorPartida.Apodo);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                NavigationService.Navigate(new Lobby(jugadorPartida));
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                NavigationService.Navigate(new Lobby(jugadorPartida));
+            }
         }
 
         private void ActivarBotonesEnPartidaTerminada()
@@ -256,23 +293,49 @@ namespace ProyectoBatallaNaval
         {
             buttonTirar.IsEnabled = true;
 
-            String nombreBoton = Properties.Idiomas.Resources.casilla + coordenadas + Properties.Idiomas.Resources.propia;
+            String nombreBoton = "casilla_" + coordenadas + "_Propia";
             Object botonSolicitado = GridPartida.FindName(nombreBoton);
             if(botonSolicitado is Button)
             {
                 Button botonPresionado = botonSolicitado as Button;
                 if (listaDePosicionesDeBarcos.Contains(coordenadas)){
                     botonPresionado.Background = brushBarcoDestruido;
-                    cliente.TiroCertero(coordenadas, jugadorContricante.Apodo);
+                    try
+                    {
+                        cliente.TiroCertero(coordenadas, jugadorContricante.Apodo);
+                    }
+                    catch (TimeoutException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                        NavigationService.Navigate(new Lobby(jugadorPartida));
+                    }
+                    catch (CommunicationException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                        NavigationService.Navigate(new Lobby(jugadorPartida));
+                    }
                     if (listaDePosicionesDeBarcos.Contains(coordenadas))
                     {
                         listaDePosicionesDeBarcos.Remove(coordenadas);
                         if(listaDePosicionesDeBarcos.Count == 0)
                         {
-                            cliente.PartidaGanada(jugadorContricante.Apodo, jugadorContricante.Apodo);
-                            textGanador.Text = Properties.Idiomas.Resources.hasPerdido;
-                            ActivarBotonesEnPartidaTerminada();
-                            cliente.TerminarPartida(jugadorPartida.Apodo);
+                            try
+                            {
+                                cliente.PartidaGanada(jugadorContricante.Apodo, jugadorContricante.Apodo);
+                                textGanador.Text = Properties.Idiomas.Resources.hasPerdido;
+                                ActivarBotonesEnPartidaTerminada();
+                                cliente.TerminarPartida(jugadorPartida.Apodo);
+                            }
+                            catch (TimeoutException)
+                            {
+                                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                                NavigationService.Navigate(new Lobby(jugadorPartida));
+                            }
+                            catch (CommunicationException)
+                            {
+                                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                                NavigationService.Navigate(new Lobby(jugadorPartida));
+                            }
                         }
                     }
                     

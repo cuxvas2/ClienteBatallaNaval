@@ -18,6 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProyectoBatallaNaval.Properties;
+using System.Data;
+using System.Security.Cryptography;
 
 namespace ProyectoBatallaNaval
 {
@@ -131,24 +133,70 @@ namespace ProyectoBatallaNaval
             else
             {
                 string correoElectronico = textBoxCorreo.Text;
-                string password = passwordBoxContraseña.Password;
+                string password = HashearContraseña(passwordBoxContraseña.Password);
                 ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
-
-                Boolean regisrado = cliente.iniciarSesion(correoElectronico, password);
+                Boolean regisrado = false;
+                try
+                {
+                    regisrado = cliente.iniciarSesion(correoElectronico, password);
+                }
+                catch (TimeoutException)
+                {
+                    AvisoErrorTiempoAgotado();
+                }
+                catch (CommunicationException)
+                {
+                    AvisoDeErrorConElServidor();
+                }
+                catch (EntityException)
+                {
+                    AvisoErrorConBaseDeDatos();
+                }
                 if (regisrado)
                 {
-                    Jugador jugador;
-                    jugador = cliente.recuperarJugadorPorCorreo(correoElectronico);
-                    if(jugador != null)
+                    Jugador jugador = new Jugador();
+                    try
+                    {
+                        jugador = cliente.recuperarJugadorPorCorreo(correoElectronico);
+                    }
+                    catch (TimeoutException)
+                    {
+                        AvisoErrorTiempoAgotado();
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
+                    }
+                    catch (EntityException)
+                    {
+                        AvisoErrorConBaseDeDatos();
+                    }
+                    catch (CommunicationException)
+                    {
+                        AvisoDeErrorConElServidor();
+                    }
+                    if (jugador != null)
                     {
                         jugadorPartida = jugador;
                         Application.Current.MainWindow.Closing += CerrandoVentana;
                         InstanceContext context = new InstanceContext(this);
                         ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
-                        //Agregar su contecto desde aqui?
-                        clienteJoin.Conectado(jugador);
+                        try
+                        {
+                            clienteJoin.Conectado(jugador);
+                            NavigationService.Navigate(new Lobby(jugador));
+                        }
+                        catch (TimeoutException)
+                        {
+                            AvisoErrorTiempoAgotado();
+                            NavigationService.Refresh();
+                        }
+                        catch (CommunicationException)
+                        {
+                            AvisoDeErrorConElServidor();
+                            NavigationService.Refresh();
+                        }
 
-                        NavigationService.Navigate(new Lobby(jugador));
                     }
                      
                 }
@@ -178,13 +226,46 @@ namespace ProyectoBatallaNaval
             {
                 if(jugadorPartida != null)
                 {
-                    InstanceContext context = new InstanceContext(this);
-                    ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
-                    cliente.CerrarJuego(jugadorPartida.Apodo);
+                    try
+                    {
+                        InstanceContext context = new InstanceContext(this);
+                        ServicioAServidor.AdminiSocialClient cliente = new ServicioAServidor.AdminiSocialClient(context);
+                        cliente.CerrarJuego(jugadorPartida.Apodo);
+                    }
+                    catch (EndpointNotFoundException)
+                    {
+                        
+                    }
                 }
                 
             }
         }
 
+        private void AvisoDeErrorConElServidor()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+        }
+        private void AvisoErrorTiempoAgotado()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+        }
+        private void AvisoErrorConBaseDeDatos()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+        }
+
+        private string HashearContraseña(string contraseña)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contraseña));
+                StringBuilder contraseñaHasheada = new StringBuilder();
+                for (int i = 0; i < (bytes.Length); i++)
+                {
+                    contraseñaHasheada.Append(bytes[i].ToString("x2"));
+                }
+                return contraseñaHasheada.ToString();
+            }
+        }
     }
 }

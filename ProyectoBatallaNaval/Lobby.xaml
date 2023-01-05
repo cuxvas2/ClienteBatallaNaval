@@ -13,7 +13,7 @@
     </Page.Background>
 
     <Grid Margin="1280,720">
-        <Button x:Name="buttonEnviar" Content="{x:Static lenguajes:Resources.crearPartida}" Click="ButtonEnviar_Click" Margin="-693,-91,578,51" Height="40" Width="115"/>
+        <Button x:Name="buttonEnviar" Content="{x:Static lenguajes:Resources.enviar}" Click="ButtonEnviar_Click" Margin="-693,-91,578,51" Height="40" Width="115"/>
 
         <Label x:Name="ApodoMensaje" HorizontalAlignment="Left" Margin="32,466,0,0" VerticalAlignment="Top" Width="81"/>
         <Label x:Name="MensajeChat" HorizontalAlignment="Left" Margin="156,453,0,0" VerticalAlignment="Top" Width="232"/>

@@ -88,7 +88,7 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Casilla_.
+        ///   Busca una cadena traducida similar a casilla_.
         /// </summary>
         public static string casilla {
             get {
@@ -174,6 +174,42 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         public static string enviar {
             get {
                 return ResourceManager.GetString("enviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ups, tenemos problema para obtener informacion, intentalo más tarde.
+        /// </summary>
+        public static string ErrorConexionBaseDeDatos {
+            get {
+                return ResourceManager.GetString("ErrorConexionBaseDeDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El servidor no responde, vuelve a intentarlo más tarde.
+        /// </summary>
+        public static string ErrorConexionServidor {
+            get {
+                return ResourceManager.GetString("ErrorConexionServidor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Intenta con otros datos.
+        /// </summary>
+        public static string ErrorDatosDuplicados {
+            get {
+                return ResourceManager.GetString("ErrorDatosDuplicados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos.
+        /// </summary>
+        public static string ErrorTiempoAgotado {
+            get {
+                return ResourceManager.GetString("ErrorTiempoAgotado", resourceCulture);
             }
         }
         

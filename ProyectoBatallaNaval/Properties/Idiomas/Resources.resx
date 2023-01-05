@@ -127,7 +127,7 @@
     <value>Cancelar</value>
   </data>
   <data name="casilla" xml:space="preserve">
-    <value>Casilla_</value>
+    <value>casilla_</value>
   </data>
   <data name="codigoInvalido" xml:space="preserve">
     <value>El código ingresado es invalido, deben ser de 5 caracteres</value>
@@ -155,6 +155,18 @@
   </data>
   <data name="enviar" xml:space="preserve">
     <value>Enviar</value>
+  </data>
+  <data name="ErrorConexionBaseDeDatos" xml:space="preserve">
+    <value>Ups, tenemos problema para obtener informacion, intentalo más tarde</value>
+  </data>
+  <data name="ErrorConexionServidor" xml:space="preserve">
+    <value>El servidor no responde, vuelve a intentarlo más tarde</value>
+  </data>
+  <data name="ErrorDatosDuplicados" xml:space="preserve">
+    <value>Intenta con otros datos</value>
+  </data>
+  <data name="ErrorTiempoAgotado" xml:space="preserve">
+    <value>Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos</value>
   </data>
   <data name="escribaContraseña" xml:space="preserve">
     <value>Escribe una contraseña</value>

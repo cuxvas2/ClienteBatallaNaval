@@ -58,14 +58,36 @@ namespace ProyectoBatallaNaval
             chat.Remitente = jugadorPartida.Apodo;
             chat.Sala = this.sala;
             chat.MensajeEnviado = mensaje;
-            cliente.enviarMensaje(chat);
+            try
+            {
+                cliente.enviarMensaje(chat);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
             txtMensaje.Text = "";
 
         }
 
         private void ButtonCrearPartida_Click(object sender, RoutedEventArgs e)
         {
-            cliente.crearSala(this.jugadorPartida);
+            try
+            {
+                cliente.crearSala(this.jugadorPartida);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
 
         }
 
@@ -142,7 +164,18 @@ namespace ProyectoBatallaNaval
             if (codigo.Length == 5)
             {
                 this.sala = codigo;
-                cliente.unirseASala(codigo, jugadorPartida);
+                try
+                {
+                    cliente.unirseASala(codigo, jugadorPartida);
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
                 textBoxCodigoSala.Text = "";
                 labelCodigoPartida.Content = codigo;
                 jugadorLider = false;
@@ -157,7 +190,18 @@ namespace ProyectoBatallaNaval
         {
             if (jugadorContricante == null)
             {
-                cliente.EliminarSala(labelCodigoPartida.Content.ToString());
+                try
+                {
+                    cliente.EliminarSala(labelCodigoPartida.Content.ToString());
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
             }
             ReiniciarElementosPorDeefecto();
         }
@@ -185,7 +229,18 @@ namespace ProyectoBatallaNaval
                     buttonIniciarPartida.Content = Properties.Idiomas.Resources.cancelar;
                     jugadoresListos += 1;
                     todoListo = true;
-                    cliente.todoListo(this.sala, this.jugadorPartida.Apodo, jugadoresListos);
+                    try
+                    {
+                        cliente.todoListo(this.sala, this.jugadorPartida.Apodo, jugadoresListos);
+                    }
+                    catch (TimeoutException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    }
+                    catch (CommunicationException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    }
                 }
                 else
                 {
@@ -193,7 +248,18 @@ namespace ProyectoBatallaNaval
                     buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
                     jugadoresListos -= 1;
                     todoListo = false;
-                    cliente.cancelarTodoListo(this.sala, this.jugadorContricante.Apodo);
+                    try
+                    {
+                        cliente.cancelarTodoListo(this.sala, this.jugadorContricante.Apodo);
+                    }
+                    catch (TimeoutException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    }
+                    catch (CommunicationException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    }
                 }
             }
             else
@@ -210,7 +276,18 @@ namespace ProyectoBatallaNaval
 
         public void recibirTodoListoParaIniciar(string contricante)
         {
-            cliente.IniciarPartida(this.jugadorPartida.Apodo);
+            try
+            {
+                cliente.IniciarPartida(this.jugadorPartida.Apodo);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
 
         }
 
@@ -257,7 +334,18 @@ namespace ProyectoBatallaNaval
 
         private void ButtonExpulsar_Click(object sender, RoutedEventArgs e)
         {
-            cliente.ExpulsarDeSala(labelCodigoPartida.Content.ToString());
+            try
+            {
+                cliente.ExpulsarDeSala(labelCodigoPartida.Content.ToString());
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
         }
     }
 }

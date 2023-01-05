@@ -156,6 +156,18 @@
   <data name="enviar" xml:space="preserve">
     <value>Send</value>
   </data>
+  <data name="ErrorConexionBaseDeDatos" xml:space="preserve">
+    <value>We are having problems obtaining the information, try again later.</value>
+  </data>
+  <data name="ErrorConexionServidor" xml:space="preserve">
+    <value>The server is not responding, try again later later.</value>
+  </data>
+  <data name="ErrorDatosDuplicados" xml:space="preserve">
+    <value>Try angain with other credentials</value>
+  </data>
+  <data name="ErrorTiempoAgotado" xml:space="preserve">
+    <value>Time out to process your request, try again later.</value>
+  </data>
   <data name="escribaContraseña" xml:space="preserve">
     <value>Enter a password</value>
   </data>

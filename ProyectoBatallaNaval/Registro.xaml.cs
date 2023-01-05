@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -61,18 +64,39 @@ namespace ProyectoBatallaNaval
                     ServicioAServidor.AdminiUsuariosClient servidor = new ServicioAServidor.AdminiUsuariosClient();
 
                     ServicioAServidor.Jugador jugador = new ServicioAServidor.Jugador();
-                    jugador.Contraseña = contraseña;
+                    jugador.Contraseña = HashearContraseña(contraseña);
                     jugador.CorreoElectronico = correoElectronico;
                     jugador.Apodo = nombreUsuario;
-                    bool jugadorRegistrado = servidor.registarUsuario(jugador);
-                    if (jugadorRegistrado)
+
+                    bool jugadorRegistrado = false;
+                    try
                     {
-                        mensajeError.Text = "Credenciales no validas, intenta con otras";
+                        jugadorRegistrado = servidor.registarUsuario(jugador);
                     }
-                    else
+                    catch (TimeoutException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    }
+                    catch (DuplicateNameException)
+                    {
+                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
+                    }
+                    catch (CommunicationException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    }
+                    catch (EntityException)
+                    {
+                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionBaseDeDatos);
+                    }
+                    if (jugadorRegistrado)
                     {
                         mensajeError.Text = "Jugador registrado";
                         Reiniciar();
+                    }
+                    else
+                    {
+                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
                     }
                 }
             }
@@ -98,6 +122,19 @@ namespace ProyectoBatallaNaval
         private void InicioSesion_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new InicioSesion());
+        }
+        private string HashearContraseña(string contraseña)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contraseña));
+                StringBuilder contraseñaHasheada = new StringBuilder();
+                for (int i = 0; i < (bytes.Length); i++)
+                {
+                    contraseñaHasheada.Append(bytes[i].ToString("x2"));
+                }
+                return contraseñaHasheada.ToString();
+            }
         }
     }
 }
