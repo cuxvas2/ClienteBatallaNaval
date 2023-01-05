@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBatallaNaval.ServicioAServidor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,13 +21,11 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class Configuracion : Page
     {
+        private Jugador jugadorConfiguracion;
         public Configuracion()
         {
             InitializeComponent();
         }
-
-
-
  
         private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -44,8 +43,7 @@ namespace ProyectoBatallaNaval
 
         private void aplicarCambios_Click(object sender, RoutedEventArgs e)
         {
-            //Debe mandar a lobby pero requiere un parametro
-            //NavigationService.Navigate(new Lobby());
+            NavigationService.Navigate( new Lobby(jugadorConfiguracion));
         }
     }
 }

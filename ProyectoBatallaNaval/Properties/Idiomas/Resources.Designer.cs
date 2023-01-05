@@ -304,6 +304,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Jugar como invitado.
+        /// </summary>
+        public static string jugarInvitado {
+            get {
+                return ResourceManager.GetString("jugarInvitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No se pueden dejar campos vacios.
         /// </summary>
         public static string noCamposVacios {

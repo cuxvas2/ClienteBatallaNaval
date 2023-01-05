@@ -360,17 +360,11 @@ namespace ProyectoBatallaNaval
             rowDefinitionUltima.Height = new GridLength(100);
             buttonPosicionListas.IsEnabled = false;
             buttonPosicionListas.Visibility = Visibility.Hidden;
-            //Quitarles el evento clic a los botones 
-
-            //Hacer un método para saber cuando los dos tengan las posiciones listas
-            //O si uno esta comodadndo las piezas y el otro tira que se espere hasta que termine de poner las posiciones
-            //y despes de poner las posiciones que se imprima el disparo
             IniciarPartida();
         }
 
         public void TiroCerteroCallback(string coordenadas)
         {
-
             ultimoBotonDisparado.Background = brushBarcoDestruido;
             ultimoBotonSeleccionado = null;
         }

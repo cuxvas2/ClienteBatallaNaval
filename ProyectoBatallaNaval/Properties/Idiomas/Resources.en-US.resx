@@ -198,6 +198,9 @@
   <data name="iniciarSesion" xml:space="preserve">
     <value>Log in</value>
   </data>
+  <data name="jugarInvitado" xml:space="preserve">
+    <value>Play like guest</value>
+  </data>
   <data name="noCamposVacios" xml:space="preserve">
     <value>Fields cannot be left empty</value>
   </data>
