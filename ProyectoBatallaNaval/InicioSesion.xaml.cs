@@ -178,7 +178,7 @@ namespace ProyectoBatallaNaval
                     bool iniciar = false;
                     if (jugador != null)
                     {
-                        if(jugador.Apodo != "")
+                        if(jugador.Apodo != "" || jugador.Apodo != null)
                         {
                             iniciar = true;
                             jugadorPartida = jugador;
