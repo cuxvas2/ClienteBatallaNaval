@@ -38,6 +38,7 @@
         <Label x:Name="labelBarcoHost" Content="" HorizontalAlignment="Left" Margin="-1074,-488,0,0" VerticalAlignment="Top" Height="38" Width="330" IsEnabled="False" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Label x:Name="labelBarcoContricante" Content="" HorizontalAlignment="Left" Margin="-568,-488,0,0" VerticalAlignment="Top" Height="38" Width="330" IsEnabled="False" FontSize="18" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         <Button x:Name="buttonExpulsar" Content="{x:Static lenguajes:Resources.expulsar}" Visibility="Hidden" HorizontalAlignment="Left" Margin="-318,-162,0,0" VerticalAlignment="Top" Height="27" Width="97" Background="#FFAA0000" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="ButtonExpulsar_Click"/>
+        <Button x:Name="buttonAñadirAmigo" Content="{x:Static lenguajes:Resources.añadirAmigo}" Visibility="Hidden" HorizontalAlignment="Left" Margin="-426,-548,0,0" VerticalAlignment="Top" Height="26" Width="96" Background="White" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="ButtonAñadirAmigo_Click"/>
         <Expander Margin="-1259,-615,884,428" Header="{x:Static lenguajes:Resources.amigos}" FontSize="18">
             <ListBox x:Name="listViewAMigos" SelectionChanged="PrintText" SelectionMode="Single">
                 <ListBox.ItemTemplate>

@@ -28,7 +28,6 @@ namespace ProyectoBatallaNaval
             jugadorPartida = jugador;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
-            this.NavigationService.Refresh();
 
         }
 
@@ -357,6 +356,11 @@ namespace ProyectoBatallaNaval
         }
 
         private void ButtonEnviarInvitacionCorreo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonAñadirAmigo_Click(object sender, RoutedEventArgs e)
         {
 
         }
