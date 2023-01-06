@@ -435,5 +435,10 @@ namespace ProyectoBatallaNaval
         {
             throw new NotImplementedException();
         }
+
+        public void NotificarAbandorarSala()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

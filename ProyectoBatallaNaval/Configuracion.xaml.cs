@@ -1,8 +1,10 @@
 ﻿using ProyectoBatallaNaval.ServicioAServidor;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,11 +24,19 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class Configuracion : Page
     {
+        public Jugador JugadorPartida { get; }
+
         public Configuracion()
         {
             InitializeComponent();
         }
- 
+
+        public Configuracion(Jugador jugadorPartida)
+        {
+            InitializeComponent();
+            JugadorPartida = jugadorPartida;
+        }
+
         private void CambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cambiarIdioma.SelectedIndex == 0)
@@ -43,10 +53,58 @@ namespace ProyectoBatallaNaval
 
         private void AplicarCambios_Click(object sender, RoutedEventArgs e)
         {
+            string contraseñaNueva = passwordBoxNuevaContraseña.Password;
 
+            if(contraseñaNueva.Count() > 3)
+            {
+                string contraseñaHasheada = HashearContraseña(contraseñaNueva);
+                if(contraseñaNueva.Contains(" "))
+                {
+                    //No se puede tener una contraseña con espacios
+                }
+                else if(JugadorPartida.Contraseña != contraseñaHasheada)
+                {
+                    bool contraseñaCambiada = false;
+                    ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+                    try
+                    {
+                        contraseñaCambiada = cliente.CambiarContraseña(JugadorPartida.Apodo, contraseñaHasheada);
+                    }
+                    catch (TimeoutException)
+                    {
+                        AvisoErrorTiempoAgotado();
+                    }
+                    catch (CommunicationException)
+                    {
+                        AvisoDeErrorConElServidor();
+                    }
+                    catch (EntityException)
+                    {
+                        AvisoErrorConBaseDeDatos();
+                    }
+                    if (contraseñaCambiada)
+                    {
+                        MessageBox.Show("Contraseña cambiada correctamente");
+                    }
+                }
+            
+            }
             NavigationService.Refresh();
             NavigationService.GoBack();
 
+        }
+
+        private void AvisoDeErrorConElServidor()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+        }
+        private void AvisoErrorTiempoAgotado()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+        }
+        private void AvisoErrorConBaseDeDatos()
+        {
+            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
         }
 
         private string HashearContraseña(string contraseña)

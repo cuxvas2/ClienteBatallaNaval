@@ -456,6 +456,9 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirCancelarListoResponse")]
         void RecibirCancelarListo(string contricante);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/NotificarAbandorarSala", ReplyAction="http://tempuri.org/IAdminiSocial/NotificarAbandorarSalaResponse")]
+        void NotificarAbandorarSala();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/InsertarDisparo", ReplyAction="http://tempuri.org/IAdminiSocial/InsertarDisparoResponse")]
         void InsertarDisparo(string coordenadas);
         

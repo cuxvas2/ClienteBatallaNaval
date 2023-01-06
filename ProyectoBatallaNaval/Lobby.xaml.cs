@@ -28,7 +28,6 @@ namespace ProyectoBatallaNaval
             jugadorPartida = jugador;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
-            this.NavigationService.Refresh();
 
         }
 
@@ -127,6 +126,7 @@ namespace ProyectoBatallaNaval
             jugadorLider = true;
             imagenBarcoHost.Visibility = Visibility.Visible;
             buttonAbandonarSala.Visibility = Visibility.Visible;
+            labelBarcoHost.Visibility = Visibility.Visible;
         }
 
         public void JugadorSeUnio(Jugador jugador, string sala, bool seUnio)
@@ -220,6 +220,7 @@ namespace ProyectoBatallaNaval
             jugadorLider = false;
             imagenBarcoContricante.Visibility = Visibility.Hidden;
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
+            labelBarcoContricante.Content = "";
         }
 
         private void ButtonIniciarPartida_Click(object sender, RoutedEventArgs e)
@@ -322,7 +323,7 @@ namespace ProyectoBatallaNaval
 
         private void ButtonConfiguracion_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Configuracion());
+            NavigationService.Navigate(new Configuracion(jugadorPartida));
         }
 
         public void RecibirExpulsacion()
@@ -359,6 +360,25 @@ namespace ProyectoBatallaNaval
         private void ButtonEnviarInvitacionCorreo_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void NotificarAbandorarSala()
+        {
+            if(jugadorContricante != null)
+            {
+                jugadorContricante = null;
+                buttonExpulsar.Visibility = Visibility.Hidden;;
+                jugadoresListos = 0;
+                jugadoresEnSala = 1;
+                jugadorLider = false;
+                imagenBarcoContricante.Visibility = Visibility.Hidden;
+                imagenTodoListoContricante.Visibility = Visibility.Hidden;
+                labelBarcoHost.Content = "";
+                todoListo = false;
+                imagenTodoListoContricante.Visibility = Visibility.Hidden;
+                imagenTodoListoHost.Visibility = Visibility.Hidden;
+                buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
+            }
         }
     }
 }

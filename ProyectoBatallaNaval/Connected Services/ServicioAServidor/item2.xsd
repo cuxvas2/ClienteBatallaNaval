@@ -320,6 +320,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="NotificarAbandorarSala">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarAbandorarSalaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InsertarDisparo">
     <xs:complexType>
       <xs:sequence>

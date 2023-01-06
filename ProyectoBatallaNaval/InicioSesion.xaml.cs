@@ -144,7 +144,7 @@ namespace ProyectoBatallaNaval
                 {
                     AvisoErrorTiempoAgotado();
                 }
-                catch (CommunicationException ex)
+                catch (CommunicationException)
                 {
                     AvisoDeErrorConElServidor();
                 }
@@ -171,7 +171,7 @@ namespace ProyectoBatallaNaval
                     {
                         AvisoErrorConBaseDeDatos();
                     }
-                    catch (CommunicationException ex)
+                    catch (CommunicationException)
                     {
                         AvisoDeErrorConElServidor();
                     }
@@ -323,6 +323,11 @@ namespace ProyectoBatallaNaval
                 codigo += numeroEnString;
             }
             return "Invitado" + codigo;
+        }
+
+        public void NotificarAbandorarSala()
+        {
+            throw new NotImplementedException();
         }
     }
 }
