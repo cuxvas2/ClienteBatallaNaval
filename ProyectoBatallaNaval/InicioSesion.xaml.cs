@@ -37,12 +37,12 @@ namespace ProyectoBatallaNaval
             return;
         }
 
-        public void actualizarJugadores(Jugador[] jugadores)
+        public void ActualizarJugadores(Jugador[] jugadores)
         {
             throw new NotImplementedException();
         }
 
-        public void escribiendoEnCallback(Jugador jugador)
+        public void EscribiendoEnCallback(Jugador jugador)
         {
             throw new NotImplementedException();
         }
@@ -52,17 +52,17 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void insertarDisparo(string coordenadas)
+        public void InsertarDisparo(string coordenadas)
         {
             throw new NotImplementedException();
         }
 
-        public void jugadorSeFue(Jugador jugador)
+        public void JugadorSeFue(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
-        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        public void JugadorSeUnio(Jugador jugador, string sala, bool seUnio)
         {
             throw new NotImplementedException();
         }
@@ -72,17 +72,17 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void primerTiroCallback(bool iniciar)
+        public void PrimerTiroCallback(bool iniciar)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirCancelarListo(string contricante)
+        public void RecibirCancelarListo(string contricante)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirCodigoSala(string codigo)
+        public void RecibirCodigoSala(string codigo)
         {
             throw new NotImplementedException();
         }
@@ -92,17 +92,17 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void recibirMensaje(Chat respuesta)
+        public void RecibirMensaje(Chat respuesta)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirTodoListo(string contricante)
+        public void RecibirTodoListo(string contricante)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirTodoListoParaIniciar(string contricante)
+        public void RecibirTodoListoParaIniciar(string contricante)
         {
             throw new NotImplementedException();
         }
@@ -112,7 +112,7 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void unionDeJugador(Jugador jugador)
+        public void UnionDeJugador(Jugador jugador)
         {
             return;
         }
@@ -138,7 +138,7 @@ namespace ProyectoBatallaNaval
                 Boolean regisrado = false;
                 try
                 {
-                    regisrado = cliente.iniciarSesion(correoElectronico, password);
+                    regisrado = cliente.IniciarSesion(correoElectronico, password);
                 }
                 catch (TimeoutException)
                 {
@@ -157,7 +157,7 @@ namespace ProyectoBatallaNaval
                     Jugador jugador = new Jugador();
                     try
                     {
-                        jugador = cliente.recuperarJugadorPorCorreo(correoElectronico);
+                        jugador = cliente.RecuperarJugadorPorCorreo(correoElectronico);
                     }
                     catch (TimeoutException)
                     {

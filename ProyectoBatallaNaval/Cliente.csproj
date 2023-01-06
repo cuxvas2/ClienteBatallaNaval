@@ -172,6 +172,9 @@
     <None Include="Connected Services\ServicioAServidor\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioAServidor\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

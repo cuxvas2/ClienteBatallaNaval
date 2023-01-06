@@ -203,29 +203,41 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioAServidor.IAdminiUsuarios")]
     public interface IAdminiUsuarios {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/iniciarSesion", ReplyAction="http://tempuri.org/IAdminiUsuarios/iniciarSesionResponse")]
-        bool iniciarSesion(string usuario, string contraseña);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/IniciarSesion", ReplyAction="http://tempuri.org/IAdminiUsuarios/IniciarSesionResponse")]
+        bool IniciarSesion(string usuario, string contraseña);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/iniciarSesion", ReplyAction="http://tempuri.org/IAdminiUsuarios/iniciarSesionResponse")]
-        System.Threading.Tasks.Task<bool> iniciarSesionAsync(string usuario, string contraseña);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/IniciarSesion", ReplyAction="http://tempuri.org/IAdminiUsuarios/IniciarSesionResponse")]
+        System.Threading.Tasks.Task<bool> IniciarSesionAsync(string usuario, string contraseña);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/registarUsuario", ReplyAction="http://tempuri.org/IAdminiUsuarios/registarUsuarioResponse")]
-        bool registarUsuario(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RegistarUsuario", ReplyAction="http://tempuri.org/IAdminiUsuarios/RegistarUsuarioResponse")]
+        bool RegistarUsuario(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/registarUsuario", ReplyAction="http://tempuri.org/IAdminiUsuarios/registarUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> registarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RegistarUsuario", ReplyAction="http://tempuri.org/IAdminiUsuarios/RegistarUsuarioResponse")]
+        System.Threading.Tasks.Task<bool> RegistarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse")]
-        bool cambiarContraseña(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/CambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/CambiarContraseñaResponse")]
+        bool CambiarContraseña(string apodo, string contraseñaNueva);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse")]
-        System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/CambiarContraseña", ReplyAction="http://tempuri.org/IAdminiUsuarios/CambiarContraseñaResponse")]
+        System.Threading.Tasks.Task<bool> CambiarContraseñaAsync(string apodo, string contraseñaNueva);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreoResponse")]
-        ProyectoBatallaNaval.ServicioAServidor.Jugador recuperarJugadorPorCorreo(string correoElectronico);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreoResponse")]
+        ProyectoBatallaNaval.ServicioAServidor.Jugador RecuperarJugadorPorCorreo(string correoElectronico);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreoResponse")]
-        System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> recuperarJugadorPorCorreoAsync(string correoElectronico);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreo", ReplyAction="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreoResponse")]
+        System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> RecuperarJugadorPorCorreoAsync(string correoElectronico);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigos", ReplyAction="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigosResponse")]
+        string[] RecuperarListaDeAmigos(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigos", ReplyAction="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigosResponse")]
+        System.Threading.Tasks.Task<string[]> RecuperarListaDeAmigosAsync(string nombreJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigo", ReplyAction="http://tempuri.org/IAdminiUsuarios/AñadirAmigoResponse")]
+        bool AñadirAmigo(string apodoJugador, string apodoAmigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigo", ReplyAction="http://tempuri.org/IAdminiUsuarios/AñadirAmigoResponse")]
+        System.Threading.Tasks.Task<bool> AñadirAmigoAsync(string apodoJugador, string apodoAmigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -255,36 +267,52 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
                 base(binding, remoteAddress) {
         }
         
-        public bool iniciarSesion(string usuario, string contraseña) {
-            return base.Channel.iniciarSesion(usuario, contraseña);
+        public bool IniciarSesion(string usuario, string contraseña) {
+            return base.Channel.IniciarSesion(usuario, contraseña);
         }
         
-        public System.Threading.Tasks.Task<bool> iniciarSesionAsync(string usuario, string contraseña) {
-            return base.Channel.iniciarSesionAsync(usuario, contraseña);
+        public System.Threading.Tasks.Task<bool> IniciarSesionAsync(string usuario, string contraseña) {
+            return base.Channel.IniciarSesionAsync(usuario, contraseña);
         }
         
-        public bool registarUsuario(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.registarUsuario(jugador);
+        public bool RegistarUsuario(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.RegistarUsuario(jugador);
         }
         
-        public System.Threading.Tasks.Task<bool> registarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.registarUsuarioAsync(jugador);
+        public System.Threading.Tasks.Task<bool> RegistarUsuarioAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.RegistarUsuarioAsync(jugador);
         }
         
-        public bool cambiarContraseña(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.cambiarContraseña(jugador);
+        public bool CambiarContraseña(string apodo, string contraseñaNueva) {
+            return base.Channel.CambiarContraseña(apodo, contraseñaNueva);
         }
         
-        public System.Threading.Tasks.Task<bool> cambiarContraseñaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.cambiarContraseñaAsync(jugador);
+        public System.Threading.Tasks.Task<bool> CambiarContraseñaAsync(string apodo, string contraseñaNueva) {
+            return base.Channel.CambiarContraseñaAsync(apodo, contraseñaNueva);
         }
         
-        public ProyectoBatallaNaval.ServicioAServidor.Jugador recuperarJugadorPorCorreo(string correoElectronico) {
-            return base.Channel.recuperarJugadorPorCorreo(correoElectronico);
+        public ProyectoBatallaNaval.ServicioAServidor.Jugador RecuperarJugadorPorCorreo(string correoElectronico) {
+            return base.Channel.RecuperarJugadorPorCorreo(correoElectronico);
         }
         
-        public System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> recuperarJugadorPorCorreoAsync(string correoElectronico) {
-            return base.Channel.recuperarJugadorPorCorreoAsync(correoElectronico);
+        public System.Threading.Tasks.Task<ProyectoBatallaNaval.ServicioAServidor.Jugador> RecuperarJugadorPorCorreoAsync(string correoElectronico) {
+            return base.Channel.RecuperarJugadorPorCorreoAsync(correoElectronico);
+        }
+        
+        public string[] RecuperarListaDeAmigos(string nombreJugador) {
+            return base.Channel.RecuperarListaDeAmigos(nombreJugador);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> RecuperarListaDeAmigosAsync(string nombreJugador) {
+            return base.Channel.RecuperarListaDeAmigosAsync(nombreJugador);
+        }
+        
+        public bool AñadirAmigo(string apodoJugador, string apodoAmigo) {
+            return base.Channel.AñadirAmigo(apodoJugador, apodoAmigo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AñadirAmigoAsync(string apodoJugador, string apodoAmigo) {
+            return base.Channel.AñadirAmigoAsync(apodoJugador, apodoAmigo);
         }
     }
     
@@ -298,41 +326,41 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Conectado")]
         System.Threading.Tasks.Task ConectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
-        void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Desconectado")]
+        void Desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/desconectado")]
-        System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/Desconectado")]
+        System.Threading.Tasks.Task DesconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
-        void enviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EnviarMensaje")]
+        void EnviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/enviarMensaje")]
-        System.Threading.Tasks.Task enviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EnviarMensaje")]
+        System.Threading.Tasks.Task EnviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/crearSala")]
-        void crearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CrearSala")]
+        void CrearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/crearSala")]
-        System.Threading.Tasks.Task crearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CrearSala")]
+        System.Threading.Tasks.Task CrearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unirseASala")]
-        void unirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/UnirseASala")]
+        void UnirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unirseASala")]
-        System.Threading.Tasks.Task unirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/UnirseASala")]
+        System.Threading.Tasks.Task UnirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/todoListo")]
-        void todoListo(string sala, string jugador, int numeroDeListos);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TodoListo")]
+        void TodoListo(string sala, string jugador, int numeroDeListos);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/todoListo")]
-        System.Threading.Tasks.Task todoListoAsync(string sala, string jugador, int numeroDeListos);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/TodoListo")]
+        System.Threading.Tasks.Task TodoListoAsync(string sala, string jugador, int numeroDeListos);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
-        void cancelarTodoListo(string sala, string jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CancelarTodoListo")]
+        void CancelarTodoListo(string sala, string jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo")]
-        System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/CancelarTodoListo")]
+        System.Threading.Tasks.Task CancelarTodoListoAsync(string sala, string jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EliminarSala")]
         void EliminarSala(string codigoSala);
@@ -398,44 +426,44 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdminiSocialCallback {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/actualizarJugadores")]
-        void actualizarJugadores(ProyectoBatallaNaval.ServicioAServidor.Jugador[] jugadores);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/ActualizarJugadores")]
+        void ActualizarJugadores(ProyectoBatallaNaval.ServicioAServidor.Jugador[] jugadores);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/unionDeJugador")]
-        void unionDeJugador(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/UnionDeJugador")]
+        void UnionDeJugador(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/jugadorSeFue")]
-        void jugadorSeFue(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/JugadorSeFue")]
+        void JugadorSeFue(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/escribiendoEnCallback")]
-        void escribiendoEnCallback(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdminiSocial/EscribiendoEnCallback")]
+        void EscribiendoEnCallback(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirMensaje", ReplyAction="http://tempuri.org/IAdminiSocial/recibirMensajeResponse")]
-        void recibirMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat respuesta);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirMensaje", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirMensajeResponse")]
+        void RecibirMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat respuesta);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCodigoSala", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCodigoSalaResponse")]
-        void recibirCodigoSala(string codigo);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirCodigoSala", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirCodigoSalaResponse")]
+        void RecibirCodigoSala(string codigo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/jugadorSeUnio", ReplyAction="http://tempuri.org/IAdminiSocial/jugadorSeUnioResponse")]
-        void jugadorSeUnio(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador, string sala, bool seUnio);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/JugadorSeUnio", ReplyAction="http://tempuri.org/IAdminiSocial/JugadorSeUnioResponse")]
+        void JugadorSeUnio(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador, string sala, bool seUnio);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse")]
-        void recibirTodoListo(string contricante);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirTodoListo", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirTodoListoResponse")]
+        void RecibirTodoListo(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar", ReplyAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse")]
-        void recibirTodoListoParaIniciar(string contricante);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirTodoListoParaIniciar", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirTodoListoParaIniciarResponse")]
+        void RecibirTodoListoParaIniciar(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse")]
-        void recibirCancelarListo(string contricante);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/RecibirCancelarListo", ReplyAction="http://tempuri.org/IAdminiSocial/RecibirCancelarListoResponse")]
+        void RecibirCancelarListo(string contricante);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/insertarDisparo", ReplyAction="http://tempuri.org/IAdminiSocial/insertarDisparoResponse")]
-        void insertarDisparo(string coordenadas);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/InsertarDisparo", ReplyAction="http://tempuri.org/IAdminiSocial/InsertarDisparoResponse")]
+        void InsertarDisparo(string coordenadas);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback", ReplyAction="http://tempuri.org/IAdminiSocial/IniciarPartidaCallbackResponse")]
         void IniciarPartidaCallback(bool inicar);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/primerTiroCallback", ReplyAction="http://tempuri.org/IAdminiSocial/primerTiroCallbackResponse")]
-        void primerTiroCallback(bool iniciar);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/PrimerTiroCallback", ReplyAction="http://tempuri.org/IAdminiSocial/PrimerTiroCallbackResponse")]
+        void PrimerTiroCallback(bool iniciar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback", ReplyAction="http://tempuri.org/IAdminiSocial/PartidaGanadaCallbackResponse")]
         void PartidaGanadaCallback(string jugadorGanado);
@@ -486,52 +514,52 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
             return base.Channel.ConectadoAsync(jugador);
         }
         
-        public void desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            base.Channel.desconectado(jugador);
+        public void Desconectado(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.Desconectado(jugador);
         }
         
-        public System.Threading.Tasks.Task desconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.desconectadoAsync(jugador);
+        public System.Threading.Tasks.Task DesconectadoAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.DesconectadoAsync(jugador);
         }
         
-        public void enviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
-            base.Channel.enviarMensaje(mensaje);
+        public void EnviarMensaje(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
+            base.Channel.EnviarMensaje(mensaje);
         }
         
-        public System.Threading.Tasks.Task enviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
-            return base.Channel.enviarMensajeAsync(mensaje);
+        public System.Threading.Tasks.Task EnviarMensajeAsync(ProyectoBatallaNaval.ServicioAServidor.Chat mensaje) {
+            return base.Channel.EnviarMensajeAsync(mensaje);
         }
         
-        public void crearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            base.Channel.crearSala(jugador);
+        public void CrearSala(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.CrearSala(jugador);
         }
         
-        public System.Threading.Tasks.Task crearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.crearSalaAsync(jugador);
+        public System.Threading.Tasks.Task CrearSalaAsync(ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.CrearSalaAsync(jugador);
         }
         
-        public void unirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            base.Channel.unirseASala(sala, jugador);
+        public void UnirseASala(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            base.Channel.UnirseASala(sala, jugador);
         }
         
-        public System.Threading.Tasks.Task unirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
-            return base.Channel.unirseASalaAsync(sala, jugador);
+        public System.Threading.Tasks.Task UnirseASalaAsync(string sala, ProyectoBatallaNaval.ServicioAServidor.Jugador jugador) {
+            return base.Channel.UnirseASalaAsync(sala, jugador);
         }
         
-        public void todoListo(string sala, string jugador, int numeroDeListos) {
-            base.Channel.todoListo(sala, jugador, numeroDeListos);
+        public void TodoListo(string sala, string jugador, int numeroDeListos) {
+            base.Channel.TodoListo(sala, jugador, numeroDeListos);
         }
         
-        public System.Threading.Tasks.Task todoListoAsync(string sala, string jugador, int numeroDeListos) {
-            return base.Channel.todoListoAsync(sala, jugador, numeroDeListos);
+        public System.Threading.Tasks.Task TodoListoAsync(string sala, string jugador, int numeroDeListos) {
+            return base.Channel.TodoListoAsync(sala, jugador, numeroDeListos);
         }
         
-        public void cancelarTodoListo(string sala, string jugador) {
-            base.Channel.cancelarTodoListo(sala, jugador);
+        public void CancelarTodoListo(string sala, string jugador) {
+            base.Channel.CancelarTodoListo(sala, jugador);
         }
         
-        public System.Threading.Tasks.Task cancelarTodoListoAsync(string sala, string jugador) {
-            return base.Channel.cancelarTodoListoAsync(sala, jugador);
+        public System.Threading.Tasks.Task CancelarTodoListoAsync(string sala, string jugador) {
+            return base.Channel.CancelarTodoListoAsync(sala, jugador);
         }
         
         public void EliminarSala(string codigoSala) {

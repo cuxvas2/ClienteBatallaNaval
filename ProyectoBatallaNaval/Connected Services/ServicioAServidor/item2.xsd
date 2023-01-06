@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-  <xs:element name="iniciarSesion">
+  <xs:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="IniciarSesion">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
@@ -9,52 +10,82 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="iniciarSesionResponse">
+  <xs:element name="IniciarSesionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="iniciarSesionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IniciarSesionResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="registarUsuario">
+  <xs:element name="RegistarUsuario">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q1:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="registarUsuarioResponse">
+  <xs:element name="RegistarUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="registarUsuarioResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="RegistarUsuarioResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="cambiarContraseña">
+  <xs:element name="CambiarContraseña">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q2:Jugador" />
+        <xs:element minOccurs="0" name="apodo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contraseñaNueva" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="cambiarContraseñaResponse">
+  <xs:element name="CambiarContraseñaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cambiarContraseñaResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CambiarContraseñaResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recuperarJugadorPorCorreo">
+  <xs:element name="RecuperarJugadorPorCorreo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="correoElectronico" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recuperarJugadorPorCorreoResponse">
+  <xs:element name="RecuperarJugadorPorCorreoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="recuperarJugadorPorCorreoResult" nillable="true" type="q3:Jugador" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="RecuperarJugadorPorCorreoResult" nillable="true" type="q2:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarListaDeAmigos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreJugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarListaDeAmigosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RecuperarListaDeAmigosResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AñadirAmigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="apodoJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apodoAmigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AñadirAmigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AñadirAmigoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,28 +96,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="desconectado">
+  <xs:element name="Desconectado">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q5:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="enviarMensaje">
+  <xs:element name="EnviarMensaje">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="mensaje" nillable="true" type="q6:Chat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="crearSala">
+  <xs:element name="CrearSala">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q7:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unirseASala">
+  <xs:element name="UnirseASala">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sala" nillable="true" type="xs:string" />
@@ -94,7 +125,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="todoListo">
+  <xs:element name="TodoListo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sala" nillable="true" type="xs:string" />
@@ -103,7 +134,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="cancelarTodoListo">
+  <xs:element name="CancelarTodoListo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sala" nillable="true" type="xs:string" />
@@ -187,59 +218,59 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="actualizarJugadores">
+  <xs:element name="ActualizarJugadores">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugadores" nillable="true" type="q9:ArrayOfJugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="unionDeJugador">
+  <xs:element name="UnionDeJugador">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q10:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="jugadorSeFue">
+  <xs:element name="JugadorSeFue">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q11:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="escribiendoEnCallback">
+  <xs:element name="EscribiendoEnCallback">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q12:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirMensaje">
+  <xs:element name="RecibirMensaje">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="respuesta" nillable="true" type="q13:Chat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirMensajeResponse">
+  <xs:element name="RecibirMensajeResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirCodigoSala">
+  <xs:element name="RecibirCodigoSala">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirCodigoSalaResponse">
+  <xs:element name="RecibirCodigoSalaResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="jugadorSeUnio">
+  <xs:element name="JugadorSeUnio">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Entidades" minOccurs="0" name="jugador" nillable="true" type="q14:Jugador" />
@@ -248,55 +279,55 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="jugadorSeUnioResponse">
+  <xs:element name="JugadorSeUnioResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirTodoListo">
+  <xs:element name="RecibirTodoListo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirTodoListoResponse">
+  <xs:element name="RecibirTodoListoResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirTodoListoParaIniciar">
+  <xs:element name="RecibirTodoListoParaIniciar">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirTodoListoParaIniciarResponse">
+  <xs:element name="RecibirTodoListoParaIniciarResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirCancelarListo">
+  <xs:element name="RecibirCancelarListo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="contricante" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="recibirCancelarListoResponse">
+  <xs:element name="RecibirCancelarListoResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="insertarDisparo">
+  <xs:element name="InsertarDisparo">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="coordenadas" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="insertarDisparoResponse">
+  <xs:element name="InsertarDisparoResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -313,14 +344,14 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="primerTiroCallback">
+  <xs:element name="PrimerTiroCallback">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="iniciar" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="primerTiroCallbackResponse">
+  <xs:element name="PrimerTiroCallbackResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

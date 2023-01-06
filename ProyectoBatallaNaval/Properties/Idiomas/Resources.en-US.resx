@@ -181,7 +181,7 @@
     <value>Spanish</value>
   </data>
   <data name="expulsar" xml:space="preserve">
-    <value>(Expulsar en inglés)</value>
+    <value>Quick</value>
   </data>
   <data name="fallaEnLobby" xml:space="preserve">
     <value>The lobby is failing</value>
