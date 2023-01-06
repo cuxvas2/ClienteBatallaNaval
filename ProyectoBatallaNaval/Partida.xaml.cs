@@ -360,7 +360,7 @@ namespace ProyectoBatallaNaval
             rowDefinitionUltima.Height = new GridLength(100);
             buttonPosicionListas.IsEnabled = false;
             buttonPosicionListas.Visibility = Visibility.Hidden;
-            
+            QuitarEventoABotonesDelHost();
             IniciarPartida();
         }
 
