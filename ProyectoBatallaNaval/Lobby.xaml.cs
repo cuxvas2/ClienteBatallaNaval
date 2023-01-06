@@ -1,5 +1,6 @@
 ﻿using ProyectoBatallaNaval.ServicioAServidor;
 using System;
+using System.Collections.Generic;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,7 +29,14 @@ namespace ProyectoBatallaNaval
             jugadorPartida = jugador;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
+            LlnarListaDeAmigos();
+        }
 
+        private void LlnarListaDeAmigos()
+        {
+            ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+            string[] amigos = cliente.RecuperarListaDeAmigos(jugadorPartida.Apodo);
+            listViewAMigos.ItemsSource = amigos;
         }
 
         public void ActualizarJugadores(Jugador[] jugadores)
