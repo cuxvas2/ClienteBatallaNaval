@@ -1,6 +1,7 @@
 ﻿using ProyectoBatallaNaval.ServicioAServidor;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -386,6 +387,27 @@ namespace ProyectoBatallaNaval
                 imagenTodoListoContricante.Visibility = Visibility.Hidden;
                 imagenTodoListoHost.Visibility = Visibility.Hidden;
                 buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
+            }
+        }
+
+        private void ButtonAñadirAmigo_Click(object sender, RoutedEventArgs e)
+        {
+            ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+            try
+            {
+                cliente.AñadirAmigo(jugadorPartida.Apodo, jugadorContricante.Apodo);
+            }
+            catch (TimeoutException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+            }
+            catch (CommunicationException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
+            catch (EntityException)
+            {
+                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
             }
         }
     }
