@@ -70,7 +70,7 @@ namespace ProyectoBatallaNaval
                     bool jugadorRegistrado = false;
                     try
                     {
-                        jugadorRegistrado = servidor.registarUsuario(jugador);
+                        jugadorRegistrado = servidor.RegistarUsuario(jugador);
                     }
                     catch (TimeoutException)
                     {

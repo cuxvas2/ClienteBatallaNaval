@@ -21,32 +21,36 @@ namespace ProyectoBatallaNaval
         private bool todoListo = false;
         private readonly InstanceContext context;
         private readonly ServicioAServidor.AdminiSocialClient cliente;
+        
         public Lobby(Jugador jugador)
         {
             InitializeComponent();
             jugadorPartida = jugador;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
+            //No se si funcione
+            this.NavigationService.Refresh();
+
         }
 
-        public void actualizarJugadores(Jugador[] jugadores)
+        public void ActualizarJugadores(Jugador[] jugadores)
         {
             throw new NotImplementedException();
         }
 
-        public void escribiendoEnCallback(Jugador jugador)
+        public void EscribiendoEnCallback(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
 
-        public void jugadorSeFue(Jugador jugador)
+        public void JugadorSeFue(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
 
-        public void unionDeJugador(Jugador jugador)
+        public void UnionDeJugador(Jugador jugador)
         {
             throw new NotImplementedException();
         }
@@ -60,7 +64,7 @@ namespace ProyectoBatallaNaval
             chat.MensajeEnviado = mensaje;
             try
             {
-                cliente.enviarMensaje(chat);
+                cliente.EnviarMensaje(chat);
             }
             catch (TimeoutException)
             {
@@ -78,7 +82,7 @@ namespace ProyectoBatallaNaval
         {
             try
             {
-                cliente.crearSala(this.jugadorPartida);
+                cliente.CrearSala(this.jugadorPartida);
             }
             catch (TimeoutException)
             {
@@ -109,14 +113,14 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void recibirMensaje(Chat respuesta)
+        public void RecibirMensaje(Chat respuesta)
         {
             ListBoxItem listBoxItemMensaje = new ListBoxItem();
             listBoxItemMensaje.Content = respuesta.Remitente + ": " + respuesta.MensajeEnviado;
             listBoxMensajes.Items.Add(listBoxItemMensaje);
         }
 
-        public void recibirCodigoSala(string codigo)
+        public void RecibirCodigoSala(string codigo)
         {
             labelCodigoPartida.Content = codigo;
             this.sala = codigo;
@@ -126,7 +130,7 @@ namespace ProyectoBatallaNaval
             buttonAbandonarSala.Visibility = Visibility.Visible;
         }
 
-        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        public void JugadorSeUnio(Jugador jugador, string sala, bool seUnio)
         {
             if (seUnio)
             {
@@ -166,7 +170,7 @@ namespace ProyectoBatallaNaval
                 this.sala = codigo;
                 try
                 {
-                    cliente.unirseASala(codigo, jugadorPartida);
+                    cliente.UnirseASala(codigo, jugadorPartida);
                 }
                 catch (TimeoutException)
                 {
@@ -231,7 +235,7 @@ namespace ProyectoBatallaNaval
                     todoListo = true;
                     try
                     {
-                        cliente.todoListo(this.sala, this.jugadorPartida.Apodo, jugadoresListos);
+                        cliente.TodoListo(this.sala, this.jugadorPartida.Apodo, jugadoresListos);
                     }
                     catch (TimeoutException)
                     {
@@ -250,7 +254,7 @@ namespace ProyectoBatallaNaval
                     todoListo = false;
                     try
                     {
-                        cliente.cancelarTodoListo(this.sala, this.jugadorContricante.Apodo);
+                        cliente.CancelarTodoListo(this.sala, this.jugadorContricante.Apodo);
                     }
                     catch (TimeoutException)
                     {
@@ -268,13 +272,13 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        public void recibirTodoListo(string contricante)
+        public void RecibirTodoListo(string contricante)
         {
             imagenTodoListoContricante.Visibility = Visibility.Visible;
             jugadoresListos += 1;
         }
 
-        public void recibirTodoListoParaIniciar(string contricante)
+        public void RecibirTodoListoParaIniciar(string contricante)
         {
             try
             {
@@ -291,20 +295,15 @@ namespace ProyectoBatallaNaval
 
         }
 
-        public void recibirCancelarListo(string contricante)
+        public void RecibirCancelarListo(string contricante)
         {
             this.jugadoresListos -= 1;
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
         }
 
-        public void insertarDisparo(string coordenadas)
+        public void InsertarDisparo(string coordenadas)
         {
             return;
-        }
-
-        public void primerTiroCallback(bool iniciar)
-        {
-            throw new NotImplementedException();
         }
 
         public void PartidaGanadaCallback(string jugadorGanado)
@@ -346,6 +345,21 @@ namespace ProyectoBatallaNaval
             {
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
             }
+        }
+
+        private void PrintText(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonEliminarAmigo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonEnviarInvitacionCorreo_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

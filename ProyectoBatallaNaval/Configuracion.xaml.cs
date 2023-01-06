@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,26 +27,40 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
  
-        private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cambiarIdioma.SelectedIndex == 0)
             {
-                //Properties.Settings.Default.codigoLenguaje = "es-MX";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
 
             }
             else
             {
-                //Properties.Settings.Default.codigoLenguaje = "en-US";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             }
         }
 
-        private void aplicarCambios_Click(object sender, RoutedEventArgs e)
+        private void AplicarCambios_Click(object sender, RoutedEventArgs e)
         {
+
             NavigationService.Refresh();
-            //NavigationService.GoBack();
+            NavigationService.GoBack();
+
+        }
+
+        private string HashearContraseña(string contraseña)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(contraseña));
+                StringBuilder contraseñaHasheada = new StringBuilder();
+                for (int i = 0; i < (bytes.Length); i++)
+                {
+                    contraseñaHasheada.Append(bytes[i].ToString("x2"));
+                }
+                return contraseñaHasheada.ToString();
+            }
         }
     }
 }

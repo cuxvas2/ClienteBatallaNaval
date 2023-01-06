@@ -18,55 +18,68 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.53.104:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.53.104:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.53.104:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+      <xsd:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+      <xsd:import schemaLocation="http://192.168.1.68:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IAdminiUsuarios_iniciarSesion_InputMessage">
-    <wsdl:part name="parameters" element="tns:iniciarSesion" />
+  <wsdl:message name="IAdminiUsuarios_IniciarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_iniciarSesion_OutputMessage">
-    <wsdl:part name="parameters" element="tns:iniciarSesionResponse" />
+  <wsdl:message name="IAdminiUsuarios_IniciarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_registarUsuario_InputMessage">
-    <wsdl:part name="parameters" element="tns:registarUsuario" />
+  <wsdl:message name="IAdminiUsuarios_RegistarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUsuario" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_registarUsuario_OutputMessage">
-    <wsdl:part name="parameters" element="tns:registarUsuarioResponse" />
+  <wsdl:message name="IAdminiUsuarios_RegistarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistarUsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_cambiarContraseña_InputMessage">
-    <wsdl:part name="parameters" element="tns:cambiarContraseña" />
+  <wsdl:message name="IAdminiUsuarios_CambiarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarContraseña" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_cambiarContraseña_OutputMessage">
-    <wsdl:part name="parameters" element="tns:cambiarContraseñaResponse" />
+  <wsdl:message name="IAdminiUsuarios_CambiarContraseña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarContraseñaResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_recuperarJugadorPorCorreo_InputMessage">
-    <wsdl:part name="parameters" element="tns:recuperarJugadorPorCorreo" />
+  <wsdl:message name="IAdminiUsuarios_RecuperarJugadorPorCorreo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarJugadorPorCorreo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiUsuarios_recuperarJugadorPorCorreo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:recuperarJugadorPorCorreoResponse" />
+  <wsdl:message name="IAdminiUsuarios_RecuperarJugadorPorCorreo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarJugadorPorCorreoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_RecuperarListaDeAmigos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarListaDeAmigos" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_RecuperarListaDeAmigos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarListaDeAmigosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_AñadirAmigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AñadirAmigo" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_AñadirAmigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AñadirAmigoResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_Conectado_InputMessage">
     <wsdl:part name="parameters" element="tns:Conectado" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_desconectado_InputMessage">
-    <wsdl:part name="parameters" element="tns:desconectado" />
+  <wsdl:message name="IAdminiSocial_Desconectado_InputMessage">
+    <wsdl:part name="parameters" element="tns:Desconectado" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_enviarMensaje_InputMessage">
-    <wsdl:part name="parameters" element="tns:enviarMensaje" />
+  <wsdl:message name="IAdminiSocial_EnviarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensaje" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_crearSala_InputMessage">
-    <wsdl:part name="parameters" element="tns:crearSala" />
+  <wsdl:message name="IAdminiSocial_CrearSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSala" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_unirseASala_InputMessage">
-    <wsdl:part name="parameters" element="tns:unirseASala" />
+  <wsdl:message name="IAdminiSocial_UnirseASala_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASala" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_todoListo_InputMessage">
-    <wsdl:part name="parameters" element="tns:todoListo" />
+  <wsdl:message name="IAdminiSocial_TodoListo_InputMessage">
+    <wsdl:part name="parameters" element="tns:TodoListo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_cancelarTodoListo_InputMessage">
-    <wsdl:part name="parameters" element="tns:cancelarTodoListo" />
+  <wsdl:message name="IAdminiSocial_CancelarTodoListo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTodoListo" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_EliminarSala_InputMessage">
     <wsdl:part name="parameters" element="tns:EliminarSala" />
@@ -98,59 +111,59 @@
   <wsdl:message name="IAdminiSocial_ExpulsarDeSala_InputMessage">
     <wsdl:part name="parameters" element="tns:ExpulsarDeSala" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_actualizarJugadores_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:actualizarJugadores" />
+  <wsdl:message name="IAdminiSocial_ActualizarJugadores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarJugadores" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_unionDeJugador_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:unionDeJugador" />
+  <wsdl:message name="IAdminiSocial_UnionDeJugador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UnionDeJugador" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_jugadorSeFue_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:jugadorSeFue" />
+  <wsdl:message name="IAdminiSocial_JugadorSeFue_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:JugadorSeFue" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_escribiendoEnCallback_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:escribiendoEnCallback" />
+  <wsdl:message name="IAdminiSocial_EscribiendoEnCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EscribiendoEnCallback" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirMensaje_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirMensaje" />
+  <wsdl:message name="IAdminiSocial_RecibirMensaje_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirMensaje" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirMensaje_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirMensajeResponse" />
+  <wsdl:message name="IAdminiSocial_RecibirMensaje_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirMensajeResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirCodigoSala_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirCodigoSala" />
+  <wsdl:message name="IAdminiSocial_RecibirCodigoSala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCodigoSala" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirCodigoSala_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirCodigoSalaResponse" />
+  <wsdl:message name="IAdminiSocial_RecibirCodigoSala_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCodigoSalaResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_jugadorSeUnio_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:jugadorSeUnio" />
+  <wsdl:message name="IAdminiSocial_JugadorSeUnio_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:JugadorSeUnio" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_jugadorSeUnio_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:jugadorSeUnioResponse" />
+  <wsdl:message name="IAdminiSocial_JugadorSeUnio_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:JugadorSeUnioResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListo_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListo" />
+  <wsdl:message name="IAdminiSocial_RecibirTodoListo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTodoListo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListo_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListoResponse" />
+  <wsdl:message name="IAdminiSocial_RecibirTodoListo_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTodoListoResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListoParaIniciar_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListoParaIniciar" />
+  <wsdl:message name="IAdminiSocial_RecibirTodoListoParaIniciar_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTodoListoParaIniciar" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirTodoListoParaIniciar_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirTodoListoParaIniciarResponse" />
+  <wsdl:message name="IAdminiSocial_RecibirTodoListoParaIniciar_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTodoListoParaIniciarResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirCancelarListo_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirCancelarListo" />
+  <wsdl:message name="IAdminiSocial_RecibirCancelarListo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCancelarListo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_recibirCancelarListo_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:recibirCancelarListoResponse" />
+  <wsdl:message name="IAdminiSocial_RecibirCancelarListo_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCancelarListoResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_insertarDisparo_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:insertarDisparo" />
+  <wsdl:message name="IAdminiSocial_InsertarDisparo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDisparo" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_insertarDisparo_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:insertarDisparoResponse" />
+  <wsdl:message name="IAdminiSocial_InsertarDisparo_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:InsertarDisparoResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_IniciarPartidaCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartidaCallback" />
@@ -158,11 +171,11 @@
   <wsdl:message name="IAdminiSocial_IniciarPartidaCallback_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartidaCallbackResponse" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_primerTiroCallback_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:primerTiroCallback" />
+  <wsdl:message name="IAdminiSocial_PrimerTiroCallback_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PrimerTiroCallback" />
   </wsdl:message>
-  <wsdl:message name="IAdminiSocial_primerTiroCallback_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:primerTiroCallbackResponse" />
+  <wsdl:message name="IAdminiSocial_PrimerTiroCallback_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PrimerTiroCallbackResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_PartidaGanadaCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:PartidaGanadaCallback" />
@@ -189,44 +202,52 @@
     <wsdl:part name="parameters" element="tns:RecibirExpulsacionResponse" />
   </wsdl:message>
   <wsdl:portType name="IAdminiUsuarios">
-    <wsdl:operation name="iniciarSesion">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/iniciarSesion" message="tns:IAdminiUsuarios_iniciarSesion_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/iniciarSesionResponse" message="tns:IAdminiUsuarios_iniciarSesion_OutputMessage" />
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/IniciarSesion" message="tns:IAdminiUsuarios_IniciarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/IniciarSesionResponse" message="tns:IAdminiUsuarios_IniciarSesion_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="registarUsuario">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/registarUsuario" message="tns:IAdminiUsuarios_registarUsuario_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/registarUsuarioResponse" message="tns:IAdminiUsuarios_registarUsuario_OutputMessage" />
+    <wsdl:operation name="RegistarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/RegistarUsuario" message="tns:IAdminiUsuarios_RegistarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/RegistarUsuarioResponse" message="tns:IAdminiUsuarios_RegistarUsuario_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="cambiarContraseña">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseña" message="tns:IAdminiUsuarios_cambiarContraseña_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/cambiarContraseñaResponse" message="tns:IAdminiUsuarios_cambiarContraseña_OutputMessage" />
+    <wsdl:operation name="CambiarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/CambiarContraseña" message="tns:IAdminiUsuarios_CambiarContraseña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/CambiarContraseñaResponse" message="tns:IAdminiUsuarios_CambiarContraseña_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recuperarJugadorPorCorreo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo" message="tns:IAdminiUsuarios_recuperarJugadorPorCorreo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreoResponse" message="tns:IAdminiUsuarios_recuperarJugadorPorCorreo_OutputMessage" />
+    <wsdl:operation name="RecuperarJugadorPorCorreo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreo" message="tns:IAdminiUsuarios_RecuperarJugadorPorCorreo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreoResponse" message="tns:IAdminiUsuarios_RecuperarJugadorPorCorreo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarListaDeAmigos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigos" message="tns:IAdminiUsuarios_RecuperarListaDeAmigos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigosResponse" message="tns:IAdminiUsuarios_RecuperarListaDeAmigos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AñadirAmigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigo" message="tns:IAdminiUsuarios_AñadirAmigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigoResponse" message="tns:IAdminiUsuarios_AñadirAmigo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IAdminiSocial">
     <wsdl:operation name="Conectado">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Conectado" message="tns:IAdminiSocial_Conectado_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="desconectado">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/desconectado" message="tns:IAdminiSocial_desconectado_InputMessage" />
+    <wsdl:operation name="Desconectado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/Desconectado" message="tns:IAdminiSocial_Desconectado_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="enviarMensaje">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/enviarMensaje" message="tns:IAdminiSocial_enviarMensaje_InputMessage" />
+    <wsdl:operation name="EnviarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/EnviarMensaje" message="tns:IAdminiSocial_EnviarMensaje_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="crearSala">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/crearSala" message="tns:IAdminiSocial_crearSala_InputMessage" />
+    <wsdl:operation name="CrearSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/CrearSala" message="tns:IAdminiSocial_CrearSala_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="unirseASala">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/unirseASala" message="tns:IAdminiSocial_unirseASala_InputMessage" />
+    <wsdl:operation name="UnirseASala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/UnirseASala" message="tns:IAdminiSocial_UnirseASala_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="todoListo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/todoListo" message="tns:IAdminiSocial_todoListo_InputMessage" />
+    <wsdl:operation name="TodoListo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/TodoListo" message="tns:IAdminiSocial_TodoListo_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="cancelarTodoListo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/cancelarTodoListo" message="tns:IAdminiSocial_cancelarTodoListo_InputMessage" />
+    <wsdl:operation name="CancelarTodoListo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/CancelarTodoListo" message="tns:IAdminiSocial_CancelarTodoListo_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EliminarSala">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/EliminarSala" message="tns:IAdminiSocial_EliminarSala_InputMessage" />
@@ -258,53 +279,53 @@
     <wsdl:operation name="ExpulsarDeSala">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/ExpulsarDeSala" message="tns:IAdminiSocial_ExpulsarDeSala_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="actualizarJugadores">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/actualizarJugadores" message="tns:IAdminiSocial_actualizarJugadores_OutputCallbackMessage" />
+    <wsdl:operation name="ActualizarJugadores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/ActualizarJugadores" message="tns:IAdminiSocial_ActualizarJugadores_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="unionDeJugador">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/unionDeJugador" message="tns:IAdminiSocial_unionDeJugador_OutputCallbackMessage" />
+    <wsdl:operation name="UnionDeJugador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/UnionDeJugador" message="tns:IAdminiSocial_UnionDeJugador_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="jugadorSeFue">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/jugadorSeFue" message="tns:IAdminiSocial_jugadorSeFue_OutputCallbackMessage" />
+    <wsdl:operation name="JugadorSeFue">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/JugadorSeFue" message="tns:IAdminiSocial_JugadorSeFue_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="escribiendoEnCallback">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/escribiendoEnCallback" message="tns:IAdminiSocial_escribiendoEnCallback_OutputCallbackMessage" />
+    <wsdl:operation name="EscribiendoEnCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/EscribiendoEnCallback" message="tns:IAdminiSocial_EscribiendoEnCallback_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recibirMensaje">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirMensaje" message="tns:IAdminiSocial_recibirMensaje_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirMensajeResponse" message="tns:IAdminiSocial_recibirMensaje_InputCallbackMessage" />
+    <wsdl:operation name="RecibirMensaje">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirMensaje" message="tns:IAdminiSocial_RecibirMensaje_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirMensajeResponse" message="tns:IAdminiSocial_RecibirMensaje_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recibirCodigoSala">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCodigoSala" message="tns:IAdminiSocial_recibirCodigoSala_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCodigoSalaResponse" message="tns:IAdminiSocial_recibirCodigoSala_InputCallbackMessage" />
+    <wsdl:operation name="RecibirCodigoSala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirCodigoSala" message="tns:IAdminiSocial_RecibirCodigoSala_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirCodigoSalaResponse" message="tns:IAdminiSocial_RecibirCodigoSala_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="jugadorSeUnio">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/jugadorSeUnio" message="tns:IAdminiSocial_jugadorSeUnio_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/jugadorSeUnioResponse" message="tns:IAdminiSocial_jugadorSeUnio_InputCallbackMessage" />
+    <wsdl:operation name="JugadorSeUnio">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/JugadorSeUnio" message="tns:IAdminiSocial_JugadorSeUnio_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/JugadorSeUnioResponse" message="tns:IAdminiSocial_JugadorSeUnio_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recibirTodoListo">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListo" message="tns:IAdminiSocial_recibirTodoListo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoResponse" message="tns:IAdminiSocial_recibirTodoListo_InputCallbackMessage" />
+    <wsdl:operation name="RecibirTodoListo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirTodoListo" message="tns:IAdminiSocial_RecibirTodoListo_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirTodoListoResponse" message="tns:IAdminiSocial_RecibirTodoListo_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recibirTodoListoParaIniciar">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar" message="tns:IAdminiSocial_recibirTodoListoParaIniciar_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciarResponse" message="tns:IAdminiSocial_recibirTodoListoParaIniciar_InputCallbackMessage" />
+    <wsdl:operation name="RecibirTodoListoParaIniciar">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirTodoListoParaIniciar" message="tns:IAdminiSocial_RecibirTodoListoParaIniciar_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirTodoListoParaIniciarResponse" message="tns:IAdminiSocial_RecibirTodoListoParaIniciar_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="recibirCancelarListo">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCancelarListo" message="tns:IAdminiSocial_recibirCancelarListo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/recibirCancelarListoResponse" message="tns:IAdminiSocial_recibirCancelarListo_InputCallbackMessage" />
+    <wsdl:operation name="RecibirCancelarListo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirCancelarListo" message="tns:IAdminiSocial_RecibirCancelarListo_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/RecibirCancelarListoResponse" message="tns:IAdminiSocial_RecibirCancelarListo_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="insertarDisparo">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/insertarDisparo" message="tns:IAdminiSocial_insertarDisparo_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/insertarDisparoResponse" message="tns:IAdminiSocial_insertarDisparo_InputCallbackMessage" />
+    <wsdl:operation name="InsertarDisparo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/InsertarDisparo" message="tns:IAdminiSocial_InsertarDisparo_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/InsertarDisparoResponse" message="tns:IAdminiSocial_InsertarDisparo_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="IniciarPartidaCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallback" message="tns:IAdminiSocial_IniciarPartidaCallback_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/IniciarPartidaCallbackResponse" message="tns:IAdminiSocial_IniciarPartidaCallback_InputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="primerTiroCallback">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/primerTiroCallback" message="tns:IAdminiSocial_primerTiroCallback_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/primerTiroCallbackResponse" message="tns:IAdminiSocial_primerTiroCallback_InputCallbackMessage" />
+    <wsdl:operation name="PrimerTiroCallback">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/PrimerTiroCallback" message="tns:IAdminiSocial_PrimerTiroCallback_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiSocial/PrimerTiroCallbackResponse" message="tns:IAdminiSocial_PrimerTiroCallback_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="PartidaGanadaCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiSocial/PartidaGanadaCallback" message="tns:IAdminiSocial_PartidaGanadaCallback_OutputCallbackMessage" />
@@ -326,8 +347,8 @@
   <wsdl:binding name="NetTcpBinding_IAdminiUsuarios" type="tns:IAdminiUsuarios">
     <wsp:PolicyReference URI="#NetTcpBinding_IAdminiUsuarios_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="iniciarSesion">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/iniciarSesion" style="document" />
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/IniciarSesion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -335,8 +356,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="registarUsuario">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/registarUsuario" style="document" />
+    <wsdl:operation name="RegistarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/RegistarUsuario" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -344,8 +365,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="cambiarContraseña">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/cambiarContraseña" style="document" />
+    <wsdl:operation name="CambiarContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/CambiarContraseña" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -353,8 +374,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recuperarJugadorPorCorreo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/recuperarJugadorPorCorreo" style="document" />
+    <wsdl:operation name="RecuperarJugadorPorCorreo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/RecuperarJugadorPorCorreo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarListaDeAmigos">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/RecuperarListaDeAmigos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AñadirAmigo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/AñadirAmigo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -372,38 +411,38 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="desconectado">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/desconectado" style="document" />
+    <wsdl:operation name="Desconectado">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/Desconectado" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="enviarMensaje">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/enviarMensaje" style="document" />
+    <wsdl:operation name="EnviarMensaje">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/EnviarMensaje" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="crearSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/crearSala" style="document" />
+    <wsdl:operation name="CrearSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/CrearSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="unirseASala">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/unirseASala" style="document" />
+    <wsdl:operation name="UnirseASala">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/UnirseASala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="todoListo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/todoListo" style="document" />
+    <wsdl:operation name="TodoListo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/TodoListo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="cancelarTodoListo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/cancelarTodoListo" style="document" />
+    <wsdl:operation name="CancelarTodoListo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/CancelarTodoListo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -468,32 +507,32 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="actualizarJugadores">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/actualizarJugadores" style="document" />
+    <wsdl:operation name="ActualizarJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/ActualizarJugadores" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="unionDeJugador">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/unionDeJugador" style="document" />
+    <wsdl:operation name="UnionDeJugador">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/UnionDeJugador" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="jugadorSeFue">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/jugadorSeFue" style="document" />
+    <wsdl:operation name="JugadorSeFue">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/JugadorSeFue" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="escribiendoEnCallback">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/escribiendoEnCallback" style="document" />
+    <wsdl:operation name="EscribiendoEnCallback">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/EscribiendoEnCallback" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recibirMensaje">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirMensaje" style="document" />
+    <wsdl:operation name="RecibirMensaje">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/RecibirMensaje" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -501,8 +540,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recibirCodigoSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirCodigoSala" style="document" />
+    <wsdl:operation name="RecibirCodigoSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/RecibirCodigoSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -510,8 +549,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="jugadorSeUnio">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/jugadorSeUnio" style="document" />
+    <wsdl:operation name="JugadorSeUnio">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/JugadorSeUnio" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -519,8 +558,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recibirTodoListo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirTodoListo" style="document" />
+    <wsdl:operation name="RecibirTodoListo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/RecibirTodoListo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -528,8 +567,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recibirTodoListoParaIniciar">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirTodoListoParaIniciar" style="document" />
+    <wsdl:operation name="RecibirTodoListoParaIniciar">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/RecibirTodoListoParaIniciar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -537,8 +576,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="recibirCancelarListo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/recibirCancelarListo" style="document" />
+    <wsdl:operation name="RecibirCancelarListo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/RecibirCancelarListo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -546,8 +585,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="insertarDisparo">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/insertarDisparo" style="document" />
+    <wsdl:operation name="InsertarDisparo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/InsertarDisparo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -564,8 +603,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="primerTiroCallback">
-      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/primerTiroCallback" style="document" />
+    <wsdl:operation name="PrimerTiroCallback">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiSocial/PrimerTiroCallback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -612,15 +651,15 @@
   </wsdl:binding>
   <wsdl:service name="AdminUsuarios">
     <wsdl:port name="NetTcpBinding_IAdminiUsuarios" binding="tns:NetTcpBinding_IAdminiUsuarios">
-      <soap12:address location="net.tcp://192.168.53.104:8081/ServicioConWCFJuego" />
+      <soap12:address location="net.tcp://192.168.1.68:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.53.104:8081/ServicioConWCFJuego</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.68:8081/ServicioConWCFJuego</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAdminiSocial" binding="tns:NetTcpBinding_IAdminiSocial">
-      <soap12:address location="net.tcp://192.168.53.104:8081/ServicioConWCFJuego" />
+      <soap12:address location="net.tcp://192.168.1.68:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.53.104:8081/ServicioConWCFJuego</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.68:8081/ServicioConWCFJuego</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

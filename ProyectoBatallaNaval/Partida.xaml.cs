@@ -199,7 +199,7 @@ namespace ProyectoBatallaNaval
             throw new NotImplementedException();
         }
 
-        public void primerTiroCallback(bool iniciar)
+        public void PrimerTiroCallback(bool iniciar)
         {
             if (true)
             {
@@ -239,57 +239,57 @@ namespace ProyectoBatallaNaval
             NavigationService.Navigate(lobby);
         }
 
-        public void actualizarJugadores(Jugador[] jugadores)
+        public void ActualizarJugadores(Jugador[] jugadores)
         {
             throw new NotImplementedException();
         }
 
-        public void unionDeJugador(Jugador jugador)
+        public void UnionDeJugador(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
-        public void jugadorSeFue(Jugador jugador)
+        public void JugadorSeFue(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
-        public void escribiendoEnCallback(Jugador jugador)
+        public void EscribiendoEnCallback(Jugador jugador)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirMensaje(Chat respuesta)
+        public void RecibirMensaje(Chat respuesta)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirCodigoSala(string codigo)
+        public void RecibirCodigoSala(string codigo)
         {
             throw new NotImplementedException();
         }
 
-        public void jugadorSeUnio(Jugador jugador, string sala, bool seUnio)
+        public void JugadorSeUnio(Jugador jugador, string sala, bool seUnio)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirTodoListo(string contricante)
+        public void RecibirTodoListo(string contricante)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirTodoListoParaIniciar(string contricante)
+        public void RecibirTodoListoParaIniciar(string contricante)
         {
             throw new NotImplementedException();
         }
 
-        public void recibirCancelarListo(string contricante)
+        public void RecibirCancelarListo(string contricante)
         {
             throw new NotImplementedException();
         }
 
-        public void insertarDisparo(String coordenadas)
+        public void InsertarDisparo(String coordenadas)
         {
             buttonTirar.IsEnabled = true;
 
