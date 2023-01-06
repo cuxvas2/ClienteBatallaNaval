@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8082" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.53.104:8082" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="a3e6ad78-1f8b-405d-8391-2593d7ae82d5" SourceId="1" SourceUrl="http://localhost:8082/?xsd=xsd2" />
-    <MetadataFile FileName="AdminUsuarios.wsdl" MetadataType="Wsdl" ID="3d122472-d29d-4eb9-9a25-07c864a8d8cf" SourceId="1" SourceUrl="http://localhost:8082/?wsdl" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="9ca74ae8-754b-4c3d-b2dc-eb5790c4e59c" SourceId="1" SourceUrl="http://localhost:8082/?xsd=xsd0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="7ae19d52-af68-4364-b610-bb2b2009b70d" SourceId="1" SourceUrl="http://localhost:8082/?disco" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="ebfcd019-1bbf-42bc-b022-7eb15d416c4e" SourceId="1" SourceUrl="http://localhost:8082/?xsd=xsd1" />
+    <MetadataFile FileName="AdminUsuarios1.wsdl" MetadataType="Wsdl" ID="8183f40f-c5af-426a-a416-077fbc3dafd0" SourceId="1" SourceUrl="http://192.168.53.104:8082/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="acbfc9b7-cf47-4da5-959d-c11b42e225d5" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd1" />
+    <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="815311a1-bda5-4ee4-902b-26c0270e8200" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd0" />
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="9c9c6c75-98a4-42cb-a251-523f05017850" SourceId="1" SourceUrl="http://192.168.53.104:8082/?disco" />
+    <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="8bad899d-4b80-4daa-9433-779e346f0279" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

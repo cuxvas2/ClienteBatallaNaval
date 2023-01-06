@@ -144,7 +144,7 @@ namespace ProyectoBatallaNaval
                 {
                     AvisoErrorTiempoAgotado();
                 }
-                catch (CommunicationException)
+                catch (CommunicationException ex)
                 {
                     AvisoDeErrorConElServidor();
                 }
@@ -171,7 +171,7 @@ namespace ProyectoBatallaNaval
                     {
                         AvisoErrorConBaseDeDatos();
                     }
-                    catch (CommunicationException)
+                    catch (CommunicationException ex)
                     {
                         AvisoDeErrorConElServidor();
                     }

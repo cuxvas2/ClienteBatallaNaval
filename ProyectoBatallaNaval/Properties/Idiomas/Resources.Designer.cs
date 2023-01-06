@@ -61,6 +61,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aplicar cambios.
+        /// </summary>
+        public static string aplicarCambios {
+            get {
+                return ResourceManager.GetString("aplicarCambios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Borrar.
         /// </summary>
         public static string borrar {

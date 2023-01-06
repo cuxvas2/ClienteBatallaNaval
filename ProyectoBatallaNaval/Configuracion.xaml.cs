@@ -21,7 +21,6 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class Configuracion : Page
     {
-        private Jugador jugadorConfiguracion;
         public Configuracion()
         {
             InitializeComponent();
@@ -31,11 +30,13 @@ namespace ProyectoBatallaNaval
         {
             if(cambiarIdioma.SelectedIndex == 0)
             {
+                //Properties.Settings.Default.codigoLenguaje = "es-MX";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
 
             }
             else
             {
+                //Properties.Settings.Default.codigoLenguaje = "en-US";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             }
@@ -43,7 +44,8 @@ namespace ProyectoBatallaNaval
 
         private void aplicarCambios_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate( new Lobby(jugadorConfiguracion));
+            NavigationService.Refresh();
+            //NavigationService.GoBack();
         }
     }
 }
