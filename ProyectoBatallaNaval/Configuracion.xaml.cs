@@ -26,7 +26,7 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
  
-        private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cambiarIdioma.SelectedIndex == 0)
             {
@@ -42,10 +42,10 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void aplicarCambios_Click(object sender, RoutedEventArgs e)
+        private void AplicarCambios_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Refresh();
-            //NavigationService.GoBack();
+            NavigationService.GoBack();
         }
     }
 }

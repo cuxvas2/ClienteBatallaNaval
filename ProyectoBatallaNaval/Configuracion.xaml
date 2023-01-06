@@ -18,9 +18,9 @@
 
             </Grid.RowDefinitions>
             <Label Content="{x:Static lenguajes:Resources.opciones}" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="352" FontSize="72" Height="107"/>
-            <Button x:Name="aplicarCambios" Content="{x:Static lenguajes:Resources.aplicarCambios}" HorizontalAlignment="Left" Margin="318,225,0,0" VerticalAlignment="Top" Height="24" Click="aplicarCambios_Click"/>
+            <Button x:Name="aplicarCambios" Content="{x:Static lenguajes:Resources.aplicarCambios}" HorizontalAlignment="Left" Margin="318,225,0,0" VerticalAlignment="Top" Height="24" Click="AplicarCambios_Click"/>
             <Label Content="{x:Static lenguajes:Resources.cambiarIdioma}" HorizontalAlignment="Left" Margin="52,144,0,0" VerticalAlignment="Top" Height="24"/>
-            <ComboBox Name="cambiarIdioma"  HorizontalAlignment="Left" Margin="159,146,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="cambiarIdioma_SelectionChanged" Height="22" SelectedIndex="0">
+            <ComboBox Name="cambiarIdioma"  HorizontalAlignment="Left" Margin="159,146,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="CambiarIdioma_SelectionChanged" Height="22" SelectedIndex="0">
                 <ComboBoxItem Content="{x:Static lenguajes:Resources.español}"/>
                 <ComboBoxItem Content="{x:Static lenguajes:Resources.ingles}"/>
 

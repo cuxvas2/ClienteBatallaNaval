@@ -360,9 +360,23 @@ namespace ProyectoBatallaNaval
             rowDefinitionUltima.Height = new GridLength(100);
             buttonPosicionListas.IsEnabled = false;
             buttonPosicionListas.Visibility = Visibility.Hidden;
+            
             IniciarPartida();
         }
 
+        private void QuitarEventoABotonesDelHost()
+        {
+            foreach (var item in GridHost.Children)
+            {
+                if (item is Button)
+                {
+                    Button boton = item as Button;
+                    boton.Click -= ButtonPropio_Click;
+                }
+
+            }
+
+        }
         public void TiroCerteroCallback(string coordenadas)
         {
             ultimoBotonDisparado.Background = brushBarcoDestruido;
