@@ -44,8 +44,7 @@ namespace ProyectoBatallaNaval
 
         private void aplicarCambios_Click(object sender, RoutedEventArgs e)
         {
-            //Debe mandar a lobby pero requiere un parametro
-            //NavigationService.Navigate(new Lobby());
+            NavigationService.GoBack();
         }
     }
 }
