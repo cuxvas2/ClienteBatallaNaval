@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="amigos" xml:space="preserve">
+    <value>Friends</value>
+  </data>
   <data name="aplicarCambios" xml:space="preserve">
     <value>Apply changes</value>
+  </data>
+  <data name="añadirAmigo" xml:space="preserve">
+    <value>Send friend invitation</value>
   </data>
   <data name="borrar" xml:space="preserve">
     <value>Delete</value>
@@ -156,8 +162,14 @@
   <data name="crearPartida" xml:space="preserve">
     <value>Create game</value>
   </data>
+  <data name="eliminarAmigo" xml:space="preserve">
+    <value>Delete friend</value>
+  </data>
   <data name="enviar" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="enviarCodigoCorreo" xml:space="preserve">
+    <value>Send code by mail</value>
   </data>
   <data name="ErrorConexionBaseDeDatos" xml:space="preserve">
     <value>We are having problems obtaining the information, try again later.</value>

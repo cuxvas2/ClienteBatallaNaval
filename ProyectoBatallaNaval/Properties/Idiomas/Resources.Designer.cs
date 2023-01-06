@@ -61,6 +61,24 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Amigos.
+        /// </summary>
+        public static string amigos {
+            get {
+                return ResourceManager.GetString("amigos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Añadir amigo.
+        /// </summary>
+        public static string añadirAmigo {
+            get {
+                return ResourceManager.GetString("añadirAmigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Aplicar cambios.
         /// </summary>
         public static string aplicarCambios {
@@ -178,11 +196,29 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Eliminar amigo.
+        /// </summary>
+        public static string eliminarAmigo {
+            get {
+                return ResourceManager.GetString("eliminarAmigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enviar.
         /// </summary>
         public static string enviar {
             get {
                 return ResourceManager.GetString("enviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar codigo por correo.
+        /// </summary>
+        public static string enviarCodigoCorreo {
+            get {
+                return ResourceManager.GetString("enviarCodigoCorreo", resourceCulture);
             }
         }
         
