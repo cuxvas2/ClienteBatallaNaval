@@ -175,28 +175,36 @@ namespace ProyectoBatallaNaval
                     {
                         AvisoDeErrorConElServidor();
                     }
+                    bool iniciar = false;
                     if (jugador != null)
                     {
-                        jugadorPartida = jugador;
-                        Application.Current.MainWindow.Closing += CerrandoVentana;
-                        InstanceContext context = new InstanceContext(this);
-                        ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
-                        try
+                        if(jugador.Apodo != "")
                         {
-                            clienteJoin.Conectado(jugador);
-                            NavigationService.Navigate(new Lobby(jugador));
-                        }
-                        catch (TimeoutException)
-                        {
-                            AvisoErrorTiempoAgotado();
-                            NavigationService.Refresh();
-                        }
-                        catch (CommunicationException)
-                        {
-                            AvisoDeErrorConElServidor();
-                            NavigationService.Refresh();
+                            iniciar = true;
+                            jugadorPartida = jugador;
+                            Application.Current.MainWindow.Closing += CerrandoVentana;
+                            InstanceContext context = new InstanceContext(this);
+                            ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
+                            try
+                            {
+                                clienteJoin.Conectado(jugador);
+                            }
+                            catch (TimeoutException)
+                            {
+                                AvisoErrorTiempoAgotado();
+                                NavigationService.Refresh();
+                            }
+                            catch (CommunicationException)
+                            {
+                                AvisoDeErrorConElServidor();
+                                NavigationService.Refresh();
+                            }
+
                         }
 
+                    }
+                    if (iniciar) {
+                        NavigationService.Navigate(new Lobby(jugador));
                     }
                      
                 }
@@ -280,23 +288,28 @@ namespace ProyectoBatallaNaval
             Application.Current.MainWindow.Closing += CerrandoVentana;
             InstanceContext context = new InstanceContext(this);
             ServicioAServidor.AdminiSocialClient clienteJoin = new ServicioAServidor.AdminiSocialClient(context);
+            bool iniciar = false;
             try
             {
+                iniciar = true;
                 clienteJoin.Conectado(jugador);
-                NavigationService.Navigate(new Lobby(jugador));
             }
             catch (TimeoutException)
             {
+                iniciar = false;
                 AvisoErrorTiempoAgotado();
                 NavigationService.Refresh();
             }
             catch (CommunicationException)
             {
+                iniciar = false;
                 AvisoDeErrorConElServidor();
                 NavigationService.Refresh();
             }
-
-            NavigationService.Navigate(new Lobby(jugador));
+            if (iniciar)
+            {
+                NavigationService.Navigate(new Lobby(jugador));
+            }
         }
 
         private string GenerarApodo()

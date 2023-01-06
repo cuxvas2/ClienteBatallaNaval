@@ -28,8 +28,7 @@ namespace ProyectoBatallaNaval
             jugadorPartida = jugador;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
-            //No se si funcione
-            this.NavigationService.Refresh();
+            
 
         }
 
