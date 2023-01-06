@@ -5,7 +5,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 
         Title="Registro" Height="387" Width="528" Background="Black">
     <Grid  Height="350" Width="525" Background="Bisque">
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" x:Name="textBlockHeading" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"><Run Language="es-mx" Text="Registro"/><LineBreak/><Run Language="es-mx"/></TextBlock>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" x:Name="textBlockHeading" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"><Run Language="es-mx" Text="{x:Static lenguajes:Resources.registrarse}"/><LineBreak/><Run Language="es-mx"/></TextBlock>
 
         <Button Margin="441,5,12,288" Content="{x:Static lenguajes:Resources.iniciarSesion}" Cursor="Hand" Click="InicioSesion_Click">
             <Button.Template>

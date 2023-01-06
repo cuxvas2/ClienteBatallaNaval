@@ -14,6 +14,14 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var codigoDeLenguaje = ProyectoBatallaNaval.Properties.Settings.Default.codigoLenguaje;
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(codigoDeLenguaje);
+            base.OnStartup(e);
+
+        }
+
         App()
         {
 

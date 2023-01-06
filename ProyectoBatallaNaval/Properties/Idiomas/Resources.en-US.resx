@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="aplicarCambios" xml:space="preserve">
+    <value>Apply changes</value>
+  </data>
   <data name="borrar" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="jugarInvitado" xml:space="preserve">
+    <value>Play like guest</value>
   </data>
   <data name="noCamposVacios" xml:space="preserve">
     <value>Fields cannot be left empty</value>

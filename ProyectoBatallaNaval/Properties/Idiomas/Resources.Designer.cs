@@ -61,6 +61,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aplicar cambios.
+        /// </summary>
+        public static string aplicarCambios {
+            get {
+                return ResourceManager.GetString("aplicarCambios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Borrar.
         /// </summary>
         public static string borrar {
@@ -300,6 +309,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         public static string iniciarSesion {
             get {
                 return ResourceManager.GetString("iniciarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugar como invitado.
+        /// </summary>
+        public static string jugarInvitado {
+            get {
+                return ResourceManager.GetString("jugarInvitado", resourceCulture);
             }
         }
         

@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.53.104:8082" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AdminUsuarios1.wsdl" MetadataType="Wsdl" ID="7dceb545-c09a-4c01-8b73-f4ac261a8639" SourceId="1" SourceUrl="http://192.168.53.104:8082/?wsdl" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="8595b6bb-dd7a-4890-ac13-20cee6da6166" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd1" />
-    <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="f9b0ad37-b209-4445-9ed6-ec514787c941" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd0" />
-    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="ea2bd228-d862-4841-97ea-4d88b3cc2992" SourceId="1" SourceUrl="http://192.168.53.104:8082/?disco" />
-    <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="6255024a-545e-48c5-bea1-d99d0fe29613" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd2" />
+    <MetadataFile FileName="AdminUsuarios1.wsdl" MetadataType="Wsdl" ID="8183f40f-c5af-426a-a416-077fbc3dafd0" SourceId="1" SourceUrl="http://192.168.53.104:8082/?wsdl" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="acbfc9b7-cf47-4da5-959d-c11b42e225d5" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd1" />
+    <MetadataFile FileName="item31.xsd" MetadataType="Schema" ID="815311a1-bda5-4ee4-902b-26c0270e8200" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd0" />
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="9c9c6c75-98a4-42cb-a251-523f05017850" SourceId="1" SourceUrl="http://192.168.53.104:8082/?disco" />
+    <MetadataFile FileName="item32.xsd" MetadataType="Schema" ID="8bad899d-4b80-4daa-9433-779e346f0279" SourceId="1" SourceUrl="http://192.168.53.104:8082/?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

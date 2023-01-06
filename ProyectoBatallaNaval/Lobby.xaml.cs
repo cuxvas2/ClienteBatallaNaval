@@ -97,7 +97,7 @@ namespace ProyectoBatallaNaval
             {
                 imagenTodoListoHost.Visibility = Visibility.Hidden;
                 imagenTodoListoContricante.Visibility = Visibility.Hidden;
-                buttonIniciarPartida.Content = "Todo listo";
+                buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
                 jugadoresListos = 0;
                 todoListo = false;
                 NavigationService.Navigate(new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala));

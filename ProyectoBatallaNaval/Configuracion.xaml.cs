@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoBatallaNaval.ServicioAServidor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,19 +25,18 @@ namespace ProyectoBatallaNaval
         {
             InitializeComponent();
         }
-
-
-
  
         private void cambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(cambiarIdioma.SelectedIndex == 0)
             {
+                //Properties.Settings.Default.codigoLenguaje = "es-MX";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es-MX");
 
             }
             else
             {
+                //Properties.Settings.Default.codigoLenguaje = "en-US";
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
 
             }
@@ -44,7 +44,8 @@ namespace ProyectoBatallaNaval
 
         private void aplicarCambios_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Refresh();
+            //NavigationService.GoBack();
         }
     }
 }
