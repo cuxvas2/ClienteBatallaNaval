@@ -74,19 +74,19 @@ namespace ProyectoBatallaNaval
                     }
                     catch (TimeoutException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                     }
                     catch (DuplicateNameException)
                     {
-                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
+                        mensajeError.Text = Properties.Idiomas.Resources.errorDatosDuplicados;
                     }
                     catch (CommunicationException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                     }
                     catch (EntityException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionBaseDeDatos);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorConexionBaseDeDatos);
                     }
                     if (jugadorRegistrado)
                     {
@@ -95,7 +95,7 @@ namespace ProyectoBatallaNaval
                     }
                     else
                     {
-                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
+                        mensajeError.Text = Properties.Idiomas.Resources.errorDatosDuplicados;
                     }
                 }
             }

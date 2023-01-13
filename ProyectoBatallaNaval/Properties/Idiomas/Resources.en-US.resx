@@ -138,6 +138,9 @@
   <data name="casilla" xml:space="preserve">
     <value>Box_</value>
   </data>
+  <data name="codigoEnviadoCorreo" xml:space="preserve">
+    <value>The room code is:</value>
+  </data>
   <data name="codigoInvalido" xml:space="preserve">
     <value>The code entered is invalid, it must be 5 characters long</value>
   </data>
@@ -171,16 +174,22 @@
   <data name="enviarCodigoCorreo" xml:space="preserve">
     <value>Send code by mail</value>
   </data>
-  <data name="ErrorConexionBaseDeDatos" xml:space="preserve">
+  <data name="errorConexionBaseDeDatos" xml:space="preserve">
     <value>We are having problems obtaining the information, try again later.</value>
   </data>
-  <data name="ErrorConexionServidor" xml:space="preserve">
+  <data name="errorConexionServidor" xml:space="preserve">
     <value>The server is not responding, try again later later.</value>
   </data>
-  <data name="ErrorDatosDuplicados" xml:space="preserve">
+  <data name="errorCorreoNoEnviado" xml:space="preserve">
+    <value>The mail has not been sent</value>
+  </data>
+  <data name="errorDatosDuplicados" xml:space="preserve">
     <value>Try angain with other credentials</value>
   </data>
-  <data name="ErrorTiempoAgotado" xml:space="preserve">
+  <data name="errorSmtp" xml:space="preserve">
+    <value>Failed to establish connection to email service</value>
+  </data>
+  <data name="errorTiempoAgotado" xml:space="preserve">
     <value>Time out to process your request, try again later.</value>
   </data>
   <data name="escribaContraseña" xml:space="preserve">
@@ -221,6 +230,9 @@
   </data>
   <data name="nombreUsuario" xml:space="preserve">
     <value>Nickname</value>
+  </data>
+  <data name="notificacionEnviadoCorreo" xml:space="preserve">
+    <value>The code has been sent to the mail</value>
   </data>
   <data name="opciones" xml:space="preserve">
     <value>Options</value>

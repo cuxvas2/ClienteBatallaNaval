@@ -95,11 +95,11 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
                 txtMensaje.Text = "";
             }
@@ -116,11 +116,11 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
             }
 
@@ -211,11 +211,11 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
                 textBoxCodigoSala.Text = "";
                 jugadorLider = false;
@@ -236,11 +236,11 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
             }
             ReiniciarElementosPorDeefecto();
@@ -276,11 +276,11 @@ namespace ProyectoBatallaNaval
                     }
                     catch (TimeoutException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                     }
                     catch (CommunicationException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                     }
                 }
                 else
@@ -295,11 +295,11 @@ namespace ProyectoBatallaNaval
                     }
                     catch (TimeoutException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                     }
                     catch (CommunicationException)
                     {
-                        MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                        MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                     }
                 }
             }
@@ -323,11 +323,11 @@ namespace ProyectoBatallaNaval
             }
             catch (TimeoutException)
             {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
             }
             catch (CommunicationException)
             {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
             }
 
         }
@@ -382,12 +382,12 @@ namespace ProyectoBatallaNaval
                 catch (TimeoutException)
                 {
                     jugadorExpulsado = false;
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
                     jugadorExpulsado = false;
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
             }
             if (jugadorExpulsado)
@@ -467,15 +467,15 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
                 catch (EntityException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
             }
         }
@@ -485,7 +485,6 @@ namespace ProyectoBatallaNaval
             bool status = false;
             string from = "batallanaval.fei@hotmail.com";
             string displayName = "Batalla Naval Juego";
-
             try
             {
                 MailMessage mailMessage = new MailMessage();
@@ -515,7 +514,7 @@ namespace ProyectoBatallaNaval
             string correoEmail = textBoxCorreoElectronico.Text;
             if (string.IsNullOrWhiteSpace(correoEmail))
             {
-                MessageBox.Show("Correo vacio");
+                MessageBox.Show(Properties.Idiomas.Resources.escribeCorreoElectronico);
             }
             else if (Regex.IsMatch(correoEmail, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
@@ -523,23 +522,23 @@ namespace ProyectoBatallaNaval
                 {
                     try 
                     { 
-                        EnviarCorreo(correoEmail, "CorreoBatallaNaval", sala);
-                        MessageBox.Show("CorreoEnviado");
+                        EnviarCorreo(correoEmail,Properties.Idiomas.Resources.codigoEnviadoCorreo , sala);
+                        MessageBox.Show(Properties.Idiomas.Resources.notificacionEnviadoCorreo);
 
                     }
                     catch(SmtpException)
                     {
-                        MessageBox.Show("No se pudo establecer conexion al servicio de correo electronico");
+                        MessageBox.Show(Properties.Idiomas.Resources.errorSmtp);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("CorreoNoEnviado");
+                    MessageBox.Show(Properties.Idiomas.Resources.errorCorreoNoEnviado);
                 }
             }
             else
             {
-                MessageBox.Show("Correo electronico no valido");
+                MessageBox.Show(Properties.Idiomas.Resources.correoInvalido);
             }
         }
 

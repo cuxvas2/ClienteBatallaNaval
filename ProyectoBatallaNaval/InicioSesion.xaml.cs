@@ -153,7 +153,7 @@ namespace ProyectoBatallaNaval
                     }
                     catch (ArgumentNullException)
                     {
-                        mensajeError.Text = Properties.Idiomas.Resources.ErrorDatosDuplicados;
+                        mensajeError.Text = Properties.Idiomas.Resources.errorDatosDuplicados;
                     }
                     catch (EntityException)
                     {
@@ -239,15 +239,15 @@ namespace ProyectoBatallaNaval
 
         private void AvisoDeErrorConElServidor()
         {
-            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
         }
         private void AvisoErrorTiempoAgotado()
         {
-            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
         }
         private void AvisoErrorConBaseDeDatos()
         {
-            MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
         }
 
         private string HashearContraseña(string contraseña)

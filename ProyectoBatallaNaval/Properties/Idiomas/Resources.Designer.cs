@@ -124,6 +124,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El codigo de la sala es:.
+        /// </summary>
+        public static string codigoEnviadoCorreo {
+            get {
+                return ResourceManager.GetString("codigoEnviadoCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El código ingresado es invalido, deben ser de 5 caracteres.
         /// </summary>
         public static string codigoInvalido {
@@ -225,36 +234,54 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         /// <summary>
         ///   Busca una cadena traducida similar a Ups, tenemos problema para obtener informacion, intentalo más tarde.
         /// </summary>
-        public static string ErrorConexionBaseDeDatos {
+        public static string errorConexionBaseDeDatos {
             get {
-                return ResourceManager.GetString("ErrorConexionBaseDeDatos", resourceCulture);
+                return ResourceManager.GetString("errorConexionBaseDeDatos", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a El servidor no responde, vuelve a intentarlo más tarde.
         /// </summary>
-        public static string ErrorConexionServidor {
+        public static string errorConexionServidor {
             get {
-                return ResourceManager.GetString("ErrorConexionServidor", resourceCulture);
+                return ResourceManager.GetString("errorConexionServidor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo no ha sido enviado.
+        /// </summary>
+        public static string errorCorreoNoEnviado {
+            get {
+                return ResourceManager.GetString("errorCorreoNoEnviado", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Intenta con otros datos.
         /// </summary>
-        public static string ErrorDatosDuplicados {
+        public static string errorDatosDuplicados {
             get {
-                return ResourceManager.GetString("ErrorDatosDuplicados", resourceCulture);
+                return ResourceManager.GetString("errorDatosDuplicados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo establecer conexion al servicio de correo electronico.
+        /// </summary>
+        public static string errorSmtp {
+            get {
+                return ResourceManager.GetString("errorSmtp", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos.
         /// </summary>
-        public static string ErrorTiempoAgotado {
+        public static string errorTiempoAgotado {
             get {
-                return ResourceManager.GetString("ErrorTiempoAgotado", resourceCulture);
+                return ResourceManager.GetString("errorTiempoAgotado", resourceCulture);
             }
         }
         
@@ -372,6 +399,15 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         public static string nombreUsuario {
             get {
                 return ResourceManager.GetString("nombreUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo ha sido enviado con exito.
+        /// </summary>
+        public static string notificacionEnviadoCorreo {
+            get {
+                return ResourceManager.GetString("notificacionEnviadoCorreo", resourceCulture);
             }
         }
         
