@@ -138,6 +138,9 @@
   <data name="casilla" xml:space="preserve">
     <value>casilla_</value>
   </data>
+  <data name="codigoEnviadoCorreo" xml:space="preserve">
+    <value>El codigo de la sala es:</value>
+  </data>
   <data name="codigoInvalido" xml:space="preserve">
     <value>El código ingresado es invalido, deben ser de 5 caracteres</value>
   </data>
@@ -171,16 +174,22 @@
   <data name="enviarCodigoCorreo" xml:space="preserve">
     <value>Enviar codigo por correo</value>
   </data>
-  <data name="ErrorConexionBaseDeDatos" xml:space="preserve">
+  <data name="errorConexionBaseDeDatos" xml:space="preserve">
     <value>Ups, tenemos problema para obtener informacion, intentalo más tarde</value>
   </data>
-  <data name="ErrorConexionServidor" xml:space="preserve">
+  <data name="errorConexionServidor" xml:space="preserve">
     <value>El servidor no responde, vuelve a intentarlo más tarde</value>
   </data>
-  <data name="ErrorDatosDuplicados" xml:space="preserve">
+  <data name="errorCorreoNoEnviado" xml:space="preserve">
+    <value>El correo no ha sido enviado</value>
+  </data>
+  <data name="errorDatosDuplicados" xml:space="preserve">
     <value>Intenta con otros datos</value>
   </data>
-  <data name="ErrorTiempoAgotado" xml:space="preserve">
+  <data name="errorSmtp" xml:space="preserve">
+    <value>No se pudo establecer conexion al servicio de correo electronico</value>
+  </data>
+  <data name="errorTiempoAgotado" xml:space="preserve">
     <value>Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos</value>
   </data>
   <data name="escribaContraseña" xml:space="preserve">
@@ -221,6 +230,9 @@
   </data>
   <data name="nombreUsuario" xml:space="preserve">
     <value>Nombre de usuario</value>
+  </data>
+  <data name="notificacionEnviadoCorreo" xml:space="preserve">
+    <value>El correo ha sido enviado con exito</value>
   </data>
   <data name="opciones" xml:space="preserve">
     <value>Opciones</value>
