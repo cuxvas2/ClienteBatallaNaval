@@ -53,5 +53,7 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Expander>
+        <Button x:Name="ButtonEnviarCodigoCorreo" Content="{x:Static lenguajes:Resources.enviarCodigoCorreo}" HorizontalAlignment="Left" Margin="-438,-618,0,0" VerticalAlignment="Top" Height="26" Width="166" Click="ButtonEnviarCodigoCorreo_Click"/>
+        <TextBox x:Name="textBoxCorreoElectronico" HorizontalAlignment="Left" Margin="-242,-618,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" FontSize="16" Height="26"/>
     </Grid>
 </Page>

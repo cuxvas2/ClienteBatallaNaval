@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net.Mail;
+using System.Net;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using System.Text.RegularExpressions;
 
 namespace ProyectoBatallaNaval
 {
@@ -445,6 +448,70 @@ namespace ProyectoBatallaNaval
                 {
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
                 }
+            }
+        }
+
+        public static bool EnviarCorreo(string to, string emailSubject, string message)
+        {
+            bool status = false;
+            string from = "batallanaval.fei@hotmail.com";
+            string displayName = "Batalla Naval Juego";
+            string msge = "";
+            try
+            {
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress(from, displayName);
+                mailMessage.To.Add(to);
+
+                mailMessage.Subject = emailSubject;
+                mailMessage.Body = message;
+                mailMessage.IsBodyHtml = true;
+
+                SmtpClient client = new SmtpClient("smtp.office365.com", 587);
+                client.Credentials = new NetworkCredential(from, "gabriel2002");
+                client.EnableSsl = true;
+
+                client.Send(mailMessage);
+                msge = "Correo enviado";
+                status = true;
+            }
+            catch (SmtpException ex)
+            {
+                throw new SmtpException(ex.Message);
+            }
+            return status;
+        }
+
+        private void ButtonEnviarCodigoCorreo_Click(object sender, RoutedEventArgs e)
+        {
+            string correoEmail = textBoxCorreoElectronico.Text;
+            if (string.IsNullOrWhiteSpace(correoEmail))
+            {
+                MessageBox.Show("Correo vacio");
+            }
+            else if (Regex.IsMatch(correoEmail, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            {
+                if(!String.IsNullOrWhiteSpace(sala))
+                {
+                    try 
+                    { 
+                        EnviarCorreo(correoEmail, "CorreoBatallaNaval", sala);
+                        MessageBox.Show("CorreoEnviado");
+
+                    }
+                    catch(SmtpException)
+                    {
+                        MessageBox.Show("No se pudo establecer conexion al servicio de correo electronico");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("CorreoNoEnviado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Correo electronico no valido");
             }
         }
     }
