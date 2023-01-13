@@ -483,12 +483,13 @@ namespace ProyectoBatallaNaval
         public static bool EnviarCorreo(string to, string emailSubject, string message)
         {
             bool status = false;
-            string from = "batallanaval.fei@hotmail.com";
-            string displayName = "Batalla Naval Juego";
+            string de = "batallanaval.fei@hotmail.com";
+            string nombreEnPantalla = "Batalla Naval Juego";
+            string contraseña = System.Configuration.ConfigurationManager.AppSettings["Contraseña"];
             try
             {
                 MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress(from, displayName);
+                mailMessage.From = new MailAddress(de, nombreEnPantalla);
                 mailMessage.To.Add(to);
 
                 mailMessage.Subject = emailSubject;
@@ -496,7 +497,7 @@ namespace ProyectoBatallaNaval
                 mailMessage.IsBodyHtml = true;
 
                 SmtpClient client = new SmtpClient("smtp.office365.com", 587);
-                client.Credentials = new NetworkCredential(from, "gabriel2002");
+                client.Credentials = new NetworkCredential(de,contraseña);
                 client.EnableSsl = true;
 
                 client.Send(mailMessage);

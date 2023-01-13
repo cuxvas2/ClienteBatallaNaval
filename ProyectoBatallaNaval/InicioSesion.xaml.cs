@@ -14,7 +14,6 @@ namespace ProyectoBatallaNaval
     public partial class InicioSesion : Page, IAdminiSocialCallback
     {
         private Jugador jugadorPartida;
-
         public InicioSesion()
         {
             InitializeComponent();
