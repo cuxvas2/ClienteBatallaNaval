@@ -1,5 +1,4 @@
-﻿C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\App.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Configuracion.xaml.cs
+﻿C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Configuracion.xaml.cs
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Lobby.xaml.cs
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Partida.xaml.cs
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Registro.xaml.cs
@@ -7,36 +6,19 @@ C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\VentanaJueg
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\App.xaml.cs
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\InicioSesion.xaml.cs
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\AssemblyInfo.cs
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.resx
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.en-US.resx
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.es-MX.resx
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.en-US.resx
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.resx
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\AdminUsuarios.wsdl
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item.xsd
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item1.xsd
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item2.xsd
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item3.xsd
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\packages.config
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Settings.settings
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\App.config
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\configuration91.svcinfo
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\configuration.svcinfo
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\Reference.svcmap
 C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item.disco
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Configuracion.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\InicioSesion.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Lobby.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Partida.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Registro.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\VentanaJuego.xaml
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\Ajustes_Icon.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\Tabrero.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\todoListoIcono.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\BarcoContricanteIcono.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\BarcoHostIcono.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\FondoMar.gif
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\oceano.jpg
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\timon.ico
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\barcoIcono.ico
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\embarcacion.ico
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\buque.png
-C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Imagenes\buqueDestruido.png

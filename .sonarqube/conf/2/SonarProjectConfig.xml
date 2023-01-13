@@ -2,7 +2,7 @@
 <SonarProjectConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/analyzer/2021/1">
   <AnalysisConfigPath>C:\Users\omarg\source\repos\ClienteBatallaNaval\.sonarqube\conf\SonarQubeAnalysisConfig.xml</AnalysisConfigPath>
   <ProjectPath>C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Cliente.csproj</ProjectPath>
-  <FilesToAnalyzePath>C:\Users\omarg\source\repos\ClienteBatallaNaval\.sonarqube\conf\1\FilesToAnalyze.txt</FilesToAnalyzePath>
-  <OutPath>C:\Users\omarg\source\repos\ClienteBatallaNaval\.sonarqube\out\1</OutPath>
+  <FilesToAnalyzePath>C:\Users\omarg\source\repos\ClienteBatallaNaval\.sonarqube\conf\2\FilesToAnalyze.txt</FilesToAnalyzePath>
+  <OutPath>C:\Users\omarg\source\repos\ClienteBatallaNaval\.sonarqube\out\2</OutPath>
   <ProjectType>Product</ProjectType>
 </SonarProjectConfig>

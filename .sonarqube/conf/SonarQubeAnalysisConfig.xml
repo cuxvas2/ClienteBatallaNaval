@@ -7,7 +7,7 @@
   <HasBeginStepCommandLineCredentials>true</HasBeginStepCommandLineCredentials>
   <SonarQubeHostUrl>http://localhost:9000</SonarQubeHostUrl>
   <SonarQubeVersion>9.8.0.63668</SonarQubeVersion>
-  <SonarProjectKey>AnalisisDeCodigoClienteBatallaNaval</SonarProjectKey>
+  <SonarProjectKey>AnalisisDeCodigoClienteBatallaNavalFinal</SonarProjectKey>
   <AdditionalConfig>
     <ConfigSetting Id="BuildUri" />
     <ConfigSetting Id="TfsUri" />

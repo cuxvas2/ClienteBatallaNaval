@@ -419,15 +419,15 @@ namespace ProyectoBatallaNaval
                 }
                 catch (TimeoutException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorTiempoAgotado);
                 }
                 catch (CommunicationException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
                 catch (EntityException)
                 {
-                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                    MessageBox.Show(Properties.Idiomas.Resources.errorConexionServidor);
                 }
             }
         }
