@@ -37,7 +37,14 @@ namespace ProyectoBatallaNaval
         {
             ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
             string[] amigos = cliente.RecuperarListaDeAmigos(jugadorPartida.Apodo);
-            listViewAMigos.ItemsSource = amigos;
+            List<Amigo> listaDeAmigos = new List<Amigo>();
+            Amigo amigo = new Amigo();
+            foreach(string apodo in amigos)
+            {
+                amigo.Apodo = apodo;
+                listaDeAmigos.Add(amigo);
+            }
+            listViewAMigos.ItemsSource = listaDeAmigos;
         }
 
         public void ActualizarJugadores(Jugador[] jugadores)
@@ -65,23 +72,26 @@ namespace ProyectoBatallaNaval
         private void ButtonEnviar_Click(object sender, RoutedEventArgs e)
         {
             string mensaje = txtMensaje.Text;
-            Chat chat = new Chat();
-            chat.Remitente = jugadorPartida.Apodo;
-            chat.Sala = this.sala;
-            chat.MensajeEnviado = mensaje;
-            try
+            if (!String.IsNullOrWhiteSpace(mensaje))
             {
-                cliente.EnviarMensaje(chat);
+                Chat chat = new Chat();
+                chat.Remitente = jugadorPartida.Apodo;
+                chat.Sala = this.sala;
+                chat.MensajeEnviado = mensaje;
+                try
+                {
+                    cliente.EnviarMensaje(chat);
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
+                txtMensaje.Text = "";
             }
-            catch (TimeoutException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-            }
-            catch (CommunicationException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-            }
-            txtMensaje.Text = "";
 
         }
 
@@ -140,7 +150,7 @@ namespace ProyectoBatallaNaval
 
         public void JugadorSeUnio(Jugador jugador, string sala, bool seUnio)
         {
-            if (seUnio)
+            if (seUnio && jugador != null)
             {
                 if (jugador.Apodo != this.jugadorPartida.Apodo)
                 {
@@ -150,7 +160,7 @@ namespace ProyectoBatallaNaval
                     }
                     this.sala = sala;
                     jugadorContricante = jugador;
-                    this.jugadoresEnSala += 1;
+                    buttonAñadirAmigo.Visibility = Visibility.Visible;
                     buttonAbandonarSala.Visibility = Visibility.Visible;
                     labelBarcoContricante.Content = jugador.Apodo;
                     labelBarcoContricante.Visibility = Visibility.Visible;
@@ -158,11 +168,10 @@ namespace ProyectoBatallaNaval
                     labelBarcoHost.Content = this.jugadorPartida.Apodo;
                     labelBarcoHost.Visibility = Visibility.Visible;
                     imagenBarcoHost.Visibility = Visibility.Visible;
+                    labelCodigoPartida.Content = sala;
                 }
-                else if (jugador.Apodo == this.jugadorPartida.Apodo)
-                {
-                    this.jugadoresEnSala += 1;
-                }
+                this.jugadoresEnSala += 1;
+
             }
             else
             {
@@ -189,7 +198,6 @@ namespace ProyectoBatallaNaval
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
                 }
                 textBoxCodigoSala.Text = "";
-                labelCodigoPartida.Content = codigo;
                 jugadorLider = false;
             }
             else
@@ -223,6 +231,7 @@ namespace ProyectoBatallaNaval
             labelCodigoPartida.Content = "";
             buttonAbandonarSala.Visibility = Visibility.Hidden;
             buttonExpulsar.Visibility = Visibility.Hidden;
+            buttonAñadirAmigo.Visibility = Visibility.Hidden;
             jugadorContricante = null;
             jugadoresListos = 0;
             jugadoresEnSala = 0;
@@ -342,23 +351,40 @@ namespace ProyectoBatallaNaval
 
         private void ButtonExpulsar_Click(object sender, RoutedEventArgs e)
         {
+            bool jugadorExpulsado = false;
             try
             {
                 cliente.ExpulsarDeSala(labelCodigoPartida.Content.ToString());
+                jugadorExpulsado = true;
             }
             catch (TimeoutException)
             {
+                jugadorExpulsado = false;
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
             }
             catch (CommunicationException)
             {
+                jugadorExpulsado = false;
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+            }
+            if (jugadorExpulsado)
+            {
+                jugadorContricante = null;
+                jugadoresEnSala -= 1;
+                if (imagenTodoListoContricante.IsVisible)
+                {
+                    jugadoresListos -= 1;
+                    imagenTodoListoContricante.Visibility = Visibility.Hidden;
+                }
+                labelBarcoContricante.Content = "";
+                imagenBarcoContricante.Visibility = Visibility.Hidden;
+                buttonAñadirAmigo.Visibility = Visibility.Hidden;
             }
         }
 
         private void PrintText(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void ButtonEliminarAmigo_Click(object sender, RoutedEventArgs e)
@@ -387,28 +413,60 @@ namespace ProyectoBatallaNaval
                 imagenTodoListoContricante.Visibility = Visibility.Hidden;
                 imagenTodoListoHost.Visibility = Visibility.Hidden;
                 buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
+                buttonAñadirAmigo.Visibility = Visibility.Hidden;
             }
         }
 
         private void ButtonAñadirAmigo_Click(object sender, RoutedEventArgs e)
         {
-            ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
-            try
+            string jugador = jugadorPartida.Apodo;
+            string contricante = jugadorContricante.Apodo;
+            if (!String.IsNullOrEmpty(jugador) && !String.IsNullOrEmpty(contricante))
             {
-                cliente.AñadirAmigo(jugadorPartida.Apodo, jugadorContricante.Apodo);
+                ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+                bool añadido = false;
+                try
+                {
+                    añadido = cliente.AñadirAmigo(jugador, contricante);
+                    if (añadido)
+                    {
+                        buttonAñadirAmigo.Visibility = Visibility.Hidden;
+                    }
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
+                catch (EntityException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
             }
-            catch (TimeoutException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-            }
-            catch (CommunicationException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-            }
-            catch (EntityException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-            }
+        }
+    }
+
+    public class Amigo
+    {
+        public string Apodo { get; set; }
+        public string CodigoSalaEnviado { get; set; }
+        public Amigo()
+        {
+            Apodo = "";
+            CodigoSalaEnviado = "";
+        }
+        public Amigo(string apodo, string codigoSalaEnviado)
+        {
+            Apodo = apodo;
+            CodigoSalaEnviado = codigoSalaEnviado;
+        }
+
+        public override string ToString()
+        {
+            return this.Apodo;
         }
     }
 }

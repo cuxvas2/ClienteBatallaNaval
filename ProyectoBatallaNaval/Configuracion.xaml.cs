@@ -60,7 +60,7 @@ namespace ProyectoBatallaNaval
                 string contraseñaHasheada = HashearContraseña(contraseñaNueva);
                 if(contraseñaNueva.Contains(" "))
                 {
-                    //No se puede tener una contraseña con espacios
+                    
                 }
                 else if(JugadorPartida.Contraseña != contraseñaHasheada)
                 {
