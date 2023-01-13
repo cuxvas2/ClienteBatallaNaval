@@ -175,7 +175,7 @@
     <value>Send code by mail</value>
   </data>
   <data name="errorConexionBaseDeDatos" xml:space="preserve">
-    <value>We are having problems obtaining the information, try again later.</value>
+    <value>We are having problems obtaining the information, if the problem persists restart the game.</value>
   </data>
   <data name="errorConexionServidor" xml:space="preserve">
     <value>The server is not responding, try again later later.</value>
@@ -190,7 +190,7 @@
     <value>Failed to establish connection to email service</value>
   </data>
   <data name="errorTiempoAgotado" xml:space="preserve">
-    <value>Time out to process your request, try again later.</value>
+    <value>Time out to process your request, if the problem persists restart the game.</value>
   </data>
   <data name="escribaContraseña" xml:space="preserve">
     <value>Enter a password</value>

@@ -241,7 +241,7 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El servidor no responde, vuelve a intentarlo más tarde.
+        ///   Busca una cadena traducida similar a El servidor no responde, si el problema perciste reinicia el juego.
         /// </summary>
         public static string errorConexionServidor {
             get {
@@ -277,7 +277,7 @@ namespace ProyectoBatallaNaval.Properties.Idiomas {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos.
+        ///   Busca una cadena traducida similar a Timpo agotado al procesar la solicitud, si el problema perciste reinicia el juego .
         /// </summary>
         public static string errorTiempoAgotado {
             get {

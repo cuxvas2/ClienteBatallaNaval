@@ -175,7 +175,7 @@
     <value>Enviar codigo por correo</value>
   </data>
   <data name="errorConexionBaseDeDatos" xml:space="preserve">
-    <value>Ups, tenemos problema para obtener informacion, intentalo más tarde</value>
+    <value>Ups, tenemos problema para obtener informacion, si el problema perciste reinicia el juego</value>
   </data>
   <data name="errorConexionServidor" xml:space="preserve">
     <value>El servidor no responde, vuelve a intentarlo más tarde</value>
@@ -184,7 +184,7 @@
     <value>Intenta con otros datos</value>
   </data>
   <data name="errorTiempoAgotado" xml:space="preserve">
-    <value>Timpo agotado al procesar la solicitud, vuelve a intentarlo en unos minutos</value>
+    <value>Timpo agotado al procesar la solicitud, si el problema perciste reinicia el juego</value>
   </data>
   <data name="escribaContraseña" xml:space="preserve">
     <value>Escribe una contraseña</value>
