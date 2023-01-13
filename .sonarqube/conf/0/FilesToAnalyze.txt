@@ -1,0 +1,23 @@
+﻿C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Configuracion.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Lobby.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Partida.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Registro.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\VentanaJuego.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\App.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\InicioSesion.xaml.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\AssemblyInfo.cs
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.en-US.resx
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.es-MX.resx
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Idiomas\Resources.resx
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\AdminUsuarios.wsdl
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item.xsd
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item1.xsd
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item2.xsd
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item3.xsd
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Properties\Settings.settings
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\App.config
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\configuration91.svcinfo
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\configuration.svcinfo
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\Reference.svcmap
+C:\Users\omarg\source\repos\ClienteBatallaNaval\ProyectoBatallaNaval\Connected Services\ServicioAServidor\item.disco
