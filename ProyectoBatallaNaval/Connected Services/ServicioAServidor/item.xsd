@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-  <xs:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+  <xs:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="IniciarSesion">
     <xs:complexType>
       <xs:sequence>
@@ -86,6 +86,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AñadirAmigoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAmigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="apodoJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apodoAmigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarAmigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EliminarAmigoResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

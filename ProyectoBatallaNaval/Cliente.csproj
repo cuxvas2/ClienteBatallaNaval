@@ -162,17 +162,17 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServicioAServidor\AdminUsuarios1.wsdl" />
-    <None Include="Connected Services\ServicioAServidor\item4.xsd">
+    <None Include="Connected Services\ServicioAServidor\AdminUsuarios.wsdl" />
+    <None Include="Connected Services\ServicioAServidor\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioAServidor\item41.xsd">
+    <None Include="Connected Services\ServicioAServidor\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioAServidor\item42.xsd">
+    <None Include="Connected Services\ServicioAServidor\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioAServidor\item43.xsd">
+    <None Include="Connected Services\ServicioAServidor\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioAServidor\ProyectoBatallaNaval.ServicioAServidor.Jugador.datasource">
@@ -253,7 +253,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioAServidor\item1.disco" />
+    <None Include="Connected Services\ServicioAServidor\item.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

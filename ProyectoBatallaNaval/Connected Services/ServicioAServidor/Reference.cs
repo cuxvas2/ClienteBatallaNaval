@@ -238,6 +238,12 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigo", ReplyAction="http://tempuri.org/IAdminiUsuarios/AñadirAmigoResponse")]
         System.Threading.Tasks.Task<bool> AñadirAmigoAsync(string apodoJugador, string apodoAmigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/EliminarAmigo", ReplyAction="http://tempuri.org/IAdminiUsuarios/EliminarAmigoResponse")]
+        bool EliminarAmigo(string apodoJugador, string apodoAmigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminiUsuarios/EliminarAmigo", ReplyAction="http://tempuri.org/IAdminiUsuarios/EliminarAmigoResponse")]
+        System.Threading.Tasks.Task<bool> EliminarAmigoAsync(string apodoJugador, string apodoAmigo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -313,6 +319,14 @@ namespace ProyectoBatallaNaval.ServicioAServidor {
         
         public System.Threading.Tasks.Task<bool> AñadirAmigoAsync(string apodoJugador, string apodoAmigo) {
             return base.Channel.AñadirAmigoAsync(apodoJugador, apodoAmigo);
+        }
+        
+        public bool EliminarAmigo(string apodoJugador, string apodoAmigo) {
+            return base.Channel.EliminarAmigo(apodoJugador, apodoAmigo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarAmigoAsync(string apodoJugador, string apodoAmigo) {
+            return base.Channel.EliminarAmigoAsync(apodoJugador, apodoAmigo);
         }
     }
     

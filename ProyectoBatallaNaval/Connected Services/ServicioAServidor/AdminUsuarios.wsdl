@@ -18,10 +18,10 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
-      <xsd:import schemaLocation="http://192.168.1.107:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Entidades" />
+      <xsd:import schemaLocation="http://192.168.1.67:8082/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAdminiUsuarios_IniciarSesion_InputMessage">
@@ -59,6 +59,12 @@
   </wsdl:message>
   <wsdl:message name="IAdminiUsuarios_AñadirAmigo_OutputMessage">
     <wsdl:part name="parameters" element="tns:AñadirAmigoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_EliminarAmigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAmigo" />
+  </wsdl:message>
+  <wsdl:message name="IAdminiUsuarios_EliminarAmigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAmigoResponse" />
   </wsdl:message>
   <wsdl:message name="IAdminiSocial_Conectado_InputMessage">
     <wsdl:part name="parameters" element="tns:Conectado" />
@@ -232,6 +238,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigo" message="tns:IAdminiUsuarios_AñadirAmigo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/AñadirAmigoResponse" message="tns:IAdminiUsuarios_AñadirAmigo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="EliminarAmigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminiUsuarios/EliminarAmigo" message="tns:IAdminiUsuarios_EliminarAmigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminiUsuarios/EliminarAmigoResponse" message="tns:IAdminiUsuarios_EliminarAmigo_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IAdminiSocial">
     <wsdl:operation name="Conectado">
@@ -404,6 +414,15 @@
     </wsdl:operation>
     <wsdl:operation name="AñadirAmigo">
       <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/AñadirAmigo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAmigo">
+      <soap12:operation soapAction="http://tempuri.org/IAdminiUsuarios/EliminarAmigo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -670,15 +689,15 @@
   </wsdl:binding>
   <wsdl:service name="AdminUsuarios">
     <wsdl:port name="NetTcpBinding_IAdminiUsuarios" binding="tns:NetTcpBinding_IAdminiUsuarios">
-      <soap12:address location="net.tcp://192.168.1.107:8081/ServicioConWCFJuego" />
+      <soap12:address location="net.tcp://192.168.1.67:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.107:8081/ServicioConWCFJuego</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.67:8081/ServicioConWCFJuego</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAdminiSocial" binding="tns:NetTcpBinding_IAdminiSocial">
-      <soap12:address location="net.tcp://192.168.1.107:8081/ServicioConWCFJuego" />
+      <soap12:address location="net.tcp://192.168.1.67:8081/ServicioConWCFJuego" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.1.107:8081/ServicioConWCFJuego</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.1.67:8081/ServicioConWCFJuego</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

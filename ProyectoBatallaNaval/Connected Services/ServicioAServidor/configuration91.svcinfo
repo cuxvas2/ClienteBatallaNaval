@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="cg5mMjJid5xvbGaAMI+1jFD8Gp6HwsDtDFiGGI3HxUo=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="mMpMlu0bBj6OPibBnRvNP59n/u7zy8X5xKc2qh3Cmu0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IAdminiUsuarios">
       <properties>
@@ -239,10 +239,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IAdminiUsuarios" contract="ServicioAServidor.IAdminiUsuarios" bindingType="netTcpBinding" address="net.tcp://192.168.1.107:8081/ServicioConWCFJuego" bindingConfiguration="NetTcpBinding_IAdminiUsuarios">
+    <endpoint name="NetTcpBinding_IAdminiUsuarios" contract="ServicioAServidor.IAdminiUsuarios" bindingType="netTcpBinding" address="net.tcp://192.168.1.67:8081/ServicioConWCFJuego" bindingConfiguration="NetTcpBinding_IAdminiUsuarios">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://192.168.1.107:8081/ServicioConWCFJuego</serializedValue>
+          <serializedValue>net.tcp://192.168.1.67:8081/ServicioConWCFJuego</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -324,10 +324,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_IAdminiSocial" contract="ServicioAServidor.IAdminiSocial" bindingType="netTcpBinding" address="net.tcp://192.168.1.107:8081/ServicioConWCFJuego" bindingConfiguration="NetTcpBinding_IAdminiSocial">
+    <endpoint name="NetTcpBinding_IAdminiSocial" contract="ServicioAServidor.IAdminiSocial" bindingType="netTcpBinding" address="net.tcp://192.168.1.67:8081/ServicioConWCFJuego" bindingConfiguration="NetTcpBinding_IAdminiSocial">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://192.168.1.107:8081/ServicioConWCFJuego</serializedValue>
+          <serializedValue>net.tcp://192.168.1.67:8081/ServicioConWCFJuego</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
