@@ -91,12 +91,12 @@ namespace ProyectoBatallaNaval
                     if (contraseñaCambiada)
                     {
                         MessageBox.Show("Contraseña cambiada correctamente");
-                        NavigationService.Refresh();
-                        NavigationService.GoBack();
                     }
                 }
             
             }
+            NavigationService.Refresh();
+            NavigationService.GoBack();
 
         }
 

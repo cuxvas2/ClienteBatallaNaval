@@ -352,7 +352,6 @@ namespace ProyectoBatallaNaval
 
         public void ActualizarCallbackEnPartidaCallback(bool actualizado)
         {
-            return;
         }
 
         private void ButtonPosicionListas_Click(object sender, RoutedEventArgs e)

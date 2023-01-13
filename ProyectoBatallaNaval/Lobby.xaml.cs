@@ -17,7 +17,6 @@ namespace ProyectoBatallaNaval
     {
         private readonly Jugador jugadorPartida;
         private string sala;
-        private int jugadoresEnSala = 0;
         private int jugadoresListos = 0;
         private Jugador jugadorContricante;
         private bool jugadorLider = false;
@@ -25,6 +24,7 @@ namespace ProyectoBatallaNaval
         private readonly bool esInvitado;
         private readonly InstanceContext context;
         private readonly ServicioAServidor.AdminiSocialClient cliente;
+        private string amigoParaEliminar;
         
         public Lobby(Jugador jugador, bool esInvitado)
         {
@@ -46,8 +46,8 @@ namespace ProyectoBatallaNaval
 
         private void LlnarListaDeAmigos()
         {
-            ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
-            string[] amigos = cliente.RecuperarListaDeAmigos(jugadorPartida.Apodo);
+            ServicioAServidor.AdminiUsuariosClient clienteUsuario = new ServicioAServidor.AdminiUsuariosClient();
+            string[] amigos = clienteUsuario.RecuperarListaDeAmigos(jugadorPartida.Apodo);
             List<Amigo> listaDeAmigos = new List<Amigo>();
             Amigo amigo = new Amigo();
             foreach(string apodo in amigos)
@@ -139,7 +139,7 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        public void PrimerTiroCallback(bool jugadorInicio)
+        public void PrimerTiroCallback(bool iniciar)
         {
             throw new NotImplementedException();
         }
@@ -155,7 +155,6 @@ namespace ProyectoBatallaNaval
         {
             labelCodigoPartida.Content = codigo;
             this.sala = codigo;
-            this.jugadoresEnSala += 1;
             jugadorLider = true;
             imagenBarcoHost.Visibility = Visibility.Visible;
             buttonAbandonarSala.Visibility = Visibility.Visible;
@@ -192,7 +191,6 @@ namespace ProyectoBatallaNaval
                     imagenBarcoHost.Visibility = Visibility.Visible;
                     labelCodigoPartida.Content = sala;
                 }
-                this.jugadoresEnSala += 1;
 
             }
             else
@@ -256,7 +254,6 @@ namespace ProyectoBatallaNaval
             buttonAñadirAmigo.Visibility = Visibility.Hidden;
             jugadorContricante = null;
             jugadoresListos = 0;
-            jugadoresEnSala = 0;
             jugadorLider = false;
             imagenBarcoContricante.Visibility = Visibility.Hidden;
             imagenTodoListoContricante.Visibility = Visibility.Hidden;
@@ -343,7 +340,7 @@ namespace ProyectoBatallaNaval
 
         public void InsertarDisparo(string coordenadas)
         {
-            return;
+            throw new NotImplementedException();
         }
 
         public void PartidaGanadaCallback(string jugadorGanado)
@@ -353,7 +350,7 @@ namespace ProyectoBatallaNaval
 
         public void ActualizarCallbackEnPartidaCallback(bool actualizado)
         {
-            return;
+            throw new NotImplementedException();
         }
 
         public void TiroCerteroCallback(string coordenadas)
@@ -396,7 +393,6 @@ namespace ProyectoBatallaNaval
             if (jugadorExpulsado)
             {
                 jugadorContricante = null;
-                jugadoresEnSala -= 1;
                 if (imagenTodoListoContricante.IsVisible)
                 {
                     jugadoresListos -= 1;
@@ -408,39 +404,49 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void PrintText(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
         private void ButtonEliminarAmigo_Click(object sender, RoutedEventArgs e)
         {
-
+            ServicioAServidor.AdminiUsuariosClient clienteUsuario = new ServicioAServidor.AdminiUsuariosClient();
+            string jugador = jugadorPartida.Apodo;
+            if (!String.IsNullOrWhiteSpace(jugador) && !String.IsNullOrWhiteSpace(amigoParaEliminar)) { 
+                try
+                {
+                    bool eliminado = clienteUsuario.EliminarAmigo(jugador, amigoParaEliminar);
+                    if (eliminado)
+                    {
+                        LlnarListaDeAmigos();
+                    }
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
+                catch (EntityException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
+            }
         }
 
-        private void ButtonEnviarInvitacionCorreo_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         public void NotificarAbandorarSala()
         {
-            if(jugadorContricante != null)
-            {
-                jugadorContricante = null;
-                buttonExpulsar.Visibility = Visibility.Hidden;;
-                jugadoresListos = 0;
-                jugadoresEnSala = 1;
-                jugadorLider = false;
-                imagenBarcoContricante.Visibility = Visibility.Hidden;
-                imagenTodoListoContricante.Visibility = Visibility.Hidden;
-                labelBarcoHost.Content = "";
-                todoListo = false;
-                imagenTodoListoContricante.Visibility = Visibility.Hidden;
-                imagenTodoListoHost.Visibility = Visibility.Hidden;
-                buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
-                buttonAñadirAmigo.Visibility = Visibility.Hidden;
-            }
+            jugadorContricante = null;
+            buttonExpulsar.Visibility = Visibility.Hidden;
+            jugadoresListos = 0;
+            jugadorLider = false;
+            imagenBarcoContricante.Visibility = Visibility.Hidden;
+            imagenTodoListoContricante.Visibility = Visibility.Hidden;
+            labelBarcoHost.Content = "";
+            todoListo = false;
+            imagenTodoListoContricante.Visibility = Visibility.Hidden;
+            imagenTodoListoHost.Visibility = Visibility.Hidden;
+            buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
+            buttonAñadirAmigo.Visibility = Visibility.Hidden;
         }
 
         private void ButtonAñadirAmigo_Click(object sender, RoutedEventArgs e)
@@ -449,11 +455,11 @@ namespace ProyectoBatallaNaval
             string contricante = jugadorContricante.Apodo;
             if (!String.IsNullOrEmpty(jugador) && !String.IsNullOrEmpty(contricante))
             {
-                ServicioAServidor.AdminiUsuariosClient cliente = new ServicioAServidor.AdminiUsuariosClient();
+                ServicioAServidor.AdminiUsuariosClient clienteUsuario = new ServicioAServidor.AdminiUsuariosClient();
                 bool añadido = false;
                 try
                 {
-                    añadido = cliente.AñadirAmigo(jugador, contricante);
+                    añadido = clienteUsuario.AñadirAmigo(jugador, contricante);
                     if (añadido)
                     {
                         buttonAñadirAmigo.Visibility = Visibility.Hidden;
@@ -479,7 +485,7 @@ namespace ProyectoBatallaNaval
             bool status = false;
             string from = "batallanaval.fei@hotmail.com";
             string displayName = "Batalla Naval Juego";
-            string msge = "";
+
             try
             {
                 MailMessage mailMessage = new MailMessage();
@@ -495,7 +501,6 @@ namespace ProyectoBatallaNaval
                 client.EnableSsl = true;
 
                 client.Send(mailMessage);
-                msge = "Correo enviado";
                 status = true;
             }
             catch (SmtpException ex)
@@ -535,6 +540,15 @@ namespace ProyectoBatallaNaval
             else
             {
                 MessageBox.Show("Correo electronico no valido");
+            }
+        }
+
+        private void ExpanderOpciones_Expanded(object sender, RoutedEventArgs e)
+        {
+            if(sender is Expander)
+            {
+                Expander expanderExpandido = sender as Expander;
+                amigoParaEliminar = expanderExpandido.Header.ToString();
             }
         }
     }

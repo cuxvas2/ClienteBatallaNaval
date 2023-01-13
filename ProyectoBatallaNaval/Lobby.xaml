@@ -40,13 +40,12 @@
         <Button x:Name="buttonExpulsar" Content="{x:Static lenguajes:Resources.expulsar}" Visibility="Hidden" HorizontalAlignment="Left" Margin="-318,-162,0,0" VerticalAlignment="Top" Height="27" Width="97" Background="#FFAA0000" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="ButtonExpulsar_Click"/>
         <Button x:Name="buttonAñadirAmigo" Content="{x:Static lenguajes:Resources.añadirAmigo}" Visibility="Hidden" HorizontalAlignment="Left" Margin="-426,-548,0,0" VerticalAlignment="Top" Height="26" Width="96" Background="White" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="ButtonAñadirAmigo_Click"/>
         <Expander Margin="-1259,-615,884,428" Header="{x:Static lenguajes:Resources.amigos}" FontSize="18">
-            <ListBox x:Name="listViewAMigos" SelectionChanged="PrintText" SelectionMode="Single">
+            <ListBox x:Name="listViewAMigos" SelectionMode="Single">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Expander x:Name="expanderOpciones" ExpandDirection="Down" Header="{Binding Apodo}" Background="White">
+                        <Expander x:Name="expanderOpciones" Expanded="ExpanderOpciones_Expanded" ExpandDirection="Down" Header="{Binding Apodo}" Background="White">
                             <StackPanel Orientation="Vertical">
-                                <Button x:Name="enviarPorCorreo" Content="{x:Static lenguajes:Resources.enviarCodigoCorreo}" Margin="0,10,0,0" Width="200" Background="White"/>
-                                <Button x:Name="eliminarAmigo" Content="{x:Static lenguajes:Resources.eliminarAmigo}" Margin="0,10,0,0" Width="200"  Background="Red"/>
+                                <Button x:Name="eliminarAmigo" Content="{x:Static lenguajes:Resources.eliminarAmigo}" Click="ButtonEliminarAmigo_Click" Margin="0,10,0,0" Width="200"  Background="Red" />
                             </StackPanel>
                         </Expander>
                     </DataTemplate>

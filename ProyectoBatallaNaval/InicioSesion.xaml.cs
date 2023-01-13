@@ -22,7 +22,7 @@ namespace ProyectoBatallaNaval
 
         public void ActualizarCallbackEnPartidaCallback(bool actualizado)
         {
-            return;
+            throw new NotImplementedException();
         }
 
         public void ActualizarJugadores(Jugador[] jugadores)
@@ -102,7 +102,7 @@ namespace ProyectoBatallaNaval
 
         public void UnionDeJugador(Jugador jugador)
         {
-            return;
+            throw new NotImplementedException();
         }
 
         private void ButtonIniciarSesion_Click(object sender, RoutedEventArgs e)
@@ -166,7 +166,7 @@ namespace ProyectoBatallaNaval
                     bool iniciar = false;
                     if (jugador != null)
                     {
-                        if(jugador.Apodo != "" || jugador.Apodo != null)
+                        if(!String.IsNullOrWhiteSpace(jugador.Apodo))
                         {
                             iniciar = true;
                             jugadorPartida = jugador;
@@ -230,7 +230,7 @@ namespace ProyectoBatallaNaval
                     }
                     catch (EndpointNotFoundException)
                     {
-                        
+                        AvisoDeErrorConElServidor();
                     }
                 }
                 
@@ -303,14 +303,15 @@ namespace ProyectoBatallaNaval
         private string GenerarApodo()
         {
             Random r = new Random();
-            String codigo = "";
+            StringBuilder codigo = new StringBuilder("");
+
             for (int i = 0; i < 5; i++)
             {
                 int numero = r.Next(0, 10);
                 string numeroEnString = numero.ToString();
-                codigo += numeroEnString;
+                codigo.Append(numeroEnString);
             }
-            return "Invitado" + codigo;
+            return "Invitado" + codigo.ToString();
         }
 
         public void NotificarAbandorarSala()
