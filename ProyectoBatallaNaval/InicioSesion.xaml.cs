@@ -192,7 +192,7 @@ namespace ProyectoBatallaNaval
 
                     }
                     if (iniciar) {
-                        NavigationService.Navigate(new Lobby(jugador));
+                        NavigationService.Navigate(new Lobby(jugador, false));
                     }
                      
                 }
@@ -264,7 +264,7 @@ namespace ProyectoBatallaNaval
             }
         }
 
-        private void ButtonIniviarComoInvitado_Click(object sender, RoutedEventArgs e)
+        private void ButtonIniciarComoInvitado_Click(object sender, RoutedEventArgs e)
         {
             Jugador jugador = new Jugador();
             jugador.Apodo = GenerarApodo();
@@ -296,7 +296,7 @@ namespace ProyectoBatallaNaval
             }
             if (iniciar)
             {
-                NavigationService.Navigate(new Lobby(jugador));
+                NavigationService.Navigate(new Lobby(jugador, true));
             }
         }
 

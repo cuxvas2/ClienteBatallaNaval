@@ -24,17 +24,23 @@ namespace ProyectoBatallaNaval
     /// </summary>
     public partial class Configuracion : Page
     {
-        public Jugador JugadorPartida { get; }
+        private Jugador JugadorPartida { get; set; }
+
 
         public Configuracion()
         {
             InitializeComponent();
         }
 
-        public Configuracion(Jugador jugadorPartida)
+        public Configuracion(Jugador jugadorPartida, bool esInvitado)
         {
             InitializeComponent();
             JugadorPartida = jugadorPartida;
+            if (esInvitado)
+            {
+                passwordBoxCambiarContraseña.Visibility = Visibility.Hidden;
+                passwordBoxNuevaContraseña.Visibility = Visibility.Hidden;
+            }
         }
 
         private void CambiarIdioma_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -55,12 +61,12 @@ namespace ProyectoBatallaNaval
         {
             string contraseñaNueva = passwordBoxNuevaContraseña.Password;
 
-            if(contraseñaNueva.Count() > 3)
+            if(contraseñaNueva.Count() > 4)
             {
                 string contraseñaHasheada = HashearContraseña(contraseñaNueva);
-                if(contraseñaNueva.Contains(" "))
+                if (contraseñaNueva.Contains(" "))
                 {
-                    
+                    MessageBox.Show("La contraseña no puede contener espacios en blanco");
                 }
                 else if(JugadorPartida.Contraseña != contraseñaHasheada)
                 {
@@ -85,12 +91,12 @@ namespace ProyectoBatallaNaval
                     if (contraseñaCambiada)
                     {
                         MessageBox.Show("Contraseña cambiada correctamente");
+                        NavigationService.Refresh();
+                        NavigationService.GoBack();
                     }
                 }
             
             }
-            NavigationService.Refresh();
-            NavigationService.GoBack();
 
         }
 

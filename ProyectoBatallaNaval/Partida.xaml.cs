@@ -34,6 +34,7 @@ namespace ProyectoBatallaNaval
         private Button ultimoBotonSeleccionado;
         private Button ultimoBotonDisparado;
         private bool jugadorLider;
+        private readonly bool esInvitado;
         private string sala;
         private ImageBrush brushBarcoDestruido = new ImageBrush();
         private ImageBrush brushBarco = new ImageBrush();
@@ -45,7 +46,7 @@ namespace ProyectoBatallaNaval
             InitializeComponent();
         }
 
-        public Partida(Jugador jugadorContricante, Jugador jugadorPartida, bool jugadorLider, Lobby lobby, string sala)
+        public Partida(Jugador jugadorContricante, Jugador jugadorPartida, bool jugadorLider, Lobby lobby, string sala, bool esInvitado)
         {
             InitializeComponent();
             this.jugadorContricante = jugadorContricante;
@@ -53,6 +54,7 @@ namespace ProyectoBatallaNaval
             this.jugadorLider = jugadorLider;
             this.lobby = lobby;
             this.sala = sala;
+            this.esInvitado = esInvitado;
             labelHost.Content = jugadorPartida.Apodo + Properties.Idiomas.Resources.tu;
             labelContricante.Content = jugadorContricante.Apodo;
             brushBarcoDestruido.ImageSource = imagenBarcoDestruido.Source;
@@ -76,12 +78,12 @@ namespace ProyectoBatallaNaval
             catch (TimeoutException)
             {
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                NavigationService.Navigate(new Lobby(jugadorPartida));
+                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
             }
             catch (CommunicationException)
             {
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                NavigationService.Navigate(new Lobby(jugadorPartida));
+                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
             }
         }
 
@@ -97,12 +99,12 @@ namespace ProyectoBatallaNaval
                 catch (TimeoutException)
                 {
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                    NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                 }
                 catch (CommunicationException)
                 {
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                    NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                 }
             }
         }
@@ -162,12 +164,12 @@ namespace ProyectoBatallaNaval
                 catch (TimeoutException)
                 {
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                    NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                 }
                 catch (CommunicationException)
                 {
                     MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                    NavigationService.Navigate(new Lobby(jugadorPartida));
+                    NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                 }
                 buttonTirar.IsEnabled = false;
                 listaDePosicionesPulsadas.Add(botonPresionadoCordenadas);
@@ -218,12 +220,12 @@ namespace ProyectoBatallaNaval
             catch (TimeoutException)
             {
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                NavigationService.Navigate(new Lobby(jugadorPartida));
+                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
             }
             catch (CommunicationException)
             {
                 MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                NavigationService.Navigate(new Lobby(jugadorPartida));
+                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
             }
         }
 
@@ -307,12 +309,12 @@ namespace ProyectoBatallaNaval
                     catch (TimeoutException)
                     {
                         MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                        NavigationService.Navigate(new Lobby(jugadorPartida));
+                        NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                     }
                     catch (CommunicationException)
                     {
                         MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                        NavigationService.Navigate(new Lobby(jugadorPartida));
+                        NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                     }
                     if (listaDePosicionesDeBarcos.Contains(coordenadas))
                     {
@@ -329,12 +331,12 @@ namespace ProyectoBatallaNaval
                             catch (TimeoutException)
                             {
                                 MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-                                NavigationService.Navigate(new Lobby(jugadorPartida));
+                                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                             }
                             catch (CommunicationException)
                             {
                                 MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
-                                NavigationService.Navigate(new Lobby(jugadorPartida));
+                                NavigationService.Navigate(new Lobby(jugadorPartida, esInvitado));
                             }
                         }
                     }

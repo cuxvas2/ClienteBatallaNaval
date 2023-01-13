@@ -9,9 +9,7 @@ using System.Windows.Navigation;
 
 namespace ProyectoBatallaNaval
 {
-    /// <summary>
-    /// Lógica de interacción para Lobby.xaml
-    /// </summary>
+
     public partial class Lobby : Page, IAdminiSocialCallback
     {
         private readonly Jugador jugadorPartida;
@@ -21,16 +19,26 @@ namespace ProyectoBatallaNaval
         private Jugador jugadorContricante;
         private bool jugadorLider = false;
         private bool todoListo = false;
+        private readonly bool esInvitado;
         private readonly InstanceContext context;
         private readonly ServicioAServidor.AdminiSocialClient cliente;
         
-        public Lobby(Jugador jugador)
+        public Lobby(Jugador jugador, bool esInvitado)
         {
             InitializeComponent();
             jugadorPartida = jugador;
+            this.esInvitado = esInvitado;
             context = new InstanceContext(this);
             cliente = new ServicioAServidor.AdminiSocialClient(context);
-            LlnarListaDeAmigos();
+            if (esInvitado)
+            {
+                listViewAMigos.Visibility = Visibility.Hidden;
+                buttonAñadirAmigo.IsEnabled = false;
+            }
+            else
+            {
+                LlnarListaDeAmigos();
+            }
         }
 
         private void LlnarListaDeAmigos()
@@ -97,17 +105,20 @@ namespace ProyectoBatallaNaval
 
         private void ButtonCrearPartida_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (this.jugadorPartida != null)
             {
-                cliente.CrearSala(this.jugadorPartida);
-            }
-            catch (TimeoutException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-            }
-            catch (CommunicationException)
-            {
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                try
+                {
+                    cliente.CrearSala(this.jugadorPartida);
+                }
+                catch (TimeoutException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
             }
 
         }
@@ -121,7 +132,7 @@ namespace ProyectoBatallaNaval
                 buttonIniciarPartida.Content = Properties.Idiomas.Resources.todoListo;
                 jugadoresListos = 0;
                 todoListo = false;
-                NavigationService.Navigate(new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala));
+                NavigationService.Navigate(new Partida(jugadorContricante, jugadorPartida, jugadorLider, this, sala, esInvitado));
             }
         }
 
@@ -160,7 +171,15 @@ namespace ProyectoBatallaNaval
                     }
                     this.sala = sala;
                     jugadorContricante = jugador;
-                    buttonAñadirAmigo.Visibility = Visibility.Visible;
+                    if (esInvitado)
+                    {
+                        buttonAñadirAmigo.Visibility = Visibility.Hidden;
+                        listViewAMigos.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        buttonAñadirAmigo.Visibility = Visibility.Visible;
+                    }
                     buttonAbandonarSala.Visibility = Visibility.Visible;
                     labelBarcoContricante.Content = jugador.Apodo;
                     labelBarcoContricante.Visibility = Visibility.Visible;
@@ -182,7 +201,7 @@ namespace ProyectoBatallaNaval
         private void ButtonUnirseSala_Click(object sender, RoutedEventArgs e)
         {
             String codigo = textBoxCodigoSala.Text;
-            if (codigo.Length == 5)
+            if (codigo.Length == 5 && jugadorPartida != null)
             {
                 this.sala = codigo;
                 try
@@ -341,7 +360,7 @@ namespace ProyectoBatallaNaval
 
         private void ButtonConfiguracion_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Configuracion(jugadorPartida));
+            NavigationService.Navigate(new Configuracion(jugadorPartida, esInvitado));
         }
 
         public void RecibirExpulsacion()
@@ -352,20 +371,24 @@ namespace ProyectoBatallaNaval
         private void ButtonExpulsar_Click(object sender, RoutedEventArgs e)
         {
             bool jugadorExpulsado = false;
-            try
+            string codigo = labelCodigoPartida.Content.ToString();
+            if (String.IsNullOrWhiteSpace(codigo))
             {
-                cliente.ExpulsarDeSala(labelCodigoPartida.Content.ToString());
-                jugadorExpulsado = true;
-            }
-            catch (TimeoutException)
-            {
-                jugadorExpulsado = false;
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
-            }
-            catch (CommunicationException)
-            {
-                jugadorExpulsado = false;
-                MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                try
+                {
+                    cliente.ExpulsarDeSala(codigo);
+                    jugadorExpulsado = true;
+                }
+                catch (TimeoutException)
+                {
+                    jugadorExpulsado = false;
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorTiempoAgotado);
+                }
+                catch (CommunicationException)
+                {
+                    jugadorExpulsado = false;
+                    MessageBox.Show(Properties.Idiomas.Resources.ErrorConexionServidor);
+                }
             }
             if (jugadorExpulsado)
             {

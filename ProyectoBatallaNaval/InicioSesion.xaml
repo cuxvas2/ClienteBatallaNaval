@@ -16,6 +16,6 @@
         <TextBlock HorizontalAlignment="Left" Margin="83,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="es-mx" Text="{x:Static lenguajes:Resources.contraseña}"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="45,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21"><Run Language="es-mx" Text="{x:Static lenguajes:Resources.correoElectronico}"/><LineBreak/><Run Language="es-mx"/><LineBreak/><Run Language="es-mx"/></TextBlock>
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="mensajeError" VerticalAlignment="Top" Width="247" Margin="147,228,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
-        <Button x:Name="ButtonIniviarComoInvitado" Content="{x:Static lenguajes:Resources.jugarInvitado}" HorizontalAlignment="Left" Margin="214,256,0,0" VerticalAlignment="Top" Height="20" Width="115" Click="ButtonIniviarComoInvitado_Click"/>
+        <Button x:Name="ButtonIniviarComoInvitado" Content="{x:Static lenguajes:Resources.jugarInvitado}" HorizontalAlignment="Left" Margin="214,256,0,0" VerticalAlignment="Top" Height="20" Width="115" Click="ButtonIniciarComoInvitado_Click"/>
     </Grid>
 </Page>
